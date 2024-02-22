@@ -7,11 +7,36 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        'poopin': ['"Poopin"', 'sans-serif']
       },
+      colors: {
+        neutral: {
+          1: '#FAFAFA',
+          2: '#A1A1A1',
+          3: '#5B5B5B',
+          4: '#1F1F1F',
+        },
+        primary: {
+          1: '#FDFCDA',
+          2: '#FDDB1D',
+          3: '#EACB1D',
+          4: '#AD961A',
+        },
+        secondary: {
+          1: '#FFE1C6',
+          2: '#744419',
+          3: '#633D19',
+          4: '#4A2A0C'
+        },
+        accents: {
+          1: '#FAE9EA',
+          2: '#D1232A',
+          3: '#901111',
+          4: '#540E11'
+        }
+      },
+     
     },
   },
   plugins: [],
