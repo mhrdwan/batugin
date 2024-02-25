@@ -1,20 +1,48 @@
 'use client'
 import NavbarComp from '@/components/NavbarComp'
 import NorifReward from '@/components/NorifReward'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import fotoPros from "../../../public/assets/foto-prostad.png"
 import Image from 'next/image'
 import Orang from "../../../public/assets/orang.png"
 import Orang2 from "../../../public/assets/orang 2.png"
 import SwipperDashboard from '@/components/Swipper'
+import up from "../../../public/assets/arrow-up-circle.png"
 import FooterComp from '@/components/Home/Footer'
 function page() {
+  
+  const [showScrollButton, setShowScrollButton] = useState(false);
   const apaItuRef = useRef(null);
+ 
   useEffect(() => {
+    // Opsional: Kondisi tertentu untuk melakukan scroll, misalnya berdasarkan state atau props
+    // Jika kondisi terpenuhi, lakukan scroll ke komponen
     if (apaItuRef.current) {
       apaItuRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, []);
+  }, []); // Kosongkan dependency array jika Anda ingin scroll terjadi saat komponen dimuat
+
+  useEffect(() => {
+    const checkScrollPosition = () => {
+      if (!showScrollButton && window.pageYOffset > 500) { // Misal, tombol muncul ketika user scroll lebih dari 500px
+        setShowScrollButton(true);
+      } else if (showScrollButton && window.pageYOffset <= 500) {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', checkScrollPosition);
+
+    return () => window.removeEventListener('scroll', checkScrollPosition);
+  }, [showScrollButton]);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Untuk scroll secara smooth
+    });
+  };
+
   const KataMereka = [
     {
       id: 1,
@@ -88,6 +116,12 @@ function page() {
       <div className='carousel '>
         <FooterComp />
       </div>
+      {showScrollButton && (
+        <Image onClick={scrollToTop} src={up} style={{ width: "3rem", position: 'fixed', bottom: '20px', right: '20px' }} className="hover:cursor-pointer" />
+        // <button onClick={scrollToTop} style={{ position: 'fixed', bottom: '20px', right: '20px' }}>
+        //  Balik Ke Atas
+        // </button>
+      )}
     </div>
   )
 }
