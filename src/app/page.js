@@ -17,7 +17,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const apaItuRef = useRef(null); // Membuat ref
+  const apaItuRef = useRef(null);
 
   useEffect(() => {
     // Opsional: Kondisi tertentu untuk melakukan scroll, misalnya berdasarkan state atau props

@@ -12,7 +12,7 @@ function NavbarComp() {
                 <Image height={heightInPx} width={widthInPx} src={logo} alt="Logo Batugin" />
             </div>
             <div className='flex justify-end gap-6 items-center text-[1rem]'>
-                <div>About</div>
+                <div className='hover:cursor-pointer'>About</div>
                 <div>Store</div>
                 <div>Points</div>
                 <button className='bg-accents-2 text-white font-semibold text-base leading-normal px-5 py-2 rounded hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50' style={{ width: '100px', height: '48px' }}>
