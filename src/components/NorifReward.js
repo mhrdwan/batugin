@@ -1,5 +1,5 @@
+'use client'
 import React, { useEffect, useState } from 'react';
-
 function NorifReward() {
     const [NavbarState, setNavbarState] = useState(false)
     useEffect(() => {
@@ -7,20 +7,16 @@ function NorifReward() {
             const currentPosition = window.scrollY;
             // console.log(currentPosition)
             if (currentPosition > 89) {
-                console.log('Lebih dari 10');
                 setNavbarState(true)
             } else {
                 setNavbarState(false)
-                console.log('Di bawah 10');
             }
         };
 
-        // Menambahkan event listener ke window untuk mendeteksi scroll
         window.addEventListener('scroll', handleScroll);
 
-        // Membersihkan event listener ketika komponen di-unmount
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []); // Dependency array kosong berarti useEffect ini hanya dijalankan sekali saat komponen dimuat
+    }, []); 
 
     return (
         <div
