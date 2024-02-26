@@ -6,10 +6,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Batugin",
   description: "Obat Peluruh Batu Ginjal PERTAMA di Indonesia",
-  authors:[{name : "Ridwan"}],
-  icons:{
-    icon : './favicon.ico'
-  }
+  authors: [{ name: "Ridwan" }],
+  icon: './favicon.ico'
+
 };
 
 export default function RootLayout({ children }) {
