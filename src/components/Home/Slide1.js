@@ -75,9 +75,11 @@ function Slide1() {
                 height={lebarnya}
               />
             </div>
-            <button className="bg-transparent border text-[1.25rem] border-accents-2 text-accents-2 font-semibold text-base leading-normal w-[10rem] h-[3.75rem] px-2 py-2 mt-[2rem] hover:bg-accents-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-              Lihat Produk
-            </button>
+            <Link href={"/obat-peluruh-batu-ginjal-pertama-di-indonesia"}>
+              <button className="bg-transparent border text-[1.25rem] border-accents-2 text-accents-2 font-semibold text-base leading-normal w-[10rem] h-[3.75rem] px-2 py-2 mt-[2rem] hover:bg-accents-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                Lihat Produk
+              </button>
+            </Link>
           </div>
           <div className="">
             <Image
