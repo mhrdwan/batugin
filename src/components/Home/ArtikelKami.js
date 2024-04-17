@@ -73,7 +73,7 @@ function ArtikelKami() {
         </div>
       </div>
       <div className="  flex mx-auto">
-        <div className="grid grid-rows-2 gap-4 pl-6 pr-6 md:pl-0 mt-4 md:pr-0">
+        <div className="grid grid-rows-2 gap-4 pl-6 pr-6 md:pl-0 mt-[4rem] md:pr-0">
           <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 text-[1.5rem] ">
             Artikel Kami
           </p>
