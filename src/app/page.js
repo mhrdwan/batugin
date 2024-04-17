@@ -59,7 +59,7 @@ export default function Home() {
       <ApaItu />
       <ArtikelKami />
       <FollowBatugin />
-      <FooterComp />
+      <FooterComp mt={20}/>
 
       {showScrollButton && (
         <Image onClick={scrollToTop} src={up} style={{ width: "3rem", position: 'fixed', bottom: '20px', right: '20px' }} className="hover:cursor-pointer" />
