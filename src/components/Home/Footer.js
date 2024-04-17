@@ -3,10 +3,10 @@ import footer from "../../../public/assets/footer.png";
 import logo from "../../../public/assets/LOGO BATUGIN-01.png";
 import Image from "next/image";
 
-function FooterComp() {
+function FooterComp({ mt = 20 }) {
   return (
     <div>
-      <div className="mt-[20rem] md:flex justify-center items-center   hidden">
+      <div className={`mt-[${mt}rem] md:flex justify-center items-center hidden`}>
         <div
           className="h-[19rem] w-full bg-no-repeat bg-cover bg-center "
           style={{ backgroundImage: `url('${footer.src}')` }}
@@ -61,7 +61,7 @@ function FooterComp() {
         </div>
       </div>
       <div
-        className="w-full  flex mt-[20rem] h-[50rem]  md:hidden"
+        className={`w-full  flex mt-[${mt}rem] h-[50rem]  md:hidden`}
         style={{
           backgroundImage: "url('/assets/ft-bawah-hp.png')",
           backgroundRepeat: "no-repeat",
@@ -80,7 +80,7 @@ function FooterComp() {
               <div>Store</div>
             </div>
             <div className="font-semibold mt-[3.7rem]  text-accents-2 text-[1.45rem]">
-            Social Media
+              Social Media
             </div>
             <div className="text-[0.85rem] text-accents-2 ">
               <div>Instagram</div>
@@ -88,7 +88,7 @@ function FooterComp() {
               <div>Twitter</div>
             </div>
             <div className="font-semibold mt-[3.7rem]  text-accents-2 text-[1.45rem]">
-            Others
+              Others
             </div>
             <div className="text-[0.85rem] text-accents-2 ">
               <div>Store</div>
@@ -96,7 +96,7 @@ function FooterComp() {
               <div>Laddeboard</div>
             </div>
             <div className="font-semibold mt-[3.7rem]  text-accents-2 text-[1.45rem]">
-            Contact
+              Contact
             </div>
             <div className="text-[0.85rem] text-accents-2 ">
               <div>batugin.support@gmail.com</div>
