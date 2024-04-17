@@ -49,8 +49,8 @@ function SwipperDashboard({ KataMereka }) {
             modules={[Autoplay]} className="mySwiper">
             {KataMereka.map((item, index) => (
                 <SwiperSlide key={index}>
-                    <div className='flex gap-4 md:h-[19rem] md:w-[43rem] relative border bg-white shadow-lg  '>
-                        <div className='h-full w-full relative'>
+                    <div className='flex w-[20rem] md:h-[19rem] md:w-[43rem] relative border bg-white shadow-lg  '>
+                        <div className='h-full relative'>
                             <Image src={item.foto} alt="Image Description" layout="fill" objectFit="cover" />
                         </div>
                         <div className='flex flex-col justify-center ml-4'>
