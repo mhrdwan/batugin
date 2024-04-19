@@ -7,7 +7,7 @@ import Image from "next/image";
 function FollowBatugin() {
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto mt-[10rem] hidden md:block pl-10 pr-10">
+      <div className="max-w-screen-xl mx-auto mt-[10rem] mb-[10rem] hidden md:block pl-10 pr-10">
         <p className="font-semibold underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 text-[1.5rem]">
           Yuk, Follow Batugin!
         </p>
@@ -25,7 +25,7 @@ function FollowBatugin() {
           <Image src={ig3} width={250} height={250} layout="fixed" />
         </div>
       </div>
-      <div className=" mt-[10rem] md:hidden pl-10 pr-10">
+      <div className=" mt-[10rem] md:hidden pl-10 pr-10 mb-[10rem]">
         <p className="font-semibold underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 text-[1.5rem]">
           Yuk, Follow Batugin!
         </p>
