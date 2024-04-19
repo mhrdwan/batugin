@@ -39,7 +39,8 @@ export default function PointKamu() {
           Ladder Board Points
         </p>
         <div className="mt-[3rem]">
-          <TablePoint />
+          <TableBaru />
+          {/* <TablePoint /> */}
         </div>
       </div>
       <div className="mt-[10rem]">
@@ -53,13 +54,266 @@ function Login() {
   return (
     <div className="table-login pr-[0.71rem] pl-[0.71rem] mt-5 flex justify-center ">
       <div className="pt-5 pb-5 w-full border rounded-lg border-black text-center h-[9rem]">
-        <div className="   text-secondary-2 ">
-          <p className="text-[1rem]  font-medium ">
+        <div className="text-secondary-2">
+          <p className="text-[1rem] font-medium">
             Silahkan masuk/daftar untuk melihat point
           </p>
-          <div className="grid grid-cols-2">
-            <button>Daftar</button>
-            <button>Login</button>
+          <div className="flex justify-center mt-4">
+            <button className="mx-2 px-5 py-2 border border-red-600 text-red-600 font-medium rounded-sm">
+              Daftar
+            </button>
+            <button className="mx-2 px-5 py-2 bg-red-600 text-white font-medium rounded-sm">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TableBaru() {
+  return (
+    <div className=" rounded-[10px] border-2 border-yellow-900 flex-col justify-start items-start inline-flex">
+      <div className="self-stretch bg-yellow-400 rounded-tl-[10px] rounded-tr-[10px] border-2 border-yellow-900 justify-center items-center inline-flex">
+        <div className="h-[66px] px-2 py-6 justify-center items-center flex">
+          <div className="text-black text-xs font-medium font-['Poppins']">
+            No.
+          </div>
+        </div>
+        <div className="h-[66px] px-2 py-6 justify-center items-center flex">
+          <div className="text-black text-xs font-medium font-['Poppins']">
+            Nama
+          </div>
+        </div>
+        <div className="h-[66px] px-2 py-6 justify-center items-center flex">
+          <div className="text-black text-xs font-medium font-['Poppins']">
+            Email
+          </div>
+        </div>
+        <div className="h-[66px] py-6 justify-center items-center flex">
+          <div className="text-black text-xs font-medium font-['Poppins']">
+            Pts
+          </div>
+        </div>
+      </div>
+      <div className="self-stretch justify-center items-center inline-flex">
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            01
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Nurahman
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Nurahman2@gmail.com
+          </div>
+        </div>
+        <div className="h-[63px] py-6 justify-center items-center flex">
+          <div className="text-red-600 text-[10px] font-medium font-['Poppins']">
+            1,204
+          </div>
+        </div>
+      </div>
+      <div className="self-stretch justify-center items-center inline-flex">
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            02
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Akbarudin A
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Akbarudin.a@gmail.com
+          </div>
+        </div>
+        <div className="h-[63px] py-6 justify-center items-center flex">
+          <div className="text-red-600 text-[10px] font-medium font-['Poppins']">
+            1,178
+          </div>
+        </div>
+      </div>
+      <div className="self-stretch justify-center items-center inline-flex">
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            03
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Steven T
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            S.Tjandra99@gmail.com
+          </div>
+        </div>
+        <div className="h-[63px] py-6 justify-center items-center flex">
+          <div className="text-red-600 text-[10px] font-medium font-['Poppins']">
+            1,123
+          </div>
+        </div>
+      </div>
+      <div className="self-stretch justify-center items-center inline-flex">
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            04
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Aqilah N
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Aqilah08n@gmail.com
+          </div>
+        </div>
+        <div className="h-[63px] py-6 justify-center items-center flex">
+          <div className="text-red-600 text-[10px] font-medium font-['Poppins']">
+            1,111
+          </div>
+        </div>
+      </div>
+      <div className="self-stretch justify-center items-center inline-flex">
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            05
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Rahmawati S
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Rahma.watis@gmail.com
+          </div>
+        </div>
+        <div className="h-[63px] py-6 justify-center items-center flex">
+          <div className="text-red-600 text-[10px] font-medium font-['Poppins']">
+            1,095
+          </div>
+        </div>
+      </div>
+      <div className="self-stretch justify-center items-center inline-flex">
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            06
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Michael J.S
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            MichJes@gmail.com
+          </div>
+        </div>
+        <div className="h-[63px] py-6 justify-center items-center flex">
+          <div className="text-red-600 text-[10px] font-medium font-['Poppins']">
+            1,044
+          </div>
+        </div>
+      </div>
+      <div className="self-stretch justify-center items-center inline-flex">
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            07
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Katrin K
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Katrin.Kaka6@gmail.com
+          </div>
+        </div>
+        <div className="h-[63px] py-6 justify-center items-center flex">
+          <div className="text-red-600 text-[10px] font-medium font-['Poppins']">
+            1,008
+          </div>
+        </div>
+      </div>
+      <div className="self-stretch justify-center items-center inline-flex">
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            08
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Syaifudin M
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Sya.Muh@gmail.com
+          </div>
+        </div>
+        <div className="h-[63px] py-6 justify-center items-center flex">
+          <div className="text-red-600 text-[10px] font-medium font-['Poppins']">
+            992
+          </div>
+        </div>
+      </div>
+      <div className="self-stretch justify-center items-center inline-flex">
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            09
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Yuliana H
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            YHartanto00@gmail.com
+          </div>
+        </div>
+        <div className="h-[63px] py-6 justify-center items-center flex">
+          <div className="text-red-600 text-[10px] font-medium font-['Poppins']">
+            977
+          </div>
+        </div>
+      </div>
+      <div className="self-stretch justify-center items-center inline-flex">
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            10
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Tina A
+          </div>
+        </div>
+        <div className="h-[63px] px-2 py-6 justify-center items-center flex">
+          <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">
+            Tina.tin04@gmail.com
+          </div>
+        </div>
+        <div className="h-[63px] py-6 justify-center items-center flex">
+          <div className="text-red-600 text-[10px] font-medium font-['Poppins']">
+            923
           </div>
         </div>
       </div>
