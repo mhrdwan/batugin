@@ -4,11 +4,11 @@ import Image from "next/image";
 
 function ApaItu() {
   return (
-    <div className="bg-primary-1  h-[53.5rem] ">
+    <div className="bg-primary-1  h-[47rem] ">
       <div className="warpnya grid grid-cols-1 md:grid-cols-2 md:ml-[7.5rem] md:mr-[7.5rem] ">
         <div>
           <Image
-            className="mt-[15.6rem]"
+            className="mt-[2.6rem]"
             height={373}
             width={486}
             src={Batugin_Product}
