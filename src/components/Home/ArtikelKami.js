@@ -134,7 +134,7 @@ function ArtikelKami() {
       </div>
       <div className="mt-[2rem]  w-full  py-4 ">
         {/* <Swipper2/> */}
-        <div className="md:hidden">
+        <div className="md:hidden   pl-[3rem]">
         <SwipperMobile KataMereka={KataMereka} />
         </div>
         <div className="hidden md:block">
