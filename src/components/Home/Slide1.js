@@ -55,17 +55,17 @@ function Slide1() {
         </div>
       </div>
       <div
-        className="hp h-[20rem] bg-primary-1 md:hidden p-[2.5rem]"
+        className="hp h-[20rem] bg-primary-1 md:hidden p-[1.5rem]"
         style={{
           backgroundImage: "url('/assets/kuning-hp.png')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "73%",
         }}
       >
-        <div className="bagi2 grid grid-cols-2 ">
-          <div className="">
-            <text>Yuk, kenalan dengan</text>
-            <text>Obat Peluruh Batu Ginjal PERTAMA di Indonesia</text>
+        <div className="bagi2 grid grid-cols-2 w-full mt-5">
+          <div className="text-[0.85rem]">
+            <p>Yuk, kenalan dengan</p>
+            <p className="font-bold text-secondary-3">Obat Peluruh Batu Ginjal <span className="text-accents-2">PERTAMA</span> di Indonesia</p>
             <div className=" flex ">
               <p className="mr-2">By </p>
               <Image
@@ -76,7 +76,7 @@ function Slide1() {
               />
             </div>
             <Link href={"/obat-peluruh-batu-ginjal-pertama-di-indonesia"}>
-              <button className="bg-transparent border text-[1.25rem] border-accents-2 text-accents-2 font-semibold text-base leading-normal w-[10rem] h-[3.75rem] px-2 py-2 mt-[2rem] hover:bg-accents-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+              <button className="bg-transparent border text-[1.25rem] border-accents-2 text-accents-2 font-semibold text-base leading-normal w-[7rem] h-[2.75rem] px-1 py-1 mt-[2rem] hover:bg-accents-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                 Lihat Produk
               </button>
             </Link>
