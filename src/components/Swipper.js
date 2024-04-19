@@ -1,69 +1,85 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import Image from 'next/image';
-
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Image from "next/image";
 
 function SwipperDashboard({ KataMereka }) {
-    const [spaceBetween, setSpaceBetween] = useState(400); // State awal untuk spaceBetween
+  const [spaceBetween, setSpaceBetween] = useState(400);
+  const [slidesPerView, setSlidesPerView] = useState(3);
+  const [isMobile, setIsMobile] = useState(false); // State baru untuk cek mobile
 
-    useEffect(() => {
-        // Fungsi untuk memeriksa ukuran layar dan mengatur spaceBetween
-        const checkMediaQuery = () => {
-            if (window.matchMedia('(min-width: 768px)').matches) {
-                setSpaceBetween(600); // spaceBetween untuk ukuran md ke atas
-            } else {
-                setSpaceBetween(400); // spaceBetween untuk ukuran di bawah md
-            }
-        };
+  useEffect(() => {
+    const checkMediaQuery = () => {
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        setSpaceBetween(600);
+        setSlidesPerView(3);
+        setIsMobile(false); // Tidak mobile
+      } else {
+        setSpaceBetween(400);
+        setSlidesPerView(1);
+        setIsMobile(true); // Mobile
+      }
+    };
 
-        // Memanggil fungsi saat komponen dimount
-        checkMediaQuery();
+    checkMediaQuery();
+    window.addEventListener("resize", checkMediaQuery);
 
-        // Menambahkan event listener untuk resize window
-        window.addEventListener('resize', checkMediaQuery);
+    return () => window.removeEventListener("resize", checkMediaQuery);
+  }, []);
 
-        // Membersihkan event listener saat komponen di-unmount
-        return () => window.removeEventListener('resize', checkMediaQuery);
-    }, []);
+  // Menambahkan style kondisional untuk mobile
+  const swiperStyle = isMobile
+    ? { display: "flex", justifyContent: "center" }
+    : {};
 
-    return (
-        <Swiper
-            slidesPerView={3}
-            spaceBetween={spaceBetween}
-            autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-            }}
-            loop
-
-            modules={[Autoplay]} className="mySwiper">
-            {KataMereka.map((item, index) => (
-                <SwiperSlide key={index}>
-                    <div className='flex w-[20rem] md:h-[19rem] md:w-[43rem] relative border bg-white shadow-lg  '>
-                        <div className='h-full relative'>
-                            <Image src={item.foto} alt="Image Description" layout="fill" objectFit="cover" />
-                        </div>
-                        <div className='flex flex-col justify-center ml-4'>
-                            <p className='text-[1.6rem] text-accents-2 font-semibold underline'>Apa kata mereka?</p>
-                            <p className='mt-4 text-neutral-4'>{item.desc}</p>
-                            <p className='text-secondary-2 mt-[5rem]'>{item.name}</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-            ))}
-        </Swiper>
-
-    )
+  return (
+    <Swiper
+      slidesPerView={slidesPerView}
+      spaceBetween={spaceBetween}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
+      loop
+      modules={[Autoplay]}
+      className="mySwiper"
+      style={swiperStyle} // Terapkan style kondisional
+    >
+      {KataMereka.map((item, index) => (
+        <SwiperSlide key={index}>
+          <div className="w-[35rem] h-[304px] bg-white rounded shadow-lg justify-start items-center inline-flex">
+            <Image
+              className="w-[16rem] self-stretch rounded-tl rounded-bl"
+              src={item.foto}
+            />
+            <div className="w-[467.57px] self-stretch p-5 flex-col justify-center items-start gap-6 inline-flex">
+              <div className="flex-col justify-start items-start gap-2 flex">
+                <div className="text-red-600 text-2xl font-medium font-['Poppins']">
+                  Apa kata mereka?
+                </div>
+                <div className="self-stretch h-1 bg-gradient-to-r from-red-800 to-red-600" />
+              </div>
+              <div className="justify-start items-start inline-flex" />
+              <div className="self-stretch text-stone-900 text-xl font-medium font-['Poppins']">
+                {item.desc}
+              </div>
+              <div className="text-yellow-900 text-xl font-normal font-['Poppins']">
+                {item.name}
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
 }
 
 export default SwipperDashboard;

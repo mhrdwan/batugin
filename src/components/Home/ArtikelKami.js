@@ -11,6 +11,7 @@ import Orang from "../../../public/assets/orang.png";
 import Orang2 from "../../../public/assets/orang 2.png";
 import BannerKuning from "../../../public/assets/Frame 90.png";
 import SwipperDashboard from "../Swipper";
+import Swipper2 from "../swipper2";
 function ArtikelKami() {
   const ArtikelKami = [
     {
@@ -44,7 +45,7 @@ function ArtikelKami() {
     },
     {
       id: 2,
-      desc: "“ Lorem ipsum dolor sit amet consectetur. Lectus et orci faucibus tellus proin mauris. “",
+      desc: "“ Tren fashion musim panas 2024: gaya minimalis yang sedang naik daun. “",
       name: "-David Sanjaya, 42 Tahun.",
       foto: Orang2,
     },
@@ -73,7 +74,7 @@ function ArtikelKami() {
         </div>
       </div>
       <div className="  flex mx-auto">
-        <div className="grid grid-rows-2 gap-4 pl-6 pr-6 md:pl-0 mt-[4rem] md:pr-0">
+        <div className="grid grid-rows-2 gap-4 pl-6 pr-6 md:pl-28 mt-[4rem] md:pr-28">
           <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 text-[1.5rem] ">
             Artikel Kami
           </p>
@@ -81,24 +82,31 @@ function ArtikelKami() {
             Sharing is caring
           </p>
           {/* <div className=" flex justify-center bg-red-500  "> */}
-          <div className="md:grid flex md:grid-cols-4  w-full lg:grid-cols-4 gap-12 mt-20 overflow-y-scroll">
+          <div className="md:grid flex md:grid-cols-4  w-full lg:grid-cols-4 gap-12 mt-20 overflow-x-scroll">
             {ArtikelKami.map((item) => (
-              <div
-                className="card w-[17.6rem] h-max-[30rem] h-[28rem]  "
-                style={{ boxShadow: "4px 4px 5px 0 rgba(0, 0, 0, 0.3)" }}
-              >
-                <div className="flex justify-center">
-                  <Image className=" " src={Rectangle} />
-                </div>
-                <p className="text-wrap text-ellipsis mx-2 mt-6 h-[4rem] h-max-[5rem]  text-black text-[0.875rem] ">
-                  {item.desc}
-                </p>
-                <div className="flex justify-center">
-                  <button className="  items-center bg-accents-2 border text-[1.25rem] border-accents-2 text-white font-semibold text-base leading-normal w-[16.1rem] h-max-[3rem] px-2 py-2 mt-[2rem] hover:bg-accents-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                    Lihat Artikel
-                  </button>
-                </div>
+              <div className="w-[282px] h-[416px] p-3 bg-neutral-50 rounded-sm shadow flex-col justify-start items-start gap-3 inline-flex">
+              <img className="self-stretch h-[272px] rounded-sm" src="https://via.placeholder.com/258x272" />
+              <div className="self-stretch text-black text-sm font-medium font-['Inter'] leading-normal">Negara-negara yang membuat ekspor Jamu indonesia meningkat di tahun 2..</div>
+              <div className="w-[258px] h-12 px-5 py-2 bg-red-600 rounded-sm justify-center items-center gap-2 inline-flex">
+                <div className="text-white text-base font-medium font-['Poppins']">Lihat Artikel</div>
               </div>
+            </div>
+              // <div
+              //   className="card w-[17.6rem] h-max-[30rem] h-[28rem]  "
+              //   style={{ boxShadow: "4px 4px 5px 0 rgba(0, 0, 0, 0.3)" }}
+              // >
+              //   <div className="flex justify-center">
+              //     <Image className=" " src={Rectangle} />
+              //   </div>
+              //   <p className="text-wrap text-ellipsis mx-2 mt-6 h-[4rem] h-max-[5rem]  text-black text-[0.875rem] ">
+              //     {item.desc}
+              //   </p>
+              //   <div className="flex justify-center">
+              //     <button className="  items-center bg-accents-2 border text-[1.25rem] border-accents-2 text-white font-semibold text-base leading-normal w-[16.1rem] h-max-[3rem] px-2 py-2 mt-[2rem] hover:bg-accents-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+              //       Lihat Artikel
+              //     </button>
+              //   </div>
+              // </div>
             ))}
             {/* </div> */}
           </div>
@@ -115,7 +123,8 @@ function ArtikelKami() {
           </div>
         </div>
       </div>
-      <div className="mt-[2rem] overflow-hidden  justify-center py-4 ">
+      <div className="mt-[2rem] h-[10rem] w-full  justify-center py-4 ">
+        {/* <Swipper2/> */}
         <SwipperDashboard KataMereka={KataMereka} />
       </div>
       <div className="flex justify-end mt-36 mr-10">
