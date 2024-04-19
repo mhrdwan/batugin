@@ -9,7 +9,7 @@ function FollowBatugin() {
     <div>
       <div className="max-w-screen-xl mx-auto mt-[10rem] mb-[10rem] hidden md:block pl-10 pr-10">
         <p className="font-semibold underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 text-[1.5rem]">
-          Yuk, Follow Batugin!
+          Yuk, Follow Batugin! 
         </p>
         <p className="font-normal mt-3 text-[1rem] text-neutral-3">
           Cek keseruan kami di Instagram
