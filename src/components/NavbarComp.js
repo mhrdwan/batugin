@@ -55,13 +55,15 @@ function NavbarComp() {
           </div>
         </div>
       </div>
-      <div className="layar-kecil bg-white md:hidden h-[3.5rem] md:hidden flex items-center  justify-between p-[1.25rem]">
-        <Image
-          height={heightInPx}
-          width={widthInPx}
-          src={logo}
-          alt="Logo Batugin"
-        />
+      <div className="layar-kecil bg-white md:hidden h-[3.5rem]  flex items-center  justify-between p-[1.25rem]">
+        <Link href={"/"}>
+          <Image
+            height={heightInPx}
+            width={widthInPx}
+            src={logo}
+            alt="Logo Batugin"
+          />
+        </Link>
         {menuIconSvg}
       </div>
     </>
