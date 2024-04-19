@@ -10,14 +10,14 @@ import Image from "next/image";
 
 function SwipperMobile({ KataMereka }) {
   const [spaceBetween, setSpaceBetween] = useState(30);
-  const [slidesPerView, setSlidesPerView] = useState(2);
+  const [slidesPerView, setSlidesPerView] = useState(1);
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const checkMediaQuery = () => {
       if (window.matchMedia("(max-width: 768px)").matches) {
         setSpaceBetween(30);
-        setSlidesPerView(2);
+        setSlidesPerView(1);
         setIsMobile(true);
       }
     };
