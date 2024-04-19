@@ -39,10 +39,10 @@ function SwipperMobile({ KataMereka }) {
 
   return (
     <Swiper
-      slidesPerView={slidesPerView}
-      spaceBetween={0} // Ubah nilai ini untuk mengurangi jarak
+      slidesPerView={2}
+      spaceBetween={10} 
       autoplay={{
-        delay: 3000,
+        delay: 5000,
         disableOnInteraction: false,
       }}
       loop
@@ -52,9 +52,9 @@ function SwipperMobile({ KataMereka }) {
     >
       {KataMereka.map((item, index) => (
         <SwiperSlide key={index}>
-          <div className="w-full max-w-[320px] min-h-[28rem] max-h-[30rem] bg-white rounded shadow-lg flex flex-col items-center">
+          <div className="max-w-[320px] min-h-[30rem] max-h-[30rem] bg-white rounded shadow-lg flex flex-col items-center">
             <Image
-              className="w-full rounded-t max-h-[200px] object-cover"
+              className="w-full rounded-t max-h-[180px] object-cover"
               src={item.foto}
               layout="responsive"
               width={300}
@@ -63,7 +63,7 @@ function SwipperMobile({ KataMereka }) {
             <div className="p-4 min-h-[200px] max-h-[300px] overflow-hidden">
               {" "}
               {/* Modifikasi di sini */}
-              <div className="text-center text-red-600 text-xl font-medium">
+              <div className="text-center t text-red-600 text-sm font-medium">
                 Apa kata mereka?
               </div>
               <div className="mt-2 text-stone-900 text-lg font-medium">
