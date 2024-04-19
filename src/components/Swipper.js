@@ -45,7 +45,7 @@ function SwipperDashboard({ KataMereka }) {
       slidesPerView={slidesPerView}
       spaceBetween={spaceBetween}
       autoplay={{
-        delay: 5000,
+        delay: 3000,
         disableOnInteraction: false,
       }}
       loop

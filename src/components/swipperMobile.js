@@ -9,14 +9,14 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
 
 function SwipperMobile({ KataMereka }) {
-  const [spaceBetween, setSpaceBetween] = useState(30);
+  const [spaceBetween, setSpaceBetween] = useState(5);
   const [slidesPerView, setSlidesPerView] = useState(1);
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const checkMediaQuery = () => {
       if (window.matchMedia("(max-width: 768px)").matches) {
-        setSpaceBetween(30);
+        setSpaceBetween(5);
         setSlidesPerView(1);
         setIsMobile(true);
       }
@@ -40,10 +40,9 @@ function SwipperMobile({ KataMereka }) {
   return (
     <Swiper
       slidesPerView={slidesPerView}
-      centeredSlides={1}
-      spaceBetween={spaceBetween}
+      spaceBetween={0} // Ubah nilai ini untuk mengurangi jarak
       autoplay={{
-        delay: 2500,
+        delay: 3000,
         disableOnInteraction: false,
       }}
       loop
