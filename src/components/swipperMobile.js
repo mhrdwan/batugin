@@ -10,7 +10,7 @@ import Image from "next/image";
 
 function SwipperMobile({ KataMereka }) {
   const [spaceBetween, setSpaceBetween] = useState(30);
-  const [slidesPerView, setSlidesPerView] = useState(3);
+  const [slidesPerView, setSlidesPerView] = useState(2);
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ function SwipperMobile({ KataMereka }) {
   return (
     <Swiper
       slidesPerView={slidesPerView}
-      centeredSlides={2}
+      centeredSlides={1}
       spaceBetween={spaceBetween}
       autoplay={{
         delay: 2500,
@@ -53,7 +53,7 @@ function SwipperMobile({ KataMereka }) {
     >
       {KataMereka.map((item, index) => (
         <SwiperSlide key={index}>
-          <div className="w-full max-w-[300px] min-h-[28rem] max-h-[30rem] bg-white rounded shadow-lg flex flex-col items-center">
+          <div className="w-full max-w-[320px] min-h-[28rem] max-h-[30rem] bg-white rounded shadow-lg flex flex-col items-center">
             <Image
               className="w-full rounded-t max-h-[200px] object-cover"
               src={item.foto}
