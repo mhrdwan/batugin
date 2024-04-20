@@ -10,7 +10,7 @@ export default function Artikel() {
   return (
     <>
       <NavbarComp />
-      <div className="relative h-[8.9rem] md:h-[20rem] bg-red-400 overflow-hidden">
+      <div className="relative h-[8.9rem] md:h-[30rem] bg-red-400 overflow-hidden">
         <Image
           src={bannerartikel}
           alt="Banner Artikel"
