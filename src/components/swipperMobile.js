@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 // Import Swiper modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
-
+import './test.css'
 function SwipperMobile({ KataMereka }) {
   const [spaceBetween, setSpaceBetween] = useState(5);
   const [slidesPerView, setSlidesPerView] = useState(1);
@@ -39,22 +39,25 @@ function SwipperMobile({ KataMereka }) {
 
   return (
     <Swiper
-      slidesPerView={2}
-      spaceBetween={10} 
+      slidesPerView={"auto"}
+      centeredSlides={true}
       autoplay={{
-        delay: 5000,
+        delay: 2500,
         disableOnInteraction: false,
       }}
-      loop
-      modules={[Autoplay]}
+      spaceBetween={30}
+      pagination={{
+        clickable: true,
+      }}
+      modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper"
-      style={swiperStyle}
     >
-      {KataMereka.map((item, index) => (
-        <SwiperSlide key={index}>
-          <div className="max-w-[320px] min-h-[30rem] max-h-[30rem] bg-white rounded shadow-lg flex flex-col items-center">
+      <>
+        {KataMereka.map((item, index) => (
+         <SwiperSlide key={index}>
+          <div className="max-w-[320px] min-h-[25rem] max-h-[25rem] bg-white rounded shadow-lg flex flex-col items-center">
             <Image
-              className="w-full rounded-t max-h-[180px] object-cover"
+              className="w-full rounded-t max-h-[210px] object-cover"
               src={item.foto}
               layout="responsive"
               width={300}
@@ -63,10 +66,10 @@ function SwipperMobile({ KataMereka }) {
             <div className="p-4 min-h-[200px] max-h-[300px] overflow-hidden">
               {" "}
               {/* Modifikasi di sini */}
-              <div className="text-center t text-red-600 text-sm font-medium">
+              <div className="text-center  text-red-600 text-sm font-medium">
                 Apa kata mereka?
               </div>
-              <div className="mt-2 text-stone-900 text-lg font-medium">
+              <div className="mt-2 text-start text-stone-900 text-lg font-medium">
                 {truncateText(item.desc, 100)}
               </div>
               <div className="mt-1 text-yellow-900 text-lg font-normal">
@@ -75,8 +78,50 @@ function SwipperMobile({ KataMereka }) {
             </div>
           </div>
         </SwiperSlide>
-      ))}
+        ))}
+      </>
     </Swiper>
+
+    // <Swiper
+    //   slidesPerView={2}
+    //   centeredSlides={true}
+    //   spaceBetween={10}
+    //   autoplay={{
+    //     delay: 5000,
+    //     disableOnInteraction: false,
+    //   }}
+    //   loop
+    //   modules={[Autoplay]}
+    //   className="mySwiper"
+    //   style={swiperStyle}
+    // >
+    //   {KataMereka.map((item, index) => (
+    //     <SwiperSlide key={index}>
+    //       <div className="max-w-[320px] min-h-[30rem] max-h-[30rem] bg-white rounded shadow-lg flex flex-col items-center">
+    //         <Image
+    //           className="w-full rounded-t max-h-[180px] object-cover"
+    //           src={item.foto}
+    //           layout="responsive"
+    //           width={300}
+    //           height={160}
+    //         />
+    //         <div className="p-4 min-h-[200px] max-h-[300px] overflow-hidden">
+    //           {" "}
+    //           {/* Modifikasi di sini */}
+    //           <div className="text-center t text-red-600 text-sm font-medium">
+    //             Apa kata mereka?
+    //           </div>
+    //           <div className="mt-2 text-stone-900 text-lg font-medium">
+    //             {truncateText(item.desc, 100)}
+    //           </div>
+    //           <div className="mt-1 text-yellow-900 text-lg font-normal">
+    //             {item.name}
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </SwiperSlide>
+    //   ))}
+    // </Swiper>
   );
 }
 
