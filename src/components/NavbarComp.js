@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -35,14 +35,21 @@ function NavbarComp() {
         <div className="flex justify-between w-full">
           <div className="items-center">
             <Link href={"/"}>
-              <Image height={heightInPx} width={widthInPx} src={logo} alt="Logo Batugin" />
+              <Image
+                height={heightInPx}
+                width={widthInPx}
+                src={logo}
+                alt="Logo Batugin"
+              />
             </Link>
           </div>
           <div className="flex justify-between space-x-5 items-center text-[1rem]">
             <Link href={"/tentang-batugin"}>
               <div className="hover:cursor-pointer">About</div>
             </Link>
-            <div>Store</div>
+            <Link href={"/obat-peluruh-batu-ginjal-pertama-di-indonesia"}>
+              <div>Product</div>
+            </Link>
             <Link href={"/points"}>
               <div>Points</div>
             </Link>
@@ -57,7 +64,12 @@ function NavbarComp() {
       </div>
       <div className="layar-kecil bg-white md:hidden h-[3.5rem] flex items-center justify-between p-[1.25rem]">
         <Link href={"/"}>
-          <Image height={heightInPx} width={widthInPx} src={logo} alt="Logo Batugin" />
+          <Image
+            height={heightInPx}
+            width={widthInPx}
+            src={logo}
+            alt="Logo Batugin"
+          />
         </Link>
         <div onClick={() => setMenuOpen(!menuOpen)}>
           {!menuOpen ? menuIconSvg : <MenuNavbar />}
