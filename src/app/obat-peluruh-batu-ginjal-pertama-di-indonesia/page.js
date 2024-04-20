@@ -9,6 +9,7 @@ import Orang2 from "../../../public/assets/orang 2.png";
 import SwipperDashboard from "@/components/Swipper";
 import up from "../../../public/assets/arrow-up-circle.png";
 import FooterComp from "@/components/Home/Footer";
+import SwipperMobile from "@/components/swipperMobile";
 function page() {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const apaItuRef = useRef(null);
@@ -170,8 +171,8 @@ function page() {
         <p className="text-center mt-4 text-[1rem]">
           Yang sudah merasakan khasiat batugin
         </p>
-        <div className="mt-5 bg-red-400 w-full h-[17.5rem] items-center flex">
-          <div className="flex justify-center h-[15rem] bg-white w-full">sss</div>
+        <div className="mt-5  w-full items-center flex">
+         <SwipperMobile KataMereka={KataMereka}/>
         </div>
       </div>
       <div className="carousel ">
