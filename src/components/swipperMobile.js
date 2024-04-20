@@ -45,6 +45,7 @@ function SwipperMobile({ KataMereka }) {
         delay: 2500,
         disableOnInteraction: false,
       }}
+      loop
       spaceBetween={30}
       // pagination={{
       //   clickable: true,
