@@ -10,7 +10,7 @@ export default function Artikel() {
   return (
     <>
       <NavbarComp />
-      <div className="relative h-[8.9rem] bg-red-400 overflow-hidden">
+      <div className="relative h-[8.9rem] md:h-[20rem] bg-red-400 overflow-hidden">
         <Image
           src={bannerartikel}
           alt="Banner Artikel"
@@ -19,15 +19,15 @@ export default function Artikel() {
           objectPosition="center"
         />
       </div>
-      <div className="pl-[1.42rem] pr-[1.42rem]">
-        <h1 className="text-[12px] font-semibold text-start mt-6 font-poopin ">
+      <div className="pl-[1.42rem] pr-[1.42rem] md:pl-[8.5rem] md:pr-[8.5rem]">
+        <h1 className="text-[12px] md:text-[24px] font-semibold text-start mt-6 font-poopin ">
           Dokter Spesialis Urologi yang bisa bantu atasi Batu Ginjal
         </h1>
-        <p className="text-start text-[10px] mt-2 text-gray-600">
+        <p className="text-start md:text-[16px] text-[10px] mt-2 text-gray-600">
           Selasa, 12 Maret 2024
         </p>
         <div className="  mt-6 ">
-          <p className="font-semibold font-poopin">
+          <p className="font-medium md:text-[16px] font-poopin">
             Horem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
             turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
             nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
@@ -47,7 +47,7 @@ export default function Artikel() {
             eleifend. Sed nec ante dictum sem condimentum ullamcorper quis
             venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
           </p>
-          <p className="mt-4">
+          <p className="mt-4 md:text-[16px] font-medium font-poopin">
             Duis non sapien at turpis interdum lobortis. Aenean ullamcorper
             turpis sed turpis accumsan tincidunt. Nam ullamcorper congue
             suscipit. Integer nec nisi ut risus consequat volutpat. Vivamus ac
@@ -55,7 +55,9 @@ export default function Artikel() {
             eleifend, et malesuada libero ultrices.
           </p>
         </div>
-        <ArtikelKami />
+        <div className="mt-[10rem]">
+          <ArtikelKami />
+        </div>
       </div>
       <div className="mt-[5rem]">
         <FooterComp />
