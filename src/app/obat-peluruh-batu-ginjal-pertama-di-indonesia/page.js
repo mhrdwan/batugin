@@ -162,8 +162,8 @@ function page() {
           </p>
         </div>
       </div>
-      <div className="md:mt-[10rem]  md:block pl-[1.25rem] pr-[1.25rem]">
-        <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
+      <div className="mt-[1rem] md:mt-[5rem]  md:block pl-[1.25rem] pr-[1.25rem]">
+        <p className="underline decoration-[3px]  text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
           Lokasi Kami
         </p>
         <p className="text-neutral-2 text-[16px] mb-10">Kamu mau ke offline store kami?</p>
