@@ -1,7 +1,9 @@
-import React from "react";
-import logo from "../../public/assets/LOGO BATUGIN-01.png";
+"use client"
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import MenuNavbar from "./menuNavbarMobile/page";
+import logo from "../../public/assets/LOGO BATUGIN-01.png";
 
 const menuIconSvg = (
   <svg
@@ -11,10 +13,10 @@ const menuIconSvg = (
     viewBox="0 0 24 24"
     fill="none"
     stroke="#d1232a"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    class="lucide lucide-align-justify"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="lucide lucide-align-justify"
   >
     <line x1="3" x2="21" y1="6" y2="6" />
     <line x1="3" x2="21" y1="12" y2="12" />
@@ -23,6 +25,7 @@ const menuIconSvg = (
 );
 
 function NavbarComp() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const heightInPx = 3 * 16;
   const widthInPx = 6.25 * 16;
 
@@ -30,24 +33,18 @@ function NavbarComp() {
     <>
       <div className="bg-white text-black md:h-[5.5rem] px-32  items-center w-full hidden md:flex opacity-0 md:opacity-100 ">
         <div className="flex justify-between w-full">
-          <div className="  items-center  ">
+          <div className="items-center">
             <Link href={"/"}>
-              <Image
-                height={heightInPx}
-                width={widthInPx}
-                src={logo}
-                alt="Logo Batugin"
-              />
+              <Image height={heightInPx} width={widthInPx} src={logo} alt="Logo Batugin" />
             </Link>
           </div>
-          <div className="flex justify-between space-x-5 items-center text-[1rem]  ">
+          <div className="flex justify-between space-x-5 items-center text-[1rem]">
             <Link href={"/tentang-batugin"}>
               <div className="hover:cursor-pointer">About</div>
             </Link>
             <div>Store</div>
             <Link href={"/points"}>
-
-            <div>Points</div>
+              <div>Points</div>
             </Link>
             <button
               className="bg-accents-2 text-white font-semibold text-base leading-normal px-5 py-2 rounded hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
@@ -58,16 +55,13 @@ function NavbarComp() {
           </div>
         </div>
       </div>
-      <div className="layar-kecil bg-white md:hidden h-[3.5rem]  flex items-center  justify-between p-[1.25rem]">
+      <div className="layar-kecil bg-white md:hidden h-[3.5rem] flex items-center justify-between p-[1.25rem]">
         <Link href={"/"}>
-          <Image
-            height={heightInPx}
-            width={widthInPx}
-            src={logo}
-            alt="Logo Batugin"
-          />
+          <Image height={heightInPx} width={widthInPx} src={logo} alt="Logo Batugin" />
         </Link>
-        {menuIconSvg}
+        <div onClick={() => setMenuOpen(!menuOpen)}>
+          {!menuOpen ? menuIconSvg : <MenuNavbar />}
+        </div>
       </div>
     </>
   );
