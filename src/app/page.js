@@ -60,32 +60,36 @@ export default function Home() {
       </div>
       <NorifReward />
       <Slide1 />
-      <ApaItu />
-      <div className="pl-[1.4rem] pr-[1.4rem] flex justify-center w-full mt-[2rem] md:hidden">
-        <Image
-          src={BATUGIN_PINTU}
-          alt="BATUGIN_PINTU"
-          width={670}
-          height={100}
-        />
-      </div>
-      <div className=" pl-[1.4rem] pr-[1.4rem] hidden md:block">
-        <div className="flex flex-row space-x-4 justify-center">
-          <div>
-            <Image src={banner1} />
-          </div>
-          <div>
-            <Image src={banner2} />
-          </div>
-          <div>
-            <Image src={banner3} />
-          </div>
-          <div>
-            <Image src={banner4} />
+      <div className="relative">
+        <ApaItu />
+
+        <div className="pl-[1.4rem] pr-[1.4rem] flex justify-center w-full mt-[2rem] md:hidden">
+          <Image
+            src={BATUGIN_PINTU}
+            alt="BATUGIN_PINTU"
+            width={670}
+            height={100}
+          />
+        </div>
+        <div className=" pl-[1.4rem] pr-[1.4rem] hidden md:block mt-3  w-full md:absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="flex flex-row space-x-4 justify-center ">
+            <div style={{ width: "auto" }}>
+              <Image src={banner1} objectFit="contain" />
+            </div>
+            <div style={{ width: "auto" }}>
+              <Image src={banner2} objectFit="contain"  />
+            </div>
+            <div style={{ width: "auto" }}>
+              <Image src={banner3} objectFit="contain"  />
+            </div>
+            <div style={{ width: "auto" }}>
+              <Image src={banner4} objectFit="contain"  />
+            </div>
           </div>
         </div>
+
+        <ArtikelKami />
       </div>
-      <ArtikelKami />
       <FollowBatugin />
       <FooterComp mt={20} />
 
