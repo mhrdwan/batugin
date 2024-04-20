@@ -46,9 +46,9 @@ function SwipperMobile({ KataMereka }) {
         disableOnInteraction: false,
       }}
       spaceBetween={30}
-      pagination={{
-        clickable: true,
-      }}
+      // pagination={{
+      //   clickable: true,
+      // }}
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper"
     >
