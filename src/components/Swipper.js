@@ -12,18 +12,18 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
 
 function SwipperDashboard({ KataMereka }) {
-  const [spaceBetween, setSpaceBetween] = useState(400);
+  const [spaceBetween, setSpaceBetween] = useState(100);
   const [slidesPerView, setSlidesPerView] = useState(3);
   const [isMobile, setIsMobile] = useState(false); // State baru untuk cek mobile
 
   useEffect(() => {
     const checkMediaQuery = () => {
       if (window.matchMedia("(min-width: 768px)").matches) {
-        setSpaceBetween(600);
+        setSpaceBetween(100);
         setSlidesPerView(3);
         setIsMobile(false); // Tidak mobile
       } else {
-        setSpaceBetween(400);
+        setSpaceBetween(100);
         setSlidesPerView(1);
         setIsMobile(true); // Mobile
       }
@@ -54,29 +54,32 @@ function SwipperDashboard({ KataMereka }) {
       style={swiperStyle} // Terapkan style kondisional
     >
       {KataMereka.map((item, index) => (
-        <SwiperSlide key={index}>
-          <div className="w-[35rem] h-[304px] bg-white rounded shadow-lg justify-start items-center inline-flex">
-            <Image
-              className="w-[16rem] self-stretch rounded-tl rounded-bl"
-              src={item.foto}
-            />
-            <div className="w-[467.57px] self-stretch p-5 flex-col justify-center items-start gap-6 inline-flex">
-              <div className="flex-col justify-start items-start gap-2 flex">
-                <div className="text-red-600 text-2xl font-medium font-['Poppins']">
-                  Apa kata mereka?
-                </div>
-                <div className="self-stretch h-1 bg-gradient-to-r from-red-800 to-red-600" />
-              </div>
-              <div className="justify-start items-start inline-flex" />
-              <div className="self-stretch text-stone-900 text-xl font-medium font-['Poppins']">
-                {item.desc}
-              </div>
-              <div className="text-yellow-900 text-xl font-normal font-['Poppins']">
-                {item.name}
-              </div>
-            </div>
+      <SwiperSlide key={index}>
+      <div className="max-w-[740px] w-[750px] min-h-[15rem] max-h-[15rem] rounded-xl shadow-xl flex flex-row items-center overflow-hidden">
+        <div className="w-1/2 h-full flex items-center justify-center">
+          <Image
+            className="rounded-l object-cover"  // This will ensure the image covers appropriately
+            src={item.foto}
+            layout="responsive"  // Changed back to 'responsive' to maintain aspect ratio
+            width={375}  // Approximate width to maintain balance with the content side
+            height={375} // Approximate height to maintain aspect ratio
+            alt="Description of image"
+          />
+        </div>
+        <div className="p-4 w-1/2 overflow-hidden">
+          <div className="text-center text-red-600 text-sm font-medium">
+            Apa kata mereka?
           </div>
-        </SwiperSlide>
+          <div className="mt-2 text-start text-stone-900 text-sm font-medium">
+            {item.desc}
+          </div>
+          <div className="mt-5 text-yellow-900 text-start text-sm font-normal">
+            {item.name}
+          </div>
+        </div>
+      </div>
+    </SwiperSlide>
+    
       ))}
     </Swiper>
   );

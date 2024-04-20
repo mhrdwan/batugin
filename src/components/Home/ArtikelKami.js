@@ -13,7 +13,12 @@ import BannerKuning from "../../../public/assets/Frame 90.png";
 import SwipperDashboard from "../Swipper";
 import Swipper2 from "../swipper2";
 import SwipperMobile from "../swipperMobile";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 function ArtikelKami() {
+  const routerr = usePathname();
+  console.log(`ini router`, routerr);
+
   const ArtikelKami = [
     {
       id: 1,
@@ -67,12 +72,16 @@ function ArtikelKami() {
   return (
     <div className="bg-[#fafafa]">
       <div className=" flex justify-between items-center">
-        <div className=" justify-start hidden md:flex">
-          <Image src={Vector} alt="Vector" />
-        </div>
-        <div className="hidden md:flex justify-end">
-          <Image src={daunKanan} alt="Daun Kanan" />
-        </div>
+        {!routerr == "/artikel" && (
+          <>
+            <div className=" justify-start hidden md:flex">
+              <Image src={Vector} alt="Vector" />
+            </div>
+            <div className="hidden md:flex justify-end">
+              <Image src={daunKanan} alt="Daun Kanan" />
+            </div>
+          </>
+        )}
       </div>
       <div className="  flex mx-auto">
         <div className="grid grid-rows-2 gap-4 pl-6 pr-6 md:pl-28 mt-[4rem] md:pr-28">
@@ -96,128 +105,119 @@ function ArtikelKami() {
                 </div>
                 <div className="w-[258px] h-12 px-5 py-2 bg-red-600 rounded-sm justify-center items-center gap-2 inline-flex">
                   <div className="text-white text-base font-medium font-['Poppins']">
-                    Lihat Artikel
+                    <Link href={"/artikel"}>Lihat Artikel</Link>
                   </div>
                 </div>
               </div>
-              // <div
-              //   className="card w-[17.6rem] h-max-[30rem] h-[28rem]  "
-              //   style={{ boxShadow: "4px 4px 5px 0 rgba(0, 0, 0, 0.3)" }}
-              // >
-              //   <div className="flex justify-center">
-              //     <Image className=" " src={Rectangle} />
-              //   </div>
-              //   <p className="text-wrap text-ellipsis mx-2 mt-6 h-[4rem] h-max-[5rem]  text-black text-[0.875rem] ">
-              //     {item.desc}
-              //   </p>
-              //   <div className="flex justify-center">
-              //     <button className="  items-center bg-accents-2 border text-[1.25rem] border-accents-2 text-white font-semibold text-base leading-normal w-[16.1rem] h-max-[3rem] px-2 py-2 mt-[2rem] hover:bg-accents-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-              //       Lihat Artikel
-              //     </button>
-              //   </div>
-              // </div>
             ))}
             {/* </div> */}
           </div>
           <div className="ml-[-11.75rem] mt-[9.7rem]">
             <Image src={Vector5} />
           </div>
-          <div className="mt-[3rem] ">
-            <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
-              Kata Mereka
-            </p>
-            <p className="font-normal mt-3 text-[1rem] text-neutral-3">
-              Yang sudah merasakan khasiat batugin
-            </p>
+          {!routerr == "/artikel" && (
+            <div className="mt-[3rem] ">
+              <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
+                Kata Mereka
+              </p>
+              <p className="font-normal mt-3 text-[1rem] text-neutral-3">
+                Yang sudah merasakan khasiat batugin
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+      {!routerr == "/artikel" && (
+        <>
+          <div className="mt-[2rem]  w-full  py-4 ">
+            {/* <Swipper2/> */}
+            <div className="md:hidden   ">
+              <SwipperMobile KataMereka={KataMereka} />
+            </div>
+            <div className="hidden md:block">
+              <SwipperDashboard KataMereka={KataMereka} />
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="mt-[2rem]  w-full  py-4 ">
-        {/* <Swipper2/> */}
-        <div className="md:hidden   ">
-        <SwipperMobile KataMereka={KataMereka} />
-        </div>
-        <div className="hidden md:block">
-          <SwipperDashboard KataMereka={KataMereka} />
-        </div>
-      </div>
-      <div className="flex justify-end mt-36 mr-10">
-        <Image src={daunKanan2} />
-      </div>
+          <div className="flex justify-end mt-36 mr-10">
+            <Image src={daunKanan2} />
+          </div>
 
-      <div className="cover-banner mt-36 hidden md:block">
-        <div
-          className="w-full h-[16.7rem] bg-red-300 flex  items-center"
-          style={{
-            backgroundImage: "url('/assets/Frame 90.png')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="tengah w-screen ">
-            <div className="text-center grid grid-cols-4">
-              <div className="text-accents-2 font-semibold text-[3.125rem]">
-                8+
-              </div>
-              <div className="text-accents-2 font-semibold text-[3.125rem]">
-                20.000
-              </div>
-              <div className="text-accents-2 font-semibold text-[3.125rem]">
-                4.2/5
-              </div>
-              <div className="text-accents-2 font-semibold text-[3.125rem]">
-                1000
-              </div>
-              <div className="text-secondary-2 text-[1.25rem]">
-                Been trusted by customer
-              </div>
-              <div className="text-secondary-2 text-[1.25rem]">
-                Sold to our customer
-              </div>
-              <div className="text-secondary-2 text-[1.25rem]">
-                Ratings in our store
-              </div>
-              <div className="text-secondary-2 text-[1.25rem]">
-                Bottle sold / month
+          <div className="cover-banner mt-36 hidden md:block">
+            <div
+              className="w-full h-[16.7rem] bg-red-300 flex  items-center"
+              style={{
+                backgroundImage: "url('/assets/Frame 90.png')",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            >
+              <div className="tengah w-screen ">
+                <div className="text-center grid grid-cols-4">
+                  <div className="text-accents-2 font-semibold text-[3.125rem]">
+                    8+
+                  </div>
+                  <div className="text-accents-2 font-semibold text-[3.125rem]">
+                    20.000
+                  </div>
+                  <div className="text-accents-2 font-semibold text-[3.125rem]">
+                    4.2/5
+                  </div>
+                  <div className="text-accents-2 font-semibold text-[3.125rem]">
+                    1000
+                  </div>
+                  <div className="text-secondary-2 text-[1.25rem]">
+                    Been trusted by customer
+                  </div>
+                  <div className="text-secondary-2 text-[1.25rem]">
+                    Sold to our customer
+                  </div>
+                  <div className="text-secondary-2 text-[1.25rem]">
+                    Ratings in our store
+                  </div>
+                  <div className="text-secondary-2 text-[1.25rem]">
+                    Bottle sold / month
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="cover-banner mt-16  md:hidden ini-hp">
-        <div
-          className="w-full h-[50.625rem] bg-red-300 flex  "
-          style={{
-            backgroundImage: "url('/assets/batugin-banner-bawah-hp.png')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className=" w-full text-center">
-            <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-secondary-2 mt-[100px] font-bold text-[1rem]">
-              Our Achivement
-            </p>
-            <p className="text-secondary-2 text-[2rem] font-bold mt-[100px]">
-              8 Years
-            </p>
-            <p className="text-secondary-2 text-[1rem] mt-1">
-              Been trusted by customer
-            </p>
-            <p className="text-secondary-2 text-[2rem] font-bold mt-[100px]">
-              20.000
-            </p>
-            <p className="text-secondary-2 text-[1rem] mt-1">
-              Sold to our customer
-            </p>
-            <p className="text-secondary-2 text-[2rem] font-bold mt-[100px]">
-              1000
-            </p>
-            <p className="text-secondary-2 text-[1rem] mt-1">
-              Bottle sold / month
-            </p>
+
+          <div className="cover-banner mt-16  md:hidden ini-hp">
+            <div
+              className="w-full h-[50.625rem] bg-red-300 flex  "
+              style={{
+                backgroundImage: "url('/assets/batugin-banner-bawah-hp.png')",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            >
+              <div className=" w-full text-center">
+                <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-secondary-2 mt-[100px] font-bold text-[1rem]">
+                  Our Achivement
+                </p>
+                <p className="text-secondary-2 text-[2rem] font-bold mt-[100px]">
+                  8 Years
+                </p>
+                <p className="text-secondary-2 text-[1rem] mt-1">
+                  Been trusted by customer
+                </p>
+                <p className="text-secondary-2 text-[2rem] font-bold mt-[100px]">
+                  20.000
+                </p>
+                <p className="text-secondary-2 text-[1rem] mt-1">
+                  Sold to our customer
+                </p>
+                <p className="text-secondary-2 text-[2rem] font-bold mt-[100px]">
+                  1000
+                </p>
+                <p className="text-secondary-2 text-[1rem] mt-1">
+                  Bottle sold / month
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 }
