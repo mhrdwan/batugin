@@ -10,6 +10,7 @@ import SwipperDashboard from "@/components/Swipper";
 import up from "../../../public/assets/arrow-up-circle.png";
 import FooterComp from "@/components/Home/Footer";
 import SwipperMobile from "@/components/swipperMobile";
+import LokasiKami from "@/components/lokasiKami/lokasiKami";
 function page() {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const apaItuRef = useRef(null);
@@ -160,6 +161,13 @@ function page() {
             membantu melancarkan buang air kecil.
           </p>
         </div>
+      </div>
+      <div className="md:mt-[10rem]  md:block pl-[1.25rem] pr-[1.25rem]">
+        <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
+          Lokasi Kami
+        </p>
+        <p className="text-neutral-2 text-[16px] mb-10">Kamu mau ke offline store kami?</p>
+        <LokasiKami />
       </div>
       <div className="carousel md:mt-[10rem] hidden md:block pl-[1.25rem] pr-[1.25rem]">
         <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
