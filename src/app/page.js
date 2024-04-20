@@ -71,19 +71,45 @@ export default function Home() {
             height={100}
           />
         </div>
-        <div className=" pl-[1.4rem] pr-[1.4rem] hidden md:block mt-3  w-full md:absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className=" pl-[1.4rem] pr-[1.4rem] hidden md:block mt-[4rem]  w-full md:absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="flex flex-row space-x-4 justify-center ">
-            <div style={{ width: "auto" }}>
-              <Image src={banner1} objectFit="contain" />
+            <div style={{ flex: 1, maxWidth: "18%" }}>
+              {" "}
+              {/* Atur flex dan max-width */}
+              <Image
+                src={banner1}
+                layout="responsive"
+                width={100}
+                height={50}
+                objectFit="contain"
+              />
             </div>
-            <div style={{ width: "auto" }}>
-              <Image src={banner2} objectFit="contain"  />
+            <div style={{ flex: 1, maxWidth: "18%" }}>
+              <Image
+                src={banner2}
+                layout="responsive"
+                width={100}
+                height={50}
+                objectFit="contain"
+              />
             </div>
-            <div style={{ width: "auto" }}>
-              <Image src={banner3} objectFit="contain"  />
+            <div style={{ flex: 1, maxWidth: "18%" }}>
+              <Image
+                src={banner3}
+                layout="responsive"
+                width={100}
+                height={50}
+                objectFit="contain"
+              />
             </div>
-            <div style={{ width: "auto" }}>
-              <Image src={banner4} objectFit="contain"  />
+            <div style={{ flex: 1, maxWidth: "18%" }}>
+              <Image
+                src={banner4}
+                layout="responsive"
+                width={100}
+                height={50}
+                objectFit="contain"
+              />
             </div>
           </div>
         </div>
