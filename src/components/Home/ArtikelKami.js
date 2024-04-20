@@ -72,7 +72,7 @@ function ArtikelKami() {
   return (
     <div className="bg-[#fafafa]">
       <div className=" flex justify-between items-center">
-        {!routerr == "/artikel" && (
+        {routerr !== "/artikel" && (
           <>
             <div className=" justify-start hidden md:flex">
               <Image src={Vector} alt="Vector" />
@@ -119,7 +119,7 @@ function ArtikelKami() {
           <div className="ml-[-11.75rem] mt-[9.7rem]">
             <Image src={Vector5} />
           </div>
-          {!routerr == "/artikel" && (
+          {routerr !== "/artikel" && (
             <div className="mt-[3rem] ">
               <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
                 Kata Mereka
@@ -131,7 +131,7 @@ function ArtikelKami() {
           )}
         </div>
       </div>
-      {!routerr == "/artikel" && (
+      {routerr !== "/artikel" && (
         <>
           <div className="mt-[2rem]  w-full  py-4 ">
             {/* <Swipper2/> */}

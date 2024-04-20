@@ -57,7 +57,6 @@ export default function Home() {
       </div>
       <NorifReward />
       <Slide1 />
-
       <ApaItu />
       <div className="pl-[1.4rem] pr-[1.4rem] flex justify-center w-full mt-[2rem] md:hidden">
         <Image
