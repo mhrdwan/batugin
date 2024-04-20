@@ -217,7 +217,6 @@ function ArtikelKami() {
             </p>
           </div>
         </div>
-      <SwipperMobile KataMereka={KataMereka} />
       </div>
     </div>
   );
