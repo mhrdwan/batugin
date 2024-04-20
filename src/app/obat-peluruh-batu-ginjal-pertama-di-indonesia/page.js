@@ -161,7 +161,10 @@ function page() {
           </p>
         </div>
       </div>
-      <div className="carousel md:mt-[10rem] hidden md:block">
+      <div className="carousel md:mt-[10rem] hidden md:block pl-[1.25rem] pr-[1.25rem]">
+        <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
+          Kata mereka
+        </p>
         <SwipperDashboard KataMereka={KataMereka} />
       </div>
       <div className="md:hidden">
@@ -172,7 +175,7 @@ function page() {
           Yang sudah merasakan khasiat batugin
         </p>
         <div className="mt-5  w-full items-center flex">
-         <SwipperMobile KataMereka={KataMereka}/>
+          <SwipperMobile KataMereka={KataMereka} />
         </div>
       </div>
       <div className="carousel ">
