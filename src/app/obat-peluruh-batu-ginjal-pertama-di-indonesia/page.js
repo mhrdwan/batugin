@@ -6,10 +6,10 @@ import fotoPros from "../../../public/assets/foto-prostad.png";
 import Image from "next/image";
 import Orang from "../../../public/assets/orang.png";
 import Orang2 from "../../../public/assets/orang 2.png";
-import SwipperDashboard from "@/components/Swipper";
+import SwipperDashboard from "@/components/Swipper/Swipper";
 import up from "../../../public/assets/arrow-up-circle.png";
 import FooterComp from "@/components/Home/Footer";
-import SwipperMobile from "@/components/swipperMobile";
+import SwipperMobile from "@/components/Swipper/swipperMobile";
 import LokasiKami from "@/components/lokasiKami/lokasiKami";
 function page() {
   const [showScrollButton, setShowScrollButton] = useState(false);

@@ -10,9 +10,9 @@ import Orang from "../../../public/assets/orang.png";
 // import bannerHp from "../../../public/assets/batugin-banner-bawah-hp.png";
 import Orang2 from "../../../public/assets/orang 2.png";
 import BannerKuning from "../../../public/assets/Frame 90.png";
-import SwipperDashboard from "../Swipper";
-import Swipper2 from "../swipper2";
-import SwipperMobile from "../swipperMobile";
+import SwipperDashboard from "../Swipper/Swipper";
+import Swipper2 from "../Swipper/swipper2";
+import SwipperMobile from "../Swipper/swipperMobile";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 function ArtikelKami() {

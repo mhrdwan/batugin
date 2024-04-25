@@ -15,7 +15,7 @@ function ApaItu() {
             alt="Gambar Produk Batugin"
           />
         </div>
-        <div className=" md:mt-[17.6rem]  ">
+        <div className=" md:mt-[5.6rem]  ">
           <p className="text-secondary-2 text-[2.25rem] text-center font-semibold underline decoration-[3px] underline-offset-[6px] decoration-red-500">
             Apa itu Batugin?
           </p>
