@@ -15,6 +15,7 @@ import Swipper2 from "../Swipper/swipper2";
 import SwipperMobile from "../Swipper/swipperMobile";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import ArtikelKamiSwipper from "../Swipper/ArtikelKamiSwipper";
 function ArtikelKami() {
   const routerr = usePathname();
   console.log(`ini router`, routerr);
@@ -37,6 +38,16 @@ function ArtikelKami() {
     },
     {
       id: 4,
+      gambar: "Triangle",
+      desc: "Penemuan baru dalam pengobatan kanker yang menjanjikan hasil yang lebih baik.",
+    },
+    {
+      id: 5,
+      gambar: "Triangle",
+      desc: "Penemuan baru dalam pengobatan kanker yang menjanjikan hasil yang lebih baik.",
+    },
+    {
+      id: 6,
       gambar: "Triangle",
       desc: "Penemuan baru dalam pengobatan kanker yang menjanjikan hasil yang lebih baik.",
     },
@@ -96,7 +107,7 @@ function ArtikelKami() {
             Sharing is caring
           </p>
           {/* <div className=" flex justify-center bg-red-500  "> */}
-          <div className="md:grid flex md:grid-cols-4  w-full lg:grid-cols-4 gap-12 mt-20 overflow-x-scroll">
+          {/* <div className="md:grid flex md:grid-cols-4  w-full lg:grid-cols-4 gap-12 mt-20 overflow-x-scroll">
             {ArtikelKami.map((item) => (
               <div className="w-[282px] h-[416px] p-3 bg-neutral-50 rounded-sm shadow flex-col justify-start items-start gap-3 inline-flex">
                 <img
@@ -113,9 +124,12 @@ function ArtikelKami() {
                   </div>
                 </div>
               </div>
-            ))}
-            {/* </div> */}
-          </div>
+            ))} */}
+          {/* </div> */}
+          {/* </div> */}
+
+          <ArtikelKamiSwipper ArtikelKami={ArtikelKami} />
+
           <div className="ml-[-11.75rem] mt-[9.7rem]">
             <Image src={Vector5} />
           </div>
