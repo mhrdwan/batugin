@@ -78,11 +78,11 @@ function page() {
         <NavbarComp />
       </div>
       <NorifReward />
-      <div className="warp-batugin grid md:grid-cols-2 mt-4 grid-rows-2 md:grid-rows-1 max-w-screen-xl  mx-auto bg-white">
+      <div className="warp-batugin grid md:grid-cols-2 mt-4 grid-rows-2 md:grid-rows-1 md:pr-[120px] md:pl-[120px]  mx-auto bg-white">
         <div>
           <Image src={fotoPros} />
         </div>
-        <div className=" md:block pl-[1.4rem] pr-[1.4rem] mt-[1.4rem]">
+        <div className=" md:block pl-[1.4rem] pr-[1.4rem]  md:mt-[1.4rem]">
           <h3 className="text-[2.25rem] text-secondary-3 font-semibold">
             Batugin Elixir Regular Size
           </h3>
@@ -108,9 +108,9 @@ function page() {
         </div>
       </div>
       <div className="big-size bg-primary-2 h-[52rem] md:h-[44rem] md:mt-[10rem]  md:flex md:justify-center md:items-center">
-        <div className="hidden md:block">
-          <div className=" md:max-w-[90rem] md:w-full w-[30rem] h-[33rem] mx-auto p-4 grid grid-cols-2 ">
-            <div>
+        <div className="hidden md:block  ">
+          <div className="  md:w-full w-[30rem] h-[33rem] pr-[100px]  flex ">
+            <div className="  w-[588px] ">
               <h3 className="text-accents-2 text-[2.25rem] font-medium">
                 Batugin Elixir Big Size
               </h3>
@@ -134,8 +134,8 @@ function page() {
                 Beli Sekarang
               </button>
             </div>
-            <div className="foto-produk ">
-              <Image src={fotoPros} />
+            <div className=" ">
+              <Image src={fotoPros} width="100%" height="100%" />
             </div>
           </div>
         </div>
@@ -162,14 +162,16 @@ function page() {
           </p>
         </div>
       </div>
-      <div className="mt-[1rem] md:mt-[5rem]  md:block pl-[1.25rem] pr-[1.25rem]">
+      <div className="mt-[1rem] md:mt-[5rem]  md:block md:pr-[120px] md:pl-[120px] pl-[20px] pr-[20px]">
         <p className="underline decoration-[3px]  text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
           Lokasi Kami
         </p>
-        <p className="text-neutral-2 text-[16px] mb-10">Kamu mau ke offline store kami?</p>
+        <p className="text-neutral-2 text-[16px] mb-10">
+          Kamu mau ke offline store kami?
+        </p>
         <LokasiKami />
       </div>
-      <div className="carousel md:mt-[10rem] hidden md:block pl-[1.25rem] pr-[1.25rem]">
+      <div className="carousel md:mt-[10rem] hidden md:block pl-[1.25rem] md:mb-5 pr-[1.25rem]">
         <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
           Kata mereka
         </p>
