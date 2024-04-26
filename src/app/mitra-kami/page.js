@@ -21,10 +21,10 @@ const gambar = [
 
 function MitraKami() {
   return (
-    <div>
+    <div className="bg-white">
       <NavbarComp />
       <NorifReward />
-      <div className="flex justify-center mt-[40px]">
+      <div className="flex justify-center  mt-[40px]">
         <div className="Frame152 w-72 h-28 flex-col justify-center items-center gap-2.5 inline-flex">
           <div className="MitraKami text-center text-yellow-900 text-4xl font-medium font-['Poppins']">
             Mitra Kami

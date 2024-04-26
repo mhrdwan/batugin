@@ -54,7 +54,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className="bg-white">
       <div ref={apaItuRef}>
         <NavbarComp />
       </div>
@@ -133,6 +133,6 @@ export default function Home() {
         //  Balik Ke Atas
         // </button>
       )}
-    </>
+    </div>
   );
 }

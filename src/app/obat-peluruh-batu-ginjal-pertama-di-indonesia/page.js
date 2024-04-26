@@ -73,7 +73,7 @@ function page() {
   ];
 
   return (
-    <div>
+    <div className="bg-white">
       <div ref={apaItuRef}>
         <NavbarComp />
       </div>

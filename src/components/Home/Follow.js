@@ -3,17 +3,24 @@ import ig1 from "../../../public/assets/ig1.png";
 import ig2 from "../../../public/assets/ig2.png";
 import ig3 from "../../../public/assets/ig3.png";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 function FollowBatugin() {
+  const routerr = usePathname();
+  console.log(`ini router`, routerr);
   return (
-    <div>
+    <div className="bg-white">
       <div className="max-w-screen-xl mx-auto mt-[10rem] mb-[10rem] hidden md:block pl-10 pr-10">
-        <p className="font-semibold underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 text-[1.5rem]">
-          Yuk, Follow Batugin! 
-        </p>
-        <p className="font-normal mt-3 text-[1rem] text-neutral-3">
-          Cek keseruan kami di Instagram
-        </p>
+        {routerr !== "/points" && (
+          <>
+            <p className="font-semibold underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 text-[1.5rem]">
+              Yuk, Follow Batugin!
+            </p>
+            <p className="font-normal mt-3 text-[1rem] text-neutral-3">
+              Cek keseruan kami di Instagram
+            </p>
+          </>
+        )}
         <div className="instagram grid  grid-cols-4 gap-4 mt-[3rem]">
           <Image src={ig1} width={250} height={250} layout="fixed" />
           <Image src={ig2} width={250} height={250} layout="fixed" />
@@ -39,7 +46,6 @@ function FollowBatugin() {
           <Image src={ig3} width={250} height={250} layout="fixed" />
         </div>
       </div>
-      
     </div>
   );
 }

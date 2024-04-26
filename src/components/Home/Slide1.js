@@ -13,7 +13,7 @@ function Slide1() {
   const botolGedeTinggi = 768; // 48 * 16
 
   return (
-    <>
+    <div className="bg-white">
       <div className="">
         <SwipperHomeUtama />
       </div>
@@ -59,7 +59,7 @@ function Slide1() {
         </div>
       </div> */}
       <div
-        className="hp h-[20rem]  md:hidden p-[1.5rem]"
+        className="hp h-[20rem] bg-primary-1 md:hidden p-[1.5rem]"
         style={{
           backgroundImage: "url('/assets/kuning-hp.png')",
           backgroundRepeat: "no-repeat",
@@ -98,7 +98,7 @@ function Slide1() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

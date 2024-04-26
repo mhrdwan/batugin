@@ -1,4 +1,3 @@
-import React from "react";
 import TablePoint from "./table";
 import FooterComp from "../Home/Footer";
 
@@ -6,9 +5,9 @@ export default function PointKamu() {
   return (
     <>
       <div className="mt-5 md:pr-[8.5rem] md:pl-[8.5rem] pr-[0.71rem] pl-[0.71rem]">
-        <p className="text-center text-[1.1rem] md:text-start font-poopin underline-offset-[6px] underline decoration-[3px] decoration-red-500">
+        {/* <p className="text-center text-[1.1rem] md:text-start font-poopin underline-offset-[6px] underline decoration-[3px] decoration-red-500">
           Point Kamu
-        </p>
+        </p> */}
         <>
           <Login />
         </>
@@ -45,7 +44,6 @@ export default function PointKamu() {
       </div>
       <div className="mt-[10rem]">
         <FooterComp />
-       
       </div>
     </>
   );
@@ -75,160 +73,72 @@ function Login() {
 
 function TableBaru() {
   return (
-    <div className="w-full flex justify-center h-[696px] rounded-[10px] border-2 border-yellow-900 flex-col  items-start ">
-    <div className="self-stretch bg-yellow-400 rounded-tl-[10px] rounded-tr-[10px] border-2 border-yellow-900 justify-center items-center inline-flex">
-      <div className="h-[66px] px-2 py-6 justify-center items-center flex">
-        <div className="text-black text-xs font-medium font-['Poppins']">No.</div>
-      </div>
-      <div className="h-[66px] px-2 py-6 justify-center items-center flex">
-        <div className="text-black text-xs font-medium font-['Poppins']">Nama</div>
-      </div>
-      <div className="h-[66px] px-2 py-6 justify-center items-center flex">
-        <div className="text-black text-xs font-medium font-['Poppins']">Email</div>
-      </div>
-      <div className="h-[66px] py-6 justify-center items-center flex">
-        <div className="text-black text-xs font-medium font-['Poppins']">Pts</div>
-      </div>
+    <div className="flex flex-col text-base font-medium text-yellow-900 rounded-xl border-4 border-yellow-900 border-solid">
+    <div className="flex gap-5 justify-between px-7 py-6 w-full text-black whitespace-nowrap bg-yellow-400 rounded-xl border-4 border-yellow-900 border-solid max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+      <div>No.</div>
+      <div>Nama</div>
+      <div>Email</div>
+      <div>Points</div>
     </div>
-    <div className="self-stretch justify-center items-center inline-flex">
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">01</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Nurahman</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Nurahman2@gmail.com</div>
-      </div>
-      <div className="h-[63px] py-6 justify-center items-center flex">
-        <div className="text-red-600 text-[10px] font-medium font-['Poppins']">1,204</div>
-      </div>
+    <div className="flex gap-5 justify-between px-8 py-6 w-full whitespace-nowrap max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+      <div>01</div>
+      <div>Nurahman</div>
+      <div>Nurahman2@gmail.com</div>
+      <div className="text-red-600">1,204</div>
     </div>
-    <div className="self-stretch justify-center items-center inline-flex">
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">02</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Akbarudin A</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Akbarudin.a@gmail.com</div>
-      </div>
-      <div className="h-[63px] py-6 justify-center items-center flex">
-        <div className="text-red-600 text-[10px] font-medium font-['Poppins']">1,178</div>
-      </div>
+    <div className="flex gap-5 justify-between px-7 py-6 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+      <div>02</div>
+      <div>Akbarudin Abdul</div>
+      <div>Akbarudin.a@gmail.com</div>
+      <div className="text-red-600">1,178</div>
     </div>
-    <div className="self-stretch justify-center items-center inline-flex">
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">03</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Steven T</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">S.Tjandra99@gmail.com</div>
-      </div>
-      <div className="h-[63px] py-6 justify-center items-center flex">
-        <div className="text-red-600 text-[10px] font-medium font-['Poppins']">1,123</div>
-      </div>
+    <div className="flex gap-5 justify-between px-7 py-6 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+      <div>03</div>
+      <div>Steven Tjandra</div>
+      <div>S.Tjandra99@gmail.com</div>
+      <div className="text-red-600">1,123</div>
     </div>
-    <div className="self-stretch justify-center items-center inline-flex">
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">04</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Aqilah N</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Aqilah08n@gmail.com</div>
-      </div>
-      <div className="h-[63px] py-6 justify-center items-center flex">
-        <div className="text-red-600 text-[10px] font-medium font-['Poppins']">1,111</div>
-      </div>
+    <div className="flex gap-5 justify-between px-7 py-6 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+      <div>04</div>
+      <div>Aqilah N</div>
+      <div>Aqilah08n@gmail.com</div>
+      <div className="text-red-600">1,111</div>
     </div>
-    <div className="self-stretch justify-center items-center inline-flex">
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">05</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Rahmawati S</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Rahma.watis@gmail.com</div>
-      </div>
-      <div className="h-[63px] py-6 justify-center items-center flex">
-        <div className="text-red-600 text-[10px] font-medium font-['Poppins']">1,095</div>
-      </div>
+    <div className="flex gap-5 justify-between px-7 py-6 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+      <div>05</div>
+      <div>Rahmawati S</div>
+      <div>Rahma.watis@gmail.com</div>
+      <div className="text-red-600">1,095</div>
     </div>
-    <div className="self-stretch justify-center items-center inline-flex">
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">06</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Michael J.S</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">MichJes@gmail.com</div>
-      </div>
-      <div className="h-[63px] py-6 justify-center items-center flex">
-        <div className="text-red-600 text-[10px] font-medium font-['Poppins']">1,044</div>
-      </div>
+    <div className="flex gap-5 justify-between px-7 py-6 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+      <div>06</div>
+      <div>Michael J.S</div>
+      <div>MichJes@gmail.com</div>
+      <div className="text-red-600">1,044</div>
     </div>
-    <div className="self-stretch justify-center items-center inline-flex">
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">07</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Katrin K</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Katrin.Kaka6@gmail.com</div>
-      </div>
-      <div className="h-[63px] py-6 justify-center items-center flex">
-        <div className="text-red-600 text-[10px] font-medium font-['Poppins']">1,008</div>
-      </div>
+    <div className="flex gap-5 justify-between px-7 py-6 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+      <div>07</div>
+      <div>Katrin K</div>
+      <div>Katrin.Kaka6@gmail.com</div>
+      <div className="text-red-600">1,008</div>
     </div>
-    <div className="self-stretch justify-center items-center inline-flex">
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">08</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Syaifudin M</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Sya.Muh@gmail.com</div>
-      </div>
-      <div className="h-[63px] py-6 justify-center items-center flex">
-        <div className="text-red-600 text-[10px] font-medium font-['Poppins']">992</div>
-      </div>
+    <div className="flex gap-5 justify-between px-7 py-6 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+      <div>08</div>
+      <div>Syaifudin M</div>
+      <div>Sya.Muh@gmail.com</div>
+      <div className="text-red-600">992</div>
     </div>
-    <div className="self-stretch justify-center items-center inline-flex">
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">09</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Yuliana H</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">YHartanto00@gmail.com</div>
-      </div>
-      <div className="h-[63px] py-6 justify-center items-center flex">
-        <div className="text-red-600 text-[10px] font-medium font-['Poppins']">977</div>
-      </div>
+    <div className="flex gap-5 justify-between px-7 py-6 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+      <div>09</div>
+      <div>Yuliana H</div>
+      <div>YHartanto00@gmail.com</div>
+      <div className="text-red-600">977</div>
     </div>
-    <div className="self-stretch justify-center items-center inline-flex">
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">10</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Tina A</div>
-      </div>
-      <div className="h-[63px] px-2 py-6 justify-center items-center flex">
-        <div className="text-yellow-900 text-[10px] font-medium font-['Poppins']">Tina.tin04@gmail.com</div>
-      </div>
-      <div className="h-[63px] py-6 justify-center items-center flex">
-        <div className="text-red-600 text-[10px] font-medium font-['Poppins']">923</div>
-      </div>
+    <div className="flex gap-5 justify-between px-8 py-6 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+      <div>10</div>
+      <div>Tina Amanda</div>
+      <div>Tina.tin04@gmail.com</div>
+      <div className="text-red-600">923</div>
     </div>
   </div>
   );
