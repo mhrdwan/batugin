@@ -4,6 +4,7 @@ import kimiaFarmaHome from "../../../public/assets/kimiaFarmaHome.png";
 import Batugin_Product from "../../../public/assets/Batugin Product.png";
 import Image from "next/image";
 import Link from "next/link";
+import SwipperHomeUtama from "../Swipper/SwipperHomeUtama/SwipperHomeUtama";
 
 function Slide1() {
   const widthNya = 256; // 16 * 16
@@ -13,7 +14,10 @@ function Slide1() {
 
   return (
     <>
-      <div
+      <div className="">
+        <SwipperHomeUtama />
+      </div>
+      {/* <div
         className="bg-primary-1 md:h-[48rem] hidden md:block"
         style={{
           backgroundImage: "url('/assets/bg-yellow.png')",
@@ -53,9 +57,9 @@ function Slide1() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
       <div
-        className="hp h-[20rem] bg-primary-1 md:hidden p-[1.5rem]"
+        className="hp h-[20rem]  md:hidden p-[1.5rem]"
         style={{
           backgroundImage: "url('/assets/kuning-hp.png')",
           backgroundRepeat: "no-repeat",
@@ -65,7 +69,10 @@ function Slide1() {
         <div className="bagi2 grid grid-cols-2 w-full mt-5">
           <div className="text-[0.85rem]">
             <p>Yuk, kenalan dengan</p>
-            <p className="font-bold text-secondary-3">Obat Peluruh Batu Ginjal <span className="text-accents-2">PERTAMA</span> di Indonesia</p>
+            <p className="font-bold text-secondary-3">
+              Obat Peluruh Batu Ginjal{" "}
+              <span className="text-accents-2">PERTAMA</span> di Indonesia
+            </p>
             <div className=" flex ">
               <p className="mr-2">By </p>
               <Image

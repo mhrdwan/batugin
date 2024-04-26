@@ -60,7 +60,7 @@ export default function Home() {
       </div>
       <NorifReward />
       <Slide1 />
-      <div className="relative">
+      {/* <div className="relative"> */}
         <ApaItu />
 
         <div className="pl-[1.4rem] pr-[1.4rem] flex justify-center w-full mt-[2rem] md:hidden">
@@ -71,11 +71,9 @@ export default function Home() {
             height={100}
           />
         </div>
-        <div className=" pl-[1.4rem] pr-[1.4rem] hidden md:block mt-[4rem]  w-full md:absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        {/* <div className=" pl-[1.4rem] pr-[1.4rem] hidden md:block mt-[4rem]  w-full md:absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="flex flex-row space-x-4 justify-center ">
             <div style={{ flex: 1, maxWidth: "18%" }}>
-              {" "}
-              {/* Atur flex dan max-width */}
               <Image
                 src={banner1}
                 layout="responsive"
@@ -112,10 +110,10 @@ export default function Home() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
         <ArtikelKami />
-      </div>
+      {/* </div> */}
       <FollowBatugin />
       <FooterComp mt={20} />
 

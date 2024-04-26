@@ -16,6 +16,13 @@ import SwipperMobile from "../Swipper/swipperMobile";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import ArtikelKamiSwipper from "../Swipper/ArtikelKamiSwipper";
+import banner1 from "../../../public/assets/Banner_Home/Banner 01.png";
+import banner2 from "../../../public/assets/Banner_Home/Banner 02.png";
+import banner3 from "../../../public/assets/Banner_Home/Banner 03.png";
+import banner4 from "../../../public/assets/Banner_Home/Banner 04.png";
+
+const bannerHome = [banner1, banner2, banner3, banner4];
+
 function ArtikelKami() {
   const routerr = usePathname();
   console.log(`ini router`, routerr);
@@ -83,7 +90,7 @@ function ArtikelKami() {
   return (
     <div className="bg-[#fafafa]">
       <div className=" flex justify-between items-center">
-        {routerr !== "/artikel" && (
+        {/* {routerr !== "/artikel" && (
           <>
             <div className=" justify-start hidden md:flex">
               <Image src={Vector} alt="Vector" />
@@ -92,7 +99,7 @@ function ArtikelKami() {
               <Image src={daunKanan} alt="Daun Kanan" />
             </div>
           </>
-        )}
+        )} */}
       </div>
       <div className="bg-red flex mx-auto">
         <div
@@ -134,7 +141,7 @@ function ArtikelKami() {
             <Image src={Vector5} />
           </div>
           {routerr !== "/artikel" && (
-            <div className="mt-[3rem] ">
+            <div className="mt-[3rem] hidden ">
               <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
                 Kata Mereka
               </p>
@@ -147,7 +154,7 @@ function ArtikelKami() {
       </div>
       {routerr !== "/artikel" && (
         <>
-          <div className="mt-[2rem]  w-full  py-4 ">
+          <div className="  w-full  py-4 hidden">
             {/* <Swipper2/> */}
             <div className="md:hidden   ">
               <SwipperMobile KataMereka={KataMereka} />
@@ -156,20 +163,26 @@ function ArtikelKami() {
               <SwipperDashboard KataMereka={KataMereka} />
             </div>
           </div>
-          <div className="flex justify-end mt-36 mr-10">
+          <div className="flex justify-end  mr-10">
             <Image src={daunKanan2} />
           </div>
 
-          <div className="cover-banner mt-36 hidden md:block">
+          <div className="cover-banner  hidden md:block">
             <div
-              className="w-full h-[16.7rem] bg-red-300 flex  items-center"
-              style={{
-                backgroundImage: "url('/assets/Frame 90.png')",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
+              className="w-full h-[16.7rem]  flex  items-center"
+              // style={{
+              //   backgroundImage: "url('/assets/Frame 90.png')",
+              //   backgroundRepeat: "no-repeat",
+              //   backgroundSize: "cover",
+              // }}
             >
-              <div className="tengah w-screen ">
+              <div className="tengah pl-[222px] mx-auto  pr-[222px]">
+                <div className="Frame72  w-48 mb-5 h-10 flex-col justify-center items-center gap-0.5 inline-flex">
+                  <div className="OutAchivement text-yellow-900 text-2xl font-semibold font-['Poppins']">
+                    Out Achivement
+                  </div>
+                  <div className="Rectangle6 self-stretch h-1 bg-red-600" />
+                </div>
                 <div className="text-center grid grid-cols-4">
                   <div className="text-accents-2 font-semibold text-[3.125rem]">
                     8+
@@ -199,7 +212,19 @@ function ArtikelKami() {
               </div>
             </div>
           </div>
-
+          <div className="mt-20 flex justify-center space-x-5">
+            {bannerHome.map((item, index) => (
+              <div key={index} >
+                <Image
+                  src={item}
+                  alt={`Banner ${index + 1}`}
+                  layout="responsive"
+                  width={500}
+                  height={300}
+                />
+              </div>
+            ))}
+          </div>
           <div className="cover-banner mt-16  md:hidden ini-hp">
             <div
               className="w-full h-[50.625rem] bg-red-300 flex  "

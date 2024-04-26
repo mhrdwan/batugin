@@ -44,21 +44,29 @@ function NavbarComp() {
             </Link>
           </div>
           <div className="flex justify-between space-x-5 items-center text-[1rem]">
-            <Link href={"/tentang-batugin"}>
-              <div className="hover:cursor-pointer">About</div>
+            <Link href={"/"}>
+              <div>Home</div>
             </Link>
             <Link href={"/obat-peluruh-batu-ginjal-pertama-di-indonesia"}>
               <div>Product</div>
             </Link>
             <Link href={"/points"}>
-              <div>Points</div>
+              <div className="hover:cursor-pointer">Activity</div>
             </Link>
-            <button
-              className="bg-accents-2 text-white font-semibold text-base leading-normal px-5 py-2 rounded hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-              style={{ width: "100px", height: "48px" }}
-            >
-              Login
-            </button>
+            <Link href={"/katamereka"}>
+              <div className="hover:cursor-pointer">Testimoni</div>
+            </Link>
+            <Link href={"/mitra-kami"}>
+              <div>Mitra</div>
+            </Link>
+            <Link href={"/login"}>
+              <button
+                className="bg-accents-2 text-white font-semibold text-base leading-normal px-5 py-2 rounded hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                style={{ width: "100px", height: "48px" }}
+              >
+                Login
+              </button>
+            </Link>
           </div>
         </div>
       </div>

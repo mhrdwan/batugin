@@ -162,7 +162,7 @@ function page() {
           </p>
         </div>
       </div>
-      <div className="mt-[1rem] md:mt-[5rem]  md:block md:pr-[120px] md:pl-[120px] pl-[20px] pr-[20px]">
+      {/* <div className="mt-[1rem] md:mt-[5rem]  md:block md:pr-[120px] md:pl-[120px] pl-[20px] pr-[20px]">
         <p className="underline decoration-[3px]  text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
           Lokasi Kami
         </p>
@@ -170,13 +170,13 @@ function page() {
           Kamu mau ke offline store kami?
         </p>
         <LokasiKami />
-      </div>
-      <div className="carousel md:mt-[10rem] hidden md:block pl-[1.25rem] md:mb-5 pr-[1.25rem]">
+      </div> */}
+      {/* <div className="carousel md:mt-[10rem] hidden md:block pl-[1.25rem] md:mb-5 pr-[1.25rem]">
         <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] decoration-red-500 font-semibold text-[1.5rem]">
           Kata mereka
         </p>
         <SwipperDashboard KataMereka={KataMereka} />
-      </div>
+      </div> */}
       <div className="md:hidden">
         <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] mt-[5rem] text-center decoration-red-500 font-semibold text-[1.5rem]">
           Review Batugin
@@ -189,7 +189,7 @@ function page() {
         </div>
       </div>
       <div className="carousel ">
-        <FooterComp mt={10} />
+        <FooterComp  />
       </div>
       {showScrollButton && (
         <Image
