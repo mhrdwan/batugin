@@ -34,7 +34,7 @@ export default function Page() {
   };
 
   return (
-    <div>
+    <div className="bg-white">
       <NavbarComp />
       <NorifReward />
       <div className="w-full mt-10 md:pr-[8.5rem] md:pl-[8.5rem]">

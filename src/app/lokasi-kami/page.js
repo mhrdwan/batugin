@@ -1,3 +1,4 @@
+"use client"
 import FooterComp from '@/components/Home/Footer'
 import LokasiKamiBaru from '@/components/LokasiKamiBaru/LokasiKamiBaru'
 import NavbarComp from '@/components/NavbarComp'

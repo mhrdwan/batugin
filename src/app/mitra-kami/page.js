@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import FooterComp from "@/components/Home/Footer";
 import NavbarComp from "@/components/NavbarComp";

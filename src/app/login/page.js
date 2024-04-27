@@ -25,6 +25,7 @@ function page() {
           </div>
           <div className="w-96">
             <input
+            type="password"
               placeholder="Masukkan Password"
               className="Frame113 w-96 h-12 p-3 rounded-sm border border-yellow-900 justify-start items-center gap-2 inline-flex"
             />
@@ -32,7 +33,7 @@ function page() {
               Lupa password?
             </div>
           </div>
-          <div className="ButtonSmall mt-[78px] w-96 h-12 px-5 py-2 bg-red-600 rounded-sm justify-center items-center gap-2 inline-flex">
+          <div className="hover:cursor-pointer ButtonSmall mt-[78px] w-96 h-12 px-5 py-2 bg-red-600 rounded-sm justify-center items-center gap-2 inline-flex">
             <div className="Login text-white text-base font-medium font-['Poppins']">
               Login
             </div>

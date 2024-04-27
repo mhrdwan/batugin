@@ -72,6 +72,11 @@ function page() {
     },
   ];
 
+  function tabBaruBeli (){
+    window.open('https://www.tokopedia.com/kimiafarmaapotekos/batugin-elixir-300-ml-obat-herbal-batu-ginjal-kimia-farma', '_blank');
+    window.open('https://www.tokopedia.com/kimiafarmaapotekos/batugin-elixir-120-ml-obat-herbal-batu-ginjal-kimia-farma', '_blank');
+  }
+  
   return (
     <div className="bg-white">
       <div ref={apaItuRef}>
@@ -102,7 +107,7 @@ function page() {
               membantu melancarkan buang air kecil.
             </div>
           </div>
-          <button className="bg-accents-2 border text-[1.25rem] border-accents-2 text-white font-semibold text-base leading-normal w-[10rem] h-[3.75rem] px-2 py-2 mt-[2.5rem] hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+          <button onClick={tabBaruBeli} className="bg-accents-2 border text-[1.25rem] border-accents-2 text-white font-semibold text-base leading-normal w-[10rem] h-[3.75rem] px-2 py-2 mt-[2.5rem] hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
             Beli Sekarang
           </button>
         </div>

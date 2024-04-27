@@ -4,7 +4,7 @@ import FooterComp from '../Home/Footer'
 
 function KolaborasiBatugin() {
   return (
-    <div>
+    <div className='bg-white'>
         <div className='w-full h-[50rem]  mt-10'>
             <FollowBatugin/>
         </div>
