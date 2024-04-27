@@ -56,8 +56,8 @@ function NavbarComp() {
             <Link href={"/katamereka"}>
               <div className="hover:cursor-pointer">Testimoni</div>
             </Link>
-            <Link href={"/mitra-kami"}>
-              <div>Mitra</div>
+            <Link href={"/temukan-batugin"}>
+              <div>Temukan Batugin</div>
             </Link>
             <Link href={"/login"}>
               <button

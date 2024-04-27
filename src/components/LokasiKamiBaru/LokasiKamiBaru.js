@@ -1,120 +1,124 @@
-import React from "react";
+import React, { useState } from "react";
 import FooterComp from "../Home/Footer";
 
+const provinsi = [
+  "Aceh",
+  "Sumatera Utara",
+  "Sumatera Barat",
+  "Riau",
+  "Kepulauan Riau",
+  "Jambi",
+  "Bengkulu",
+  "Sumatera Selatan",
+  "Bangka Belitung",
+  "Lampung",
+  "DKI Jakarta",
+  "Banten",
+  "Jawa Barat",
+  "Jawa Tengah",
+  "DI Yogyakarta",
+  "Jawa Timur",
+  "Bali",
+  "Nusa Tenggara Barat (NTB)",
+  "Nusa Tenggara Timur (NTT)",
+  "Kalimantan Barat",
+  "Kalimantan Tengah",
+  "Kalimantan Selatan",
+  "Kalimantan Timur",
+  "Kalimantan Utara",
+  "Sulawesi Utara",
+  "Gorontalo",
+  "Sulawesi Tengah",
+  "Sulawesi Barat",
+  "Sulawesi Selatan",
+  "Sulawesi Tenggara",
+  "Maluku",
+  "Maluku Utara",
+  "Papua Barat",
+  "Papua"
+];
+
 function LokasiKamiBaru() {
+  const [selectedProvinsi, setSelectedProvinsi] = useState("");
+
+  const handleProvinsiChange = (e) => {
+    setSelectedProvinsi(e.target.value);
+  };
+
   return (
-    <div >
-      <div className="Frame163 mt-[37px]  h-96 flex-col justify-start items-start gap-10 inline-flex">
-        <div className="Frame77 flex-col justify-center items-start gap-2 flex">
-          <div className="Frame72 flex-col justify-center items-center gap-1 flex">
-            <div className="LokasiKami text-yellow-900 text-2xl font-semibold font-['Poppins']">
-              Lokasi Kami
+    <div>
+      <div className="flex flex-col items-start mt-14">
+        <div className="text-2xl font-semibold text-yellow-900">Lokasi Kami</div>
+        <div className="shrink-0 mt-1 max-w-full h-1 bg-red-600 w-[262px]" />
+        <div className="mt-2 text-base text-zinc-600">
+          Kamu mau ke offline store kami?
+        </div>
+        <div className="self-stretch p-10 mt-10 w-full bg-white rounded-xl border border-yellow-900 border-solid max-md:px-5 max-md:max-w-full">
+          <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+            <div className="flex flex-col ml-5 w-full max-md:ml-0 max-md:w-full">
+              <div className="flex grow gap-2 justify-between self-stretch px-6 py-3 w-full text-xl font-medium text-black whitespace-nowrap bg-white max-md:flex-wrap max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                <div>Provinsi</div>
+                <select
+                  value={selectedProvinsi}
+                  onChange={handleProvinsiChange}
+                  className="w-full py-1 pl-3 pr-8 leading-tight text-gray-700 border border-gray-400 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                >
+                  <option value="">Pilih Provinsi</option>
+                  {provinsi.map((provinsi) => (
+                    <option key={provinsi} value={provinsi}>{provinsi}</option>
+                  ))}
+                </select>
+              </div>
             </div>
-            <div className="Rectangle6 self-stretch h-1 bg-gradient-to-r from-red-800 to-red-600" />
-          </div>
-          <div className="KamuMauKeOfflineStoreKami text-zinc-600 text-base font-normal font-['Poppins']">
-            Kamu mau ke offline store kami?
+            <div className="flex flex-col ml-5 w-[10%] max-md:ml-0 max-md:w-full">
+              <div className="bg-accents-2 mt-2 text-white font-semibold text-base leading-normal px-5 py-2 rounded hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                Cari
+              </div>
+            </div>
           </div>
         </div>
-        <div className="Frame162 w-[1200px] h-36 p-10 bg-white rounded-lg border border-yellow-900 justify-start items-center gap-6 inline-flex">
-          <div className="Frame161 grow shrink basis-0 self-stretch px-6 py-3 bg-stone-50 justify-start items-center gap-2 flex">
-            <div className="Daerah text-black text-xl font-medium font-['Poppins']">
-              Daerah
-            </div>
+      </div>
+      <div className="flex flex-col self-stretch mt-10 w-full text-base font-medium rounded-xl border-2 border-yellow-900 border-solid max-md:max-w-full">
+        <div className="flex gap-5 justify-center px-7 py-6 w-full text-black bg-yellow-400 rounded-xl border-2 border-yellow-900 border-solid max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+          <div>No.</div>
+          <div>Nama Mitra</div>
+          <div>Lokasi</div>
+          <div>Alamat Mitra</div>
+          <div>Maps</div>
+        </div>
+        <div className="flex gap-4 justify-center items-center py-6 pl-8 max-md:flex-wrap max-md:pl-5">
+          <div className="self-stretch my-auto text-yellow-900">01</div>
+          <div className="flex-1 self-stretch my-auto text-center text-yellow-900">
+            Kima Farma
           </div>
-          <div className="Frame162 grow shrink basis-0 self-stretch px-6 py-3 bg-stone-50 justify-between items-center flex">
-            <div className="Provinsi text-black text-xl font-medium font-['Poppins']">
-              Provinsi
-            </div>
+          <div className="flex-1 self-stretch my-auto text-center text-yellow-900">
+            Cibubur
           </div>
-          <div className="ButtonLarge w-44 h-14 px-5 py-2 bg-red-600 rounded-sm justify-center items-center gap-2 flex">
-            <div className="Login text-white text-xl font-semibold font-['Poppins']">
-              Cari
+          <div className="flex gap-2 self-stretch max-md:flex-wrap">
+            <div className="flex-1 text-yellow-900 max-md:max-w-full">
+              RW.14, Duren Sawit, Kec. Duren Sawit, Kota Jakarta Timur, Daerah
+              Khusus Ibukota Jakarta 13440
+            </div>
+            <div className="flex-1 my-auto text-center text-red-600">
+              Lihat Maps
             </div>
           </div>
         </div>
-        <div className="Frame119 h-64 w-[1200px]  rounded-lg border-2 border-yellow-900 flex-col justify-start items-start flex">
-          <div className="Frame35 self-stretch bg-yellow-400 rounded-tl-lg rounded-tr-lg border-2 border-yellow-900 justify-center items-center inline-flex">
-            <div className="Frame33 h-16 px-2 py-6 justify-center items-center flex">
-              <div className="No text-black text-base font-medium font-['Poppins']">
-                No.
-              </div>
-            </div>
-            <div className="Frame37 h-16 px-2 py-6 justify-center items-center flex">
-              <div className="NamaMitra text-black text-base font-medium font-['Poppins']">
-                Nama Mitra
-              </div>
-            </div>
-            <div className="Frame34 h-16 px-2 py-6 justify-center items-center flex">
-              <div className="Lokasi text-black text-base font-medium font-['Poppins']">
-                Lokasi
-              </div>
-            </div>
-            <div className="Frame35 h-16 px-2 py-6 justify-center items-center flex">
-              <div className="AlamatMitra text-black text-base font-medium font-['Poppins']">
-                Alamat Mitra
-              </div>
-            </div>
-            <div className="Frame36 grow shrink basis-0 h-16 py-6 justify-center items-center flex">
-              <div className="Maps text-black text-base font-medium font-['Poppins']">
-                Maps
-              </div>
-            </div>
+        <div className="flex gap-4 justify-center items-center py-6 pl-8 max-md:flex-wrap max-md:pl-5">
+          <div className="self-stretch my-auto text-yellow-900">02</div>
+          <div className="flex-1 self-stretch my-auto text-center text-yellow-900">
+            Apotek 24
           </div>
-          <div className="Frame36 self-stretch justify-center items-center inline-flex">
-            <div className="Frame33 h-16 px-2 py-6 justify-center items-center flex">
-              <div className=" text-yellow-900 text-base font-medium font-['Poppins']">
-                01
-              </div>
-            </div>
-            <div className="Frame37 h-16 px-2 py-6 justify-center items-center flex">
-              <div className="KimaFarma grow shrink basis-0 text-center text-yellow-900 text-base font-medium font-['Poppins']">
-                Kima Farma
-              </div>
-            </div>
-            <div className="Frame34 h-16 px-2 py-6 justify-center items-center flex">
-              <div className="Cibubur grow shrink basis-0 text-center text-yellow-900 text-base font-medium font-['Poppins']">
-                Cibubur
-              </div>
-            </div>
-            <div className="Frame35 h-24 px-2 py-6 justify-center items-center flex">
-              <div className="Rw14DurenSawitKecDurenSawitKotaJakartaTimurDaerahKhususIbukotaJakarta13440 grow shrink basis-0 text-yellow-900 text-base font-medium font-['Poppins']">
-                RW.14, Duren Sawit, Kec. Duren Sawit, Kota Jakarta Timur, Daerah
-                Khusus Ibukota Jakarta 13440
-              </div>
-            </div>
-            <div className="Frame36 grow shrink basis-0 h-16 py-6 justify-center items-center flex">
-              <div className="LihatMaps grow shrink basis-0 text-center text-red-600 text-base font-medium font-['Poppins']">
-                Lihat Maps
-              </div>
-            </div>
+          <div className="flex-1 self-stretch my-auto text-center text-yellow-900">
+            Cipayung
           </div>
-          <div className="Frame37 self-stretch justify-center items-center inline-flex">
-            <div className="Frame33 h-16 px-2 py-6 justify-center items-center flex">
-              <div className=" text-yellow-900 text-base font-medium font-['Poppins']">
-                02
-              </div>
+          <div className="flex gap-2 self-stretch max-md:flex-wrap">
+            <div className="flex-1 text-yellow-900 max-md:max-w-full">
+              RW.14, Duren Sawit, Kec. Duren Sawit, Kota Jakarta Timur, Daerah
+              Khusus Ibukota Jakarta 13440
             </div>
-            <div className="Frame37 h-16 px-2 py-6 justify-center items-center flex">
-              <div className="Apotek24 grow shrink basis-0 text-center text-yellow-900 text-base font-medium font-['Poppins']">
-                Apotek 24
-              </div>
-            </div>
-            <div className="Frame34 h-16 px-2 py-6 justify-center items-center flex">
-              <div className="Cipayung grow shrink basis-0 text-center text-yellow-900 text-base font-medium font-['Poppins']">
-                Cipayung
-              </div>
-            </div>
-            <div className="Frame35 h-24 px-2 py-6 justify-center items-center flex">
-              <div className="Rw14DurenSawitKecDurenSawitKotaJakartaTimurDaerahKhususIbukotaJakarta13440 grow shrink basis-0 text-yellow-900 text-base font-medium font-['Poppins']">
-                RW.14, Duren Sawit, Kec. Duren Sawit, Kota Jakarta Timur, Daerah
-                Khusus Ibukota Jakarta 13440
-              </div>
-            </div>
-            <div className="Frame36 grow shrink basis-0 h-16 py-6 justify-center items-center flex">
-              <div className="LihatMaps grow shrink basis-0 text-center text-red-600 text-base font-medium font-['Poppins']">
-                Lihat Maps
-              </div>
+            <div className="flex-1 my-auto text-center text-red-600">
+              Lihat Maps
             </div>
           </div>
         </div>
