@@ -14,7 +14,7 @@ function Slide1() {
 
   return (
     <div className="bg-white">
-      <div className="">
+      <div className="h-[37rem]">
         <SwipperHomeUtama />
       </div>
       {/* <div
