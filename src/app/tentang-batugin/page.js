@@ -1,3 +1,4 @@
+"use client"
 import NavbarComp from "@/components/NavbarComp";
 import NorifReward from "@/components/NorifReward";
 import React from "react";
