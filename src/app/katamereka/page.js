@@ -58,7 +58,7 @@ const datanya = [
 
 function KataMereka() {
   return (
-    <div>
+    <div className="bg-white">
       <NavbarComp />
       <NorifReward />
       <style>

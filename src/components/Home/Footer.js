@@ -39,22 +39,22 @@ function FooterComp({ mt = 20 }) {
               </div>
               <div className="flex flex-col text-start">
                 <div className="font-semibold text-accents-2 text-[1.25rem]">
-                  Social Media
+                  Others
                 </div>
                 <div className="text-[1rem] text-accents-2 ">
-                  <div>Instagram</div>
-                  <div>Facebook</div>
-                  <div>Twitter</div>
+                  <div>Store</div>
+                  <div>Points</div>
+                  <div>Leadderboard</div>
                 </div>
               </div>
               <div className="flex flex-col text-start">
                 <div className="font-semibold text-accents-2 text-[1.25rem]">
-                  Social Media
+                  Contact
                 </div>
                 <div className="text-[1rem] text-accents-2 ">
-                  <div>Instagram</div>
-                  <div>Facebook</div>
-                  <div>Twitter</div>
+                  <div>batugin.support@gmail.com</div>
+                  <div>(021) 1238-2309</div>
+                  <div>(Whatsapp) 0812-2389-1239 </div>
                 </div>
               </div>
             </div>
