@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import NavbarComp from "@/components/NavbarComp";
 import PointKamu from "@/components/PointKamu/page";
