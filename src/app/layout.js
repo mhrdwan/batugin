@@ -7,7 +7,8 @@ export const metadata = {
   title: "Batugin",
   description: "Obat Peluruh Batu Ginjal PERTAMA di Indonesia",
   authors: [{ name: "Ridwan"}],
-  icon: './favicon.ico'
+  icon: './favicon.ico',
+  
 
 };
 

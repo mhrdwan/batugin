@@ -6,7 +6,7 @@ import senam4 from "../../../public/assets/Senam/senam4.png";
 import Image from "next/image";
 import FooterComp from "../Home/Footer";
 import muri from "../../../public/assets/muri.jpeg";
-const senam = [muri, muri, muri, muri,  muri,  muri,  muri, muri];
+const senam = [muri];
 function SenamAero() {
   return (
     <>
@@ -15,13 +15,13 @@ function SenamAero() {
           <div className="text-2xl font-medium text-black">
             Muri Batugin 
           </div>
-          <div className="w-full grid grid-cols-4 gap-5 mt-10">
+          <div className="w-full flex justify-center mt-10">
             {senam.map((item, index) => (
               <div
                 key={index}
                 className={`relative ${index === 0 ? "mt-0" : ""}`}
               >
-                <Image width={200} src={item} />
+                <Image width={300} src={item} />
               </div>
             ))}
           </div>
