@@ -61,7 +61,7 @@ export default function Home() {
       <NorifReward />
       <Slide1 />
       {/* <div className="relative"> */}
-        <ApaItu />
+        <ApaItu  />
 
         <div className="pl-[1.4rem] pr-[1.4rem] flex justify-center w-full mt-[2rem] md:hidden">
           <Image
@@ -111,8 +111,10 @@ export default function Home() {
             </div>
           </div>
         </div> */}
+<div className=" ">
 
         <ArtikelKami />
+</div>
       {/* </div> */}
       <FollowBatugin />
       <FooterComp mt={20} />

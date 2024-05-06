@@ -88,7 +88,7 @@ function ArtikelKami() {
   ];
 
   return (
-    <div className="bg-white">
+    <div className=" ">
       <div className=" flex justify-between items-center">
         {/* {routerr !== "/artikel" && (
           <>

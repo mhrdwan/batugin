@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function ApaItu() {
   return (
-    <div className="bg-white h-[47rem] ">
+    <div className=" h-[35rem] ">
       <div className="warpnya grid grid-cols-1 md:grid-cols-2 md:ml-[7.5rem] md:mr-[7.5rem] ">
         <div>
           <Image
