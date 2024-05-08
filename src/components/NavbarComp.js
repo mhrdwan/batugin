@@ -64,7 +64,7 @@ function NavbarComp() {
                 className="bg-accents-2 text-white font-semibold text-base leading-normal px-5 py-2 rounded hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                 style={{ width: "100px", height: "48px" }}
               >
-                Logins
+                Login
               </button>
             </Link>
           </div>

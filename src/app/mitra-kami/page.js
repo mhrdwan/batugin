@@ -10,15 +10,21 @@ import apotekSahabat from "../../../public/assets/mitra/apotek-sahabat.png";
 import apotek24 from "../../../public/assets/mitra/apotek24.png";
 import kimiafarma from "../../../public/assets/mitra/kimiafarma.png";
 import pharmacy from "../../../public/assets/mitra/pharmacy.png";
+import alfa from "../../../public/assets/mitra/alfa.png";
+import alfamidi from "../../../public/assets/mitra/alfamidi.png";
+import viva from "../../../public/assets/mitra/viva-apotek.png";
+import watsons from "../../../public/assets/mitra/watsons.png";
+import century from "../../../public/assets/mitra/century.png";
 import LokasiKamiBaru from "@/components/LokasiKamiBaru/LokasiKamiBaru";
 
 const gambar = [
-  apotekFarma,
   apotekGenerik,
-  apotekSahabat,
   apotek24,
   kimiafarma,
-  pharmacy,
+  alfa,
+  alfamidi,
+  viva,
+  watsons,century
 ];
 
 function MitraKami() {
@@ -42,7 +48,7 @@ function MitraKami() {
         </div>
       </div>
 
-      <div className=" pl-[120px] pr-[120px] mt-[80px] grid grid-cols-3 gap-4">
+      <div className=" pl-[120px] pr-[120px] mt-[80px] grid grid-cols-4 gap-4">
         {gambar.map((src, index) => (
           <div
             key={index}
