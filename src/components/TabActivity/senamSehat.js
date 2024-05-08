@@ -7,13 +7,13 @@ import Image from "next/image";
 import FooterComp from "../Home/Footer";
 import muri from "../../../public/assets/muri.jpeg";
 const senam = [muri];
-function SenamAero() {
+function SenamSehatBatugin() {
   return (
     <>
-      <div className="w-full   mt-10  pl-10 pr-10">
+      <div className="w-full   mt-10  pl-[8.5rem] pr-10">
         <div className="flex flex-col justify-center  items-start">
           <div className="text-2xl font-medium text-black">
-            Muri Batugin 
+            Senam Sehat Bersama Batugin 
           </div>
           <div className="w-full flex justify-center mt-10">
             {senam.map((item, index) => (
@@ -34,4 +34,4 @@ function SenamAero() {
   );
 }
 
-export default SenamAero;
+export default SenamSehatBatugin;

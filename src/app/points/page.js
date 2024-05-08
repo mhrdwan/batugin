@@ -3,7 +3,9 @@ import NavbarComp from "@/components/NavbarComp";
 import NorifReward from "@/components/NorifReward";
 import PointKamu from "@/components/PointKamu/page";
 import KolaborasiBatugin from "@/components/TabActivity/KolaborasiBatugin";
-import SenamAero from "@/components/TabActivity/SenamAero";
+import MuriComp from "@/components/TabActivity/MuriComp";
+import SenamAero from "@/components/TabActivity/MuriComp";
+import SenamSehatBatugin from "@/components/TabActivity/senamSehat";
 // import KolaborasiBatugin from "@/components/KolaborasiBatugin"; // Contoh import komponen baru
 // import MuriBatugin from "@/components/MuriBatugin"; // Contoh import komponen baru
 // import SenamSehatBatugin from "@/components/SenamSehatBatugin"; // Contoh import komponen baru
@@ -25,9 +27,9 @@ export default function Page() {
       case "kolaborasi":
         return <KolaborasiBatugin />;
       case "muri":
-        return <SenamAero />;
+        return <MuriComp />;
       case "senam":
-        return <SenamAero />;
+        return <SenamSehatBatugin />;
       default:
         return <PointKamu />;
     }
