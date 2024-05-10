@@ -1,15 +1,37 @@
 "use client";
 import { LoginZustand } from "@/zustand/loginStore";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 
 export default function AdminLogin() {
-  const { setUsername, setPassword, loginApi, userPassword, loading } =
-    LoginZustand();
+  const {
+    setUsername,
+    setPassword,
+    loginApi,
+    userPassword,
+    loading,
+    responseMessage,
+  } = LoginZustand();
 
-  const handleLogin = (e) => {
-    e.preventDefault(); // Prevent the form from submitting and changing the URL
-    loginApi(userPassword.username, userPassword.password);
-  };
+  const router = useRouter();
+  async function ValidasiLogin() {
+    const resposne = await loginApi();
+    console.log(resposne);
+    if (resposne == 200) {
+      return router.push("/login/admin/dashboard");
+    } else {
+      return;
+    }
+  }
+  useEffect(() => {
+    if (responseMessage == 200) {
+      console.log("ini 200");
+      return router.push("/dashboard");
+    } else {
+      console.log("ini bukan 200");
+      return;
+    }
+  }, [userPassword]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-200">
@@ -49,11 +71,18 @@ export default function AdminLogin() {
           </div>
           <button
             disabled={loading}
-            onClick={handleLogin}
-            className={`${loading ? "bg-gray-500 cursor-not-allowed" :"bg-blue-600 hover:bg-blue-700"} w-full   text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
+            onClick={() => ValidasiLogin()}
+            className={`${
+              loading
+                ? "bg-gray-500 cursor-not-allowed"
+                : "bg-blue-600 hover:bg-blue-700"
+            } w-full   text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
           >
-            {loading ? "Loading...":"Login"}
+            {loading ? "Loading..." : "Login"}
           </button>
+          <p className="text-red-500">
+            {responseMessage != 200 ? responseMessage : ""}
+          </p>
         </form>
       </div>
     </div>

@@ -1,3 +1,6 @@
+'use client'
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 import {
   FaHome,
@@ -12,12 +15,22 @@ import {
   FaCog,
 } from "react-icons/fa";
 
-function Sidebar({ title = "title", content ="content" }) {
+function Sidebar({ title = "title", children }) {
+  const routerr = usePathname();
+  const pathSegments = routerr.split("/");
+  const adminIndex = pathSegments.indexOf("admin");
+  const partAfterAdmin =
+    adminIndex !== -1 && adminIndex + 1 < pathSegments.length
+      ? pathSegments.slice(adminIndex + 1).join("/")
+      : "";
+  console.log(partAfterAdmin);
+
+  
   return (
     <div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50  text-gray-800">
       <div className="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
         <div className="flex items-center justify-center h-14 border-b">
-          {/* <div>Sidebar Navigation By iAmine</div> */}
+          <div>Batugin Admin Dashboard</div>
         </div>
         <div className="overflow-y-auto overflow-x-hidden flex-grow">
           <ul className="flex flex-col py-4 space-y-1">
@@ -28,8 +41,8 @@ function Sidebar({ title = "title", content ="content" }) {
                 </div>
               </div>
             </li>
-            <li>
-              <a className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <li  className={`${partAfterAdmin === 'dashboard' ? "bg-primary-2" : "bg-transparent"} hover:cursor-pointer`}>
+              <Link href="/login/admin/dashboard" id="dashboard" className=" relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
                     className="w-5 h-5"
@@ -46,13 +59,13 @@ function Sidebar({ title = "title", content ="content" }) {
                     ></path>
                   </svg>
                 </span>
-                <span className="ml-2 text-sm tracking-wide truncate">
+                <span id="dashboard" className="ml-2 text-sm tracking-wide truncate">
                   Dashboard
                 </span>
-              </a>
+              </Link>
             </li>
-            <li>
-              <a className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <li className={`${partAfterAdmin === 'banner' ? "bg-primary-2" : "bg-transparent"}`}>
+              <Link href="/login/admin/banner" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
                     className="w-5 h-5"
@@ -75,10 +88,10 @@ function Sidebar({ title = "title", content ="content" }) {
                 <span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-indigo-500 bg-indigo-50 rounded-full">
                   New
                 </span>
-              </a>
+              </Link>
             </li>
-            <li>
-              <a className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <li className={`${partAfterAdmin === 'article' ? "bg-primary-2" : "bg-transparent"}`}>
+              <Link href="/login/admin/article" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
                     className="w-5 h-5"
@@ -98,7 +111,7 @@ function Sidebar({ title = "title", content ="content" }) {
                 <span className="ml-2 text-sm tracking-wide truncate">
                   Article
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
               <a className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
@@ -242,7 +255,7 @@ function Sidebar({ title = "title", content ="content" }) {
               </a>
             </li>
             <li>
-              <a className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+              <Link href={"/login/admin/login"} className="hover:cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
                     className="w-5 h-5"
@@ -262,18 +275,18 @@ function Sidebar({ title = "title", content ="content" }) {
                 <span className="ml-2 text-sm tracking-wide truncate">
                   Logout
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="flex-1 bg-[#f7f9ff] flex flex-col ml-64 ">
         <div className=" flex-grow p-6 ">
-          <h2 className="text-lg font-semibold ml-6 text-gray-800 border-b mt-1">
+          <h2 className="text-lg font-semibold ml-12 text-gray-800 border-b mt-1">
             {title}
           </h2>
           <div className="min-h-[95vh]  rounded-lg p-6 overflow-auto">
-            <div>{content}</div>
+            <div>{children}</div>
           </div>
         </div>
       </div>
