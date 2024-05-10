@@ -7,7 +7,7 @@ function page() {
   return (
     <div>
       <NavbarComp />
-      <div className=" grid grid-cols-2 h-screen">
+      <div className="bg-white grid grid-cols-2 h-screen">
         <div className="relative w-full  ">
           <Image src={gambAr} layout="fill" objectFit="cover" />
         </div>
