@@ -21,45 +21,86 @@ function SenamSehatBatugin() {
   return (
     <>
       <div className="w-full mt-10 pl-[8.5rem] pr-10">
-        <div className="text-3xl font-semibold text-black mb-6">
-          Senam Sehat Bersama Batugin
-        </div>
-        <div className="flex justify-between items-stretch">
-          {senam.map((item, index) => (
-            <div key={index} className="flex flex-col w-1/2 max-w-md p-4 bg-white rounded-lg shadow-xl m-2">
-              <div className="relative w-full h-64 mb-4">
-                <Image src={item.image} alt={item.title} layout="fill" objectFit="cover" className="rounded-t-lg" />
+      <div className="flex flex-col">
+      <div className="px-5 py-10 w-full bg-white border border-solid border-stone-300 max-md:max-w-full">
+        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+          <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
+              <div className="text-xl font-semibold tracking-wide text-black max-md:max-w-full">
+                Senam Sehat 1
               </div>
-              <div className="flex flex-col justify-between p-4">
-                <div className="font-bold text-xl mb-2">{item.title}</div>
-                <p className="text-gray-700 text-base">
-                  {item.description}
-                </p>
+              <div className="mt-5 text-base tracking-wide leading-7 text-zinc-600 max-md:max-w-full">
+                Kerja sama Batugin dengan Kementerian Pemuda dan Olahraga
+                Republik Indonesia dalam acara Road to Haornas 2023 Zumba Fit &
+                Fabulous with Puteri Indonesia di Velodrome Rawamangun pada 8
+                September 2023.
               </div>
             </div>
-          ))}
+          </div>
+          <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+            <Image
+              loading="lazy"
+              src={senam1}
+              className="grow w-full aspect-[2.94] max-md:mt-10 max-md:max-w-full"
+            />
+          </div>
         </div>
-        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8 mt-10">
-          <div className="font-bold text-xl mb-4">Tentang Batugin</div>
-          <p className="text-gray-700 text-base mb-2">
-            Batugin memahami betapa pentingnya menjaga kesehatan ginjal untuk kehidupan yang berkualitas. Kami berkomitmen untuk menyebarkan kesadaran tentang pentingnya kesehatan ginjal.
-          </p>
-          <p className="text-gray-700 text-base mb-2">
-            Kami bekerja sama dengan berbagai pihak untuk menyelenggarakan acara senam dan zumba sehat. Acara ini bukan hanya tentang berolahraga, tetapi juga sarana edukasi tentang kesehatan ginjal.
-          </p>
-          <p className="text-gray-700 text-base mb-2">
-            Dalam setiap acara, kami mengajak peserta untuk bergerak aktif melalui gerakan senam dan zumba yang energik, sekaligus memberikan informasi penting tentang cara menjaga kesehatan ginjal.
-          </p>
-          <p className="text-gray-700 text-base mb-2">
-            Kami bangga bermitra dengan lembaga kesehatan, komunitas olahraga, dan influencer kesehatan untuk menciptakan acara bermanfaat bagi masyarakat.
-          </p>
-          <p className="text-gray-700 text-base mb-2">
-            Selain acara senam dan zumba sehat, kami memberikan informasi tentang produk Batugin yang membantu menjaga kesehatan ginjal, seperti suplemen untuk mengurangi risiko batu ginjal dan menjaga fungsi ginjal optimal.
-          </p>
-          <p className="text-gray-700 text-base">
-            Kami berharap melalui inisiatif ini, kami dapat terus berkontribusi dalam upaya menyehatkan masyarakat dan meningkatkan kesadaran akan pentingnya menjaga kesehatan ginjal. Bersama-sama, mari kita jaga kesehatan ginjal dan hidup sehat untuk masa depan yang lebih baik.
-          </p>
+      </div>
+      <div className="px-5 py-10 w-full bg-white border border-solid border-stone-300 max-md:max-w-full">
+        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+          <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
+              <div className="text-xl font-semibold tracking-wide text-black max-md:max-w-full">
+                Senam Sehat 2
+              </div>
+              <div className="mt-5 text-base tracking-wide leading-7 text-zinc-600 max-md:max-w-full">
+                Batugin bekerja sama dengan diaspora Kota Tangerang melaksanakan
+                acara 'Bergerak Bersama Batugin' di Stadion Benteng Reborn.
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+          <Image
+              loading="lazy"
+             src={senam2}
+              className="grow w-full aspect-[2.94] max-md:mt-10 max-md:max-w-full"
+            />
+          </div>
         </div>
+      </div>
+      <div className="flex flex-col justify-center px-5 py-10 w-full bg-white border border-solid border-stone-300 max-md:max-w-full">
+        <div className="text-xl font-semibold tracking-wide leading-7 text-black max-md:max-w-full">
+          Tentang Batugin
+        </div>
+        <div className="mt-5 text-base tracking-wide leading-7 text-zinc-600 max-md:max-w-full">
+          Batugin memahami betapa pentingnya menjaga kesehatan ginjal untuk
+          kehidupan yang berkualitas. Kami berkomitmen untuk menyebarkan
+          kesadaran tentang pentingnya kesehatan ginjal.
+          <br />
+          Kami bekerja sama dengan berbagai pihak untuk menyelenggarakan acara
+          senam dan zumba sehat. Acara ini bukan hanya tentang berolahraga,
+          tetapi juga sarana edukasi tentang kesehatan ginjal.
+          <br />
+          Dalam setiap acara, kami mengajak peserta untuk bergerak aktif melalui
+          gerakan senam dan zumba yang energik, sekaligus memberikan informasi
+          penting tentang cara menjaga kesehatan ginjal.
+          <br />
+          Kami bangga bermitra dengan lembaga kesehatan, komunitas olahraga, dan
+          influencer kesehatan untuk menciptakan acara bermanfaat bagi
+          masyarakat.
+          <br />
+          Selain acara senam dan zumba sehat, kami memberikan informasi tentang
+          produk Batugin yang membantu menjaga kesehatan ginjal, seperti
+          suplemen untuk mengurangi risiko batu ginjal dan menjaga fungsi ginjal
+          optimal.
+          <br />
+          Kami berharap melalui inisiatif ini, kami dapat terus berkontribusi
+          dalam upaya menyehatkan masyarakat dan meningkatkan kesadaran akan
+          pentingnya menjaga kesehatan ginjal. Bersama-sama, mari kita jaga
+          kesehatan ginjal dan hidup sehat untuk masa depan yang lebih baik.{" "}
+        </div>
+      </div>
+    </div>
       </div>
       <div className="mt-[20px]">
 
