@@ -3,7 +3,7 @@ import NavbarComp from "@/components/NavbarComp";
 import NorifReward from "@/components/NorifReward";
 import React, { useEffect, useRef, useState } from "react";
 import fotoPros1 from "../../../public/assets/BATUGIN PRODUCT-300ml.png";
-import fotoPros from "../../../public/assets/foto-prostad.png";
+import fotoPros from "../../../public/assets/BATUGIN PRODUCT-01.png";
 import Image from "next/image";
 import Orang from "../../../public/assets/orang.png";
 import Orang2 from "../../../public/assets/orang 2.png";
@@ -94,7 +94,7 @@ function page() {
         <div>
           <Image src={fotoPros} />
         </div>
-        <div className=" md:block pl-[1.4rem] pr-[1.4rem]  md:mt-[1.4rem]">
+        <div className=" md:block pl-[1.4rem] pr-[1.4rem]  md:mt-[3.4rem]">
           <h3 className="text-[2.25rem] text-secondary-3 font-semibold">
             Batugin Elixir Regular Size
           </h3>
