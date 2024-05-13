@@ -2,7 +2,7 @@
 import NavbarComp from "@/components/NavbarComp";
 import NorifReward from "@/components/NorifReward";
 import React, { useEffect, useRef, useState } from "react";
-import fotoPros1 from "../../../public/assets/BATUGIN PRODUCT-01.png";
+import fotoPros1 from "../../../public/assets/BATUGIN PRODUCT-300ml.png";
 import fotoPros from "../../../public/assets/foto-prostad.png";
 import Image from "next/image";
 import Orang from "../../../public/assets/orang.png";
@@ -73,11 +73,17 @@ function page() {
     },
   ];
 
-  function tabBaruBeli (){
-    window.open('https://www.tokopedia.com/kimiafarmaapotekos/batugin-elixir-300-ml-obat-herbal-batu-ginjal-kimia-farma', '_blank');
-    window.open('https://www.tokopedia.com/kimiafarmaapotekos/batugin-elixir-120-ml-obat-herbal-batu-ginjal-kimia-farma', '_blank');
+  function tabBaruBeli() {
+    window.open(
+      "https://www.tokopedia.com/kimiafarmaapotekos/batugin-elixir-300-ml-obat-herbal-batu-ginjal-kimia-farma",
+      "_blank"
+    );
+    window.open(
+      "https://www.tokopedia.com/kimiafarmaapotekos/batugin-elixir-120-ml-obat-herbal-batu-ginjal-kimia-farma",
+      "_blank"
+    );
   }
-  
+
   return (
     <div className="bg-white">
       <div ref={apaItuRef}>
@@ -86,7 +92,7 @@ function page() {
       <NorifReward />
       <div className="warp-batugin grid md:grid-cols-2 mt-4 grid-rows-2 md:grid-rows-1 md:pr-[120px] md:pl-[120px]  mx-auto bg-white">
         <div>
-          <Image src={fotoPros1} />
+          <Image src={fotoPros} />
         </div>
         <div className=" md:block pl-[1.4rem] pr-[1.4rem]  md:mt-[1.4rem]">
           <h3 className="text-[2.25rem] text-secondary-3 font-semibold">
@@ -108,14 +114,17 @@ function page() {
               membantu melancarkan buang air kecil.
             </div>
           </div>
-          <button onClick={tabBaruBeli} className="bg-accents-2 border text-[1.25rem] border-accents-2 text-white font-semibold text-base leading-normal w-[10rem] h-[3.75rem] px-2 py-2 mt-[2.5rem] hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+          <button
+            onClick={tabBaruBeli}
+            className="bg-accents-2 border text-[1.25rem] border-accents-2 text-white font-semibold text-base leading-normal w-[10rem] h-[3.75rem] px-2 py-2 mt-[2.5rem] hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+          >
             Beli Sekarang
           </button>
         </div>
       </div>
-      <div className="big-size bg-primary-2 h-[52rem] md:h-[44rem] md:mt-[10rem]  md:flex md:justify-center md:items-center">
+      <div className="big-size bg-primary-2 h-[52rem] md:h-[44rem] md:mt-[10rem] md:flex md:justify-center md:items-center">
         <div className="hidden md:block  ">
-          <div className="  md:w-full w-[30rem] h-[33rem] pr-[100px]  flex ">
+          <div className="  md:w-full w-[30rem] h-[33rem]   flex  ">
             <div className="  w-[588px] ">
               <h3 className="text-accents-2 text-[2.25rem] font-medium">
                 Batugin Elixir Big Size
@@ -140,8 +149,12 @@ function page() {
                 Beli Sekarang
               </button>
             </div>
-            <div className=" ">
-              <Image src={fotoPros} width="100%" height="100%" />
+            <div className="min-h-[20rem]  max-h-[50rem] min-w-[40rem]  max-w-[50rem]">
+              <Image
+              className="ml-[50px]"
+                src={fotoPros1}
+                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+              />
             </div>
           </div>
         </div>
@@ -195,7 +208,7 @@ function page() {
         </div>
       </div>
       <div className="carousel ">
-        <FooterComp  />
+        <FooterComp />
       </div>
       {showScrollButton && (
         <Image
