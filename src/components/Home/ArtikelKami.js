@@ -163,9 +163,9 @@ function ArtikelKami() {
               <SwipperDashboard KataMereka={KataMereka} />
             </div>
           </div>
-          <div className="flex justify-end  mr-10">
+          {/* <div className="flex justify-end  mr-10">
             <Image src={daunKanan2} />
-          </div>
+          </div> */}
 
           <div className="cover-banner  hidden md:block">
             <div
