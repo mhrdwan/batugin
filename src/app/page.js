@@ -61,17 +61,17 @@ export default function Home() {
       <NorifReward />
       <Slide1 />
       {/* <div className="relative"> */}
-        <ApaItu  />
+      <ApaItu />
 
-        <div className="pl-[1.4rem] pr-[1.4rem] flex justify-center w-full mt-[2rem] md:hidden">
-          <Image
-            src={BATUGIN_PINTU}
-            alt="BATUGIN_PINTU"
-            width={670}
-            height={100}
-          />
-        </div>
-        {/* <div className=" pl-[1.4rem] pr-[1.4rem] hidden md:block mt-[4rem]  w-full md:absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="pl-[1.4rem] pr-[1.4rem] flex justify-center w-full mt-[2rem] md:hidden">
+        <Image
+          src={BATUGIN_PINTU}
+          alt="BATUGIN_PINTU"
+          width={670}
+          height={100}
+        />
+      </div>
+      {/* <div className=" pl-[1.4rem] pr-[1.4rem] hidden md:block mt-[4rem]  w-full md:absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="flex flex-row space-x-4 justify-center ">
             <div style={{ flex: 1, maxWidth: "18%" }}>
               <Image
@@ -111,10 +111,9 @@ export default function Home() {
             </div>
           </div>
         </div> */}
-<div className=" ">
-
+      <div className=" ">
         <ArtikelKami />
-</div>
+      </div>
       {/* </div> */}
       <FollowBatugin />
       <FooterComp mt={20} />

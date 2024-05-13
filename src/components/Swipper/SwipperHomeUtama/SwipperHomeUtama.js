@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import banner1 from "../../../../public/assets/BannerUtamaHome/WEB BANNER BATUGIN (1440px x 771px)-01-2.png";
-import banner2 from "../../../../public/assets/BannerUtamaHome/WEB BANNER BATUGIN (1440px x 771px)-02 (1).png";
-import banner3 from "../../../../public/assets/BannerUtamaHome/WEB BANNER BATUGIN (1440px x 771px)-03 (1).png";
+import banner1 from "../../../../public/assets/BannerUtamaHome/BANNER BATUGIN - 1440 x 530-01.png";
+import banner2 from "../../../../public/assets/BannerUtamaHome/BANNER BATUGIN - 1440 x 530-02.png";
+import banner3 from "../../../../public/assets/BannerUtamaHome/BANNER BATUGIN - 1440 x 530-03.png";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -42,7 +42,7 @@ export default function SwipperHomeUtama() {
         {Banner.map((item, index) => (
           <div key={index}>
             <SwiperSlide>
-              <Image src={item} alt={`Banner ${index + 1}`} />
+              <Image src={item} alt={`Banner ${index + 1}`} width={"100%"} layout="cover"/>
             </SwiperSlide>
           </div>
         ))}
