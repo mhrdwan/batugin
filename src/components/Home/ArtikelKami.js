@@ -185,16 +185,16 @@ function ArtikelKami() {
                 </div>
                 <div className="text-center grid grid-cols-4">
                   <div className="text-accents-2 font-semibold text-[3.125rem]">
-                    8+
+                    50+
                   </div>
                   <div className="text-accents-2 font-semibold text-[3.125rem]">
-                    20.000
+                    60.000+
                   </div>
                   <div className="text-accents-2 font-semibold text-[3.125rem]">
-                    4.2/5
+                    4.9/5
                   </div>
                   <div className="text-accents-2 font-semibold text-[3.125rem]">
-                    1000
+                    1500
                   </div>
                   <div className="text-secondary-2 text-[1.25rem]">
                     Been trusted by customer
