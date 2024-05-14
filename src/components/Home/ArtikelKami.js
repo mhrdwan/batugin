@@ -185,7 +185,7 @@ function ArtikelKami() {
                 </div>
                 <div className="text-center grid grid-cols-4">
                   <div className="text-accents-2 font-semibold text-[3.125rem]">
-                    50+
+                    50 years
                   </div>
                   <div className="text-accents-2 font-semibold text-[3.125rem]">
                     60.000+
