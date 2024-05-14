@@ -73,13 +73,16 @@ function page() {
     },
   ];
 
-  function tabBaruBeli() {
-    window.open(
-      "https://www.tokopedia.com/kimiafarmaapotekos/batugin-elixir-300-ml-obat-herbal-batu-ginjal-kimia-farma",
-      "_blank"
-    );
+  function tabBaruBeli120() {
+   
     window.open(
       "https://www.tokopedia.com/kimiafarmaapotekos/batugin-elixir-120-ml-obat-herbal-batu-ginjal-kimia-farma",
+      "_blank"
+    );
+  }
+  function tabBaruBeli300() {
+    window.open(
+      "https://www.tokopedia.com/kimiafarmaapotekos/batugin-elixir-300-ml-obat-herbal-batu-ginjal-kimia-farma",
       "_blank"
     );
   }
@@ -115,7 +118,7 @@ function page() {
             </div>
           </div>
           <button
-            onClick={tabBaruBeli}
+            onClick={tabBaruBeli120}
             className="bg-accents-2 border text-[1.25rem] border-accents-2 text-white font-semibold text-base leading-normal w-[10rem] h-[3.75rem] px-2 py-2 mt-[2.5rem] hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
           >
             Beli Sekarang
@@ -145,7 +148,7 @@ function page() {
                 (nefrolitiasis) dan batu saluran kemih (uretrolitisis), serta
                 membantu melancarkan buang air kecil.
               </p>
-              <button className="bg-accents-2 border text-[1.25rem] border-accents-2 text-white font-semibold text-base leading-normal w-[10rem] h-[3.75rem] px-2 py-2 mt-[2.5rem] hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+              <button onClick={tabBaruBeli300} className="bg-accents-2 border text-[1.25rem] border-accents-2 text-white font-semibold text-base leading-normal w-[10rem] h-[3.75rem] px-2 py-2 mt-[2.5rem] hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                 Beli Sekarang
               </button>
             </div>
