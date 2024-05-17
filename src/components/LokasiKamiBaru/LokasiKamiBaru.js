@@ -1,110 +1,174 @@
-import React, { useEffect, useState } from "react";
-import FooterComp from "../Home/Footer";
+import React, { useEffect } from "react";
 import { Select } from "antd";
 import { LokasiZustand } from "@/zustand/location/lokasi";
 
 function LokasiKamiBaru() {
-  const { getLokasi, DataLokasi } = LokasiZustand();
+  const {
+    getLokasi,
+    DataLokasi,
+    setid_provinsi,
+    setid_kota,
+    id_provinsi,
+    id_kota,
+    getLokasiPosisi,
+    dataSemuaLokasiSelect,
+  } = LokasiZustand();
+
   useEffect(() => {
     getLokasi();
-  }, []);
-  const [selectedProvinsi, setSelectedProvinsi] = useState("");
+  }, [id_provinsi]);
 
-  const handleProvinsiChange = (e) => {
-    setSelectedProvinsi(e.target.value);
-  };
+  useEffect(() => {
+    getLokasiPosisi();
+  }, [id_kota]);
+
+console.log(`dataSemuaLokasiSelect`,dataSemuaLokasiSelect)
 
   return (
-    <div>
+    <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col items-start mt-14">
         <div className="text-2xl font-semibold text-yellow-900">
           Lokasi Kami
         </div>
-        <div className="shrink-0 mt-1 max-w-full h-1 bg-red-600 w-[262px]" />
+        <div className="shrink-0 mt-1 h-1 bg-red-600 w-64" />
         <div className="mt-2 text-base text-zinc-600">
           Kamu mau ke offline store kami?
         </div>
-        <div className="self-stretch p-10 mt-10 w-full bg-white rounded-xl border border-yellow-900 border-solid max-md:px-5 max-md:max-w-full">
+        <div className="self-stretch p-10 mt-10 bg-white rounded-xl border border-yellow-900 max-md:px-5">
           <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-            <div className="flex flex-col ml-5 w-full max-md:ml-0 max-md:w-full">
-              <div className="flex grow gap-2 justify-between self-stretch px-6 py-3 w-full text-xl font-medium text-black whitespace-nowrap bg-white max-md:flex-wrap max-md:px-5 max-md:mt-10 max-md:max-w-full">
-                <div>Provinsi</div>
-                <Select placeholder="Cari Provinsi" style={{ width: "100%" }}>
-                  <Select.Option>Cari Provinsi</Select.Option>
-                  {Array.isArray(DataLokasi)?.provinsi?.map(
-                    (provinsi, index) => (
-                      <Select.Option key={index} value={provinsi}>
-                        {provinsi?.provinsi}
-                      </Select.Option>
-                    )
-                  )}
-                </Select>
-                <div>Kota</div>
-                <Select
-                  disabled={!DataLokasi.kota}
-                  placeholder="Cari Kota"
-                  style={{ width: "100%" }}
-                >
-                  {Array.isArray(DataLokasi).kota?.map((provinsi, index) => (
-                    <Select.Option key={index} value={provinsi}>
-                      {provinsi}
-                    </Select.Option>
-                  ))}
-                </Select>
+            <div className="flex flex-col w-full">
+              <div className="flex grow gap-2 justify-between px-6 py-3 text-xl font-medium text-black bg-white max-md:flex-wrap max-md:px-5 max-md:mt-10">
+                <div className="w-1/2 pr-2">
+                  <div>Provinsi</div>
+                  <Select
+                    showSearch
+                    optionFilterProp="children"
+                    placeholder="Cari Provinsi"
+                    style={{ width: "100%" }}
+                    onChange={(e, w) => {
+                      setid_provinsi(w.Option.id_provinsi);
+                    }}
+                  >
+                    {Array.isArray(DataLokasi?.provinsi) &&
+                      DataLokasi.provinsi.map((provinsi, index) => (
+                        <Select.Option
+                          Option={provinsi}
+                          key={index}
+                          value={provinsi.provinsi}
+                        >
+                          {provinsi.provinsi}
+                        </Select.Option>
+                      ))}
+                  </Select>
+                </div>
+                <div className="w-1/2 pl-2">
+                  <div>Kota</div>
+                  <Select
+                    disabled={!id_provinsi}
+                    showSearch
+                    optionFilterProp="children"
+                    placeholder="Cari Kota"
+                    style={{ width: "100%" }}
+                    onChange={(e, w) => {
+                      setid_kota(w.Option.id_kota);
+                    }}
+                  >
+                    {Array.isArray(DataLokasi?.kota) &&
+                      DataLokasi.kota.map((kota, index) => (
+                        <Select.Option
+                          key={index}
+                          Option={kota}
+                          value={kota.kota}
+                        >
+                          {kota.kota}
+                        </Select.Option>
+                      ))}
+                  </Select>
+                </div>
               </div>
             </div>
-            <div className="flex flex-col ml-5 w-[10%] max-md:ml-0 max-md:w-full">
-              <div className="bg-accents-2 mt-2 text-white font-semibold text-base leading-normal px-5 py-2 rounded hover:bg-accents-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+            {/* <div className="flex flex-col w-auto">
+              <div className="bg-yellow-500 mt-2 text-white font-semibold text-base leading-normal px-5 py-2 rounded hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                 Cari
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
-      <div className="flex flex-col self-stretch mt-10 w-full text-base font-medium rounded-xl border-2 border-yellow-900 border-solid max-md:max-w-full">
-        <div className="flex gap-5 justify-center px-7 py-6 w-full text-black bg-yellow-400 rounded-xl border-2 border-yellow-900 border-solid max-md:flex-wrap max-md:px-5 max-md:max-w-full">
-          <div>No.</div>
-          <div>Nama Mitra</div>
-          <div>Lokasi</div>
-          <div>Alamat Mitra</div>
-          <div>Maps</div>
-        </div>
-        <div className="flex gap-4 justify-center items-center py-6 pl-8 max-md:flex-wrap max-md:pl-5">
-          <div className="self-stretch my-auto text-yellow-900">01</div>
-          <div className="flex-1 self-stretch my-auto text-center text-yellow-900">
-            Kima Farma
-          </div>
-          <div className="flex-1 self-stretch my-auto text-center text-yellow-900">
-            Cibubur
-          </div>
-          <div className="flex gap-2 self-stretch max-md:flex-wrap">
-            <div className="flex-1 text-yellow-900 max-md:max-w-full">
-              RW.14, Duren Sawit, Kec. Duren Sawit, Kota Jakarta Timur, Daerah
-              Khusus Ibukota Jakarta 13440
-            </div>
-            <div className="flex-1 my-auto text-center text-red-600">
-              Lihat Maps
-            </div>
-          </div>
-        </div>
-        <div className="flex gap-4 justify-center items-center py-6 pl-8 max-md:flex-wrap max-md:pl-5">
-          <div className="self-stretch my-auto text-yellow-900">02</div>
-          <div className="flex-1 self-stretch my-auto text-center text-yellow-900">
-            Apotek 24
-          </div>
-          <div className="flex-1 self-stretch my-auto text-center text-yellow-900">
-            Cipayung
-          </div>
-          <div className="flex gap-2 self-stretch max-md:flex-wrap">
-            <div className="flex-1 text-yellow-900 max-md:max-w-full">
-              RW.14, Duren Sawit, Kec. Duren Sawit, Kota Jakarta Timur, Daerah
-              Khusus Ibukota Jakarta 13440
-            </div>
-            <div className="flex-1 my-auto text-center text-red-600">
-              Lihat Maps
-            </div>
-          </div>
-        </div>
+      <div className="overflow-x-auto mt-10  rounded-lg">
+        <table className="min-w-full divide-y border rounded-lg divide-gray-200">
+          <thead className="bg-primary-2">
+            <tr>
+              <th
+                scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider"
+              >
+                No.
+              </th>
+              <th
+                scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider"
+              >
+                Nama Mitra
+              </th>
+              <th
+                scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider"
+              >
+                Provinsi
+              </th>
+              <th
+                scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider"
+              >
+                Kota
+              </th>
+              <th
+                scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider"
+              >
+                Alamat Mitra
+              </th>
+              <th
+                scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider"
+              >
+                Maps
+              </th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {dataSemuaLokasiSelect?.data?.map((item, index) => (
+                <tr key={index}>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    {item.no}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                   {item.nama_mitra}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                   {item.provinsi}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                   {item.kota}
+                  </td>
+                  <td className="px-6 py-4 text-sm text-gray-900">
+                   {item.location}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-500">
+                    <a
+                      href="https://maps.google.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Lihat Maps
+                    </a>
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
       </div>
     </div>
   );
