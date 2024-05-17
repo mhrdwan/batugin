@@ -24,7 +24,7 @@ export const LoginZustand = create((set, get) => ({
     set({ loading: true });
     try {
       const response = await axios.post(
-        `http://159.223.85.15:2000/auth/login-admin`,
+        `https://batuginbackend.whandev.tech/auth/login-admin`,
         {
           username: userPassword.username,
           password: userPassword.password,

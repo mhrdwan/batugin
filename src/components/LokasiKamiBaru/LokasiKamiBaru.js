@@ -67,7 +67,7 @@ console.log(`dataSemuaLokasiSelect`,dataSemuaLokasiSelect)
                     disabled={!id_provinsi}
                     showSearch
                     optionFilterProp="children"
-                    placeholder="Cari Kota"
+                    placeholder={!id_provinsi ? "Pilih Provinsi Terlebih Dahulu" : "Cari Kota"}
                     style={{ width: "100%" }}
                     onChange={(e, w) => {
                       setid_kota(w.Option.id_kota);

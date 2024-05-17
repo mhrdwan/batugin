@@ -14,7 +14,7 @@ export const LokasiZustand = create((set, get) => ({
     const id_kota = get().id_kota;
     try {
       const response = await axios.get(
-        `http://159.223.85.15:2000/location/get-select-location?id_provinsi=${id_provinsi}&id_kota=${id_kota}`
+        `https://batuginbackend.whandev.tech/location/get-select-location?id_provinsi=${id_provinsi}&id_kota=${id_kota}`
       );
       // console.log(response.data);
       set({ DataLokasi: response.data });
@@ -29,7 +29,7 @@ export const LokasiZustand = create((set, get) => ({
     const id_kota = get().id_kota;
     try {
       const response = await axios.get(
-        `http://159.223.85.15:2000/location/get-location?id_provinsi=${id_provinsi}&id_kota=${id_kota}&page=1&limit=10`
+        `https://batuginbackend.whandev.tech/location/get-location?id_provinsi=${id_provinsi}&id_kota=${id_kota}&page=1&limit=10`
       );
       // console.log(response.data.data);
       set({dataSemuaLokasiSelect : response.data})

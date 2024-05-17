@@ -8,7 +8,7 @@ export const BannerZustand = create((set, get) => ({
   getBanner: async () => {
     try {
       const response = await axios.get(
-        `http://159.223.85.15:2000/banner/get-banner-home`
+        `https://batuginbackend.whandev.tech/banner/get-banner-home`
       );
       console.log(response.data);
       set({ DataBanner: response.data });
