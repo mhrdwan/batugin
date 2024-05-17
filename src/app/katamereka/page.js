@@ -1,58 +1,42 @@
 "use client";
 import FooterComp from "@/components/Home/Footer";
-import Katamereka from "@/components/KataMereka/Katamereka";
 import NavbarComp from "@/components/NavbarComp";
 import NorifReward from "@/components/NorifReward";
 import React from "react";
+import Image from "next/image";
+import katamere1 from "../../../public/assets/katamereka/Ashanty.png";
+import katamere2 from "../../../public/assets/katamereka/Rasidin Karyana Founder Sinar Jaya Group.png";
+import katamere3 from "../../../public/assets/katamereka/Suharto GM ASDP PT. Ferry Indonesia.png";
+import katamere4 from "../../../public/assets/katamereka/Walikota tangerang.png";
 
-const datanya = [
+const testimonials = [
   {
     id: 1,
-    nama: "Alif",
-    umur: "22",
-    gambar:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzZZjJqrvQ186KxaLqjts3EJyDZDgqAgDW6mqm4m0qzRXCwDUIoNfjvqT9QbBQgne1zA&usqp=CAU",
-    desc: "Negara-negara yang membuat ekspor Jamu Indonesia meningkat di tahun 2023.",
+    name: "Ashanty Penyanyi",
+    age: "Penyanyi",
+    image: katamere1,
+    desc: "“Hati-hati batu ginjal, batu ginjal! Yuk minum batugin 1 hari 1 teguk untuk mencegah batu ginjal.”",
   },
   {
     id: 2,
-    nama: "Budi",
-    umur: "25",
-    gambar:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVKQOT7CRf62gbmctgqdmlpU6FChFa9ZsOLUTcQhVW5jpLjF4LNyvT96lzeWwrcb7Srs8&usqp=CAU",
-    desc: "Jamu Indonesia: Tradisi dan Inovasi.",
+    name: "Rasidin Karyana ",
+    age: "Founder Sinar Jaya Group",
+    image: katamere2,
+    desc: "“Saya merasakan perubahan besar setelah minum Batugin, buang air kecil jadi lancar. Batugin menyelamatkan saya dari batu ginjal dan anyang-anyangan yang rasanya tidak nyaman.”",
   },
   {
     id: 3,
-    nama: "Citra",
-    umur: "30",
-    gambar:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg8mwtMEo2ugbJcjE9H_lzrhE-LtK1NMlUuE6zNCc1oAQ6YYfQm6sKWAv716TB-4pv3Ug&usqp=CAU",
-    desc: "Manfaat Jamu untuk Kesehatan Tubuh.",
+    name: "Suharto ",
+    age: "GM ASDP PT. Ferry Indonesia",
+    image: katamere3,
+    desc: "“Saya divonis dokter terkena batu ginjal dan disarankan untuk mengkonsumsi Batugin Elixir. Setelah mengkonsumsi 2 botol, saat saya buang air kecil ada terasa batu keluar dan batu ginjal saya hilang. Hingga saat ini saya rutin mengkonsumsi Batugin.”",
   },
   {
     id: 4,
-    nama: "Dewi",
-    umur: "28",
-    gambar:
-      "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg&ga=GA1.1.1224184972.1713830400&semt=ais",
-    desc: "Inovasi Baru dalam Pembuatan Jamu Tradisional.",
-  },
-  {
-    id: 5,
-    nama: "Eka",
-    umur: "35",
-    gambar:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-vJsLUiOLgXXcz2hWEp-wQybdp3WXgWneKNf6XpfKn8I5J18tQkAJTBuo6DJsbbMb-UU&usqp=CAU",
-    desc: "Khasiat Jamu untuk Menyembuhkan Penyakit Umum.",
-  },
-  {
-    id: 6,
-    nama: "Fajar",
-    umur: "32",
-    gambar:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-s1xDS99ObOy8awteQXed_bRgjc-DlXIaL_bKXLFesZidTQvgYlak3m-PtW4aYyVDEHc&usqp=CAU",
-    desc: "Mengenal Berbagai Jenis Jamu dan Manfaatnya.",
+    name: "Drs. H. Sachrudin ",
+    age: "Wakil Walikota Tangerang",
+    image: katamere4,
+    desc: "“Terima kasih kepada Batugin atas kerjasamanya untuk mengadakan aktivitas yang menyehatkan sambil memberikan informasi dan edukasi terkait batu ginjal.”",
   },
 ];
 
@@ -61,56 +45,41 @@ function KataMereka() {
     <div className="bg-white">
       <NavbarComp />
       <NorifReward />
-      <style>
-        {`.adjust-first-item {
-  margin-top: 1;  /* Contoh: Menghilangkan margin tambahan */
-}
-`}
-      </style>
-      <div className="flex justify-center mt-[40px] mb-[40px]">
-        <div className="Frame152 flex justify-end w-64 h-28 flex-col  items-center gap-2.5 ">
-          <div className="KataMereka text-center text-yellow-900 text-4xl font-medium font-['Poppins']">
-            Kata Mereka.
+      <div className="flex justify-center mt-10 mb-10">
+        <div className="text-center">
+          <div className="text-yellow-900 text-4xl font-medium font-['Poppins']">
+            Kata Mereka
           </div>
-          <div className="Rectangle6 self-stretch h-1 bg-gradient-to-r from-red-800 to-red-600" />
-          <div className="TestimoniBatuginMereka text-center text-zinc-600 text-xl font-medium font-['Poppins']">
-            Testimoni Batugin mereka
+          <div className="w-full h-1 bg-gradient-to-r from-red-800 to-red-600 mt-2 mb-4"></div>
+          <div className="text-zinc-600 text-xl font-medium font-['Poppins']">
+            Testimoni Batugin Mereka
           </div>
         </div>
       </div>
-      <div className="space-y-5  pl-[120px] pr-[120px] md:grid grid-cols-3  hidden">
-        {datanya &&
-          datanya.map((item, index) => (
-            <div
-              className={`flex flex-col items-center p-10 ${
-                index === 0 ? "mt-5" : ""
-              } h-[495px] max-w-sm text-base font-medium border border-solid border-neutral-400`}
-            >
-              <img
-                key={index}
-                loading="lazy"
-                srcSet={item.gambar}
-                className={`max-w-full aspect-square ${
-                  index == 0 ? " w-[120px]" : " w-[120px]"
-                }`}
-              />
-              <div className="mt-10 text-2xl text-red-600">{item.nama}</div>
-              <div className="shrink-0 mt-2 h-1 bg-red-600 w-[194px]" />
-              <div className="mt-6 text-neutral-400">{item.umur} Tahun</div>
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/550c1f47c7f56604f9e67eb52e04b16e6c060ae10af9544e1ff20030e54d5db5?"
-                className="mt-6 max-w-full aspect-[5] w-[120px]"
-              />
-              <div className="self-stretch mt-6 text-center text-zinc-600">
-                “{item.desc} “
-              </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
+        {testimonials.map((item) => (
+          <div
+            key={item.id}
+            className="flex flex-col items-center p-10 border border-neutral-400"
+          >
+            <Image
+              loading="lazy"
+              src={item.image}
+              alt={item.name}
+              width={120}
+              height={120}
+              className="object-cover rounded-full"
+            />
+            <div className="mt-6 text-xl text-red-600 text-center">
+              {item.name}
             </div>
-          ))}
+            <div className="w-full h-1 bg-red-600 mt-2 mb-4"></div>
+            <div className="text-neutral-400 text-center">{item.age} Tahun</div>
+            <div className="text-center text-zinc-600 mt-6">{item.desc}</div>
+          </div>
+        ))}
       </div>
-      <div className="mt-10">
-        <FooterComp />
-      </div>
+      <FooterComp />
     </div>
   );
 }
