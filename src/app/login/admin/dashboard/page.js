@@ -1,9 +1,13 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../page";
 import { usePathname } from "next/navigation";
+import TableBanner from "@/components/Table/TableBanner/TableBanner";
+import TableArticle from "@/components/Table/TableArticle/TableArticle";
+import { ArticleZustand } from "@/zustand/Article/article";
 
 export default function Dashboard() {
+ 
   const routerr = usePathname();
   const pathSegments = routerr.split("/");
   const adminIndex = pathSegments.indexOf("admin");
@@ -25,16 +29,15 @@ export default function Dashboard() {
           Total Testimoni
         </div>
       </div>
-      <div className="flex space-x-6 w-full p-4">
-        <div className="bg-white font-bold w-full h-[50vh] rounded-lg shadow-md p-4 flex-1">
-          <p className="border-b">Banner</p>
+      <div className="flex space-x-6 w-full p-4 ">
+        <div className="bg-white  w-full  rounded-lg shadow-md p-4 flex-1">
+          <p className="border-b font-bold">Banner</p>
+          <TableBanner />
         </div>
-        <div className="bg-white font-bold w-full h-[50vh] rounded-lg shadow-md p-4 flex-1">
-          <p className="border-b">Article</p>
+        <div className="bg-white  w-full rounded-lg shadow-md p-4 flex-1">
+          <p className="border-b font-bold">Article</p>
+          <TableArticle />
         </div>
-      </div>
-      <div className="w-full  p-4">
-        This div uses the full width available within the content area.
       </div>
     </Sidebar>
   );

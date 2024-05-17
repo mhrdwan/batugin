@@ -1,44 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FooterComp from "../Home/Footer";
-
-const provinsi = [
-  "Aceh",
-  "Sumatera Utara",
-  "Sumatera Barat",
-  "Riau",
-  "Kepulauan Riau",
-  "Jambi",
-  "Bengkulu",
-  "Sumatera Selatan",
-  "Bangka Belitung",
-  "Lampung",
-  "DKI Jakarta",
-  "Banten",
-  "Jawa Barat",
-  "Jawa Tengah",
-  "DI Yogyakarta",
-  "Jawa Timur",
-  "Bali",
-  "Nusa Tenggara Barat (NTB)",
-  "Nusa Tenggara Timur (NTT)",
-  "Kalimantan Barat",
-  "Kalimantan Tengah",
-  "Kalimantan Selatan",
-  "Kalimantan Timur",
-  "Kalimantan Utara",
-  "Sulawesi Utara",
-  "Gorontalo",
-  "Sulawesi Tengah",
-  "Sulawesi Barat",
-  "Sulawesi Selatan",
-  "Sulawesi Tenggara",
-  "Maluku",
-  "Maluku Utara",
-  "Papua Barat",
-  "Papua"
-];
+import { Select } from "antd";
+import { LokasiZustand } from "@/zustand/location/lokasi";
 
 function LokasiKamiBaru() {
+  const { getLokasi, DataLokasi } = LokasiZustand();
+  useEffect(() => {
+    getLokasi();
+  }, []);
   const [selectedProvinsi, setSelectedProvinsi] = useState("");
 
   const handleProvinsiChange = (e) => {
@@ -48,7 +17,9 @@ function LokasiKamiBaru() {
   return (
     <div>
       <div className="flex flex-col items-start mt-14">
-        <div className="text-2xl font-semibold text-yellow-900">Lokasi Kami</div>
+        <div className="text-2xl font-semibold text-yellow-900">
+          Lokasi Kami
+        </div>
         <div className="shrink-0 mt-1 max-w-full h-1 bg-red-600 w-[262px]" />
         <div className="mt-2 text-base text-zinc-600">
           Kamu mau ke offline store kami?
@@ -58,16 +29,28 @@ function LokasiKamiBaru() {
             <div className="flex flex-col ml-5 w-full max-md:ml-0 max-md:w-full">
               <div className="flex grow gap-2 justify-between self-stretch px-6 py-3 w-full text-xl font-medium text-black whitespace-nowrap bg-white max-md:flex-wrap max-md:px-5 max-md:mt-10 max-md:max-w-full">
                 <div>Provinsi</div>
-                <select
-                  value={selectedProvinsi}
-                  onChange={handleProvinsiChange}
-                  className="w-full py-1 pl-3 pr-8 leading-tight text-gray-700 border border-gray-400 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                <Select placeholder="Cari Provinsi" style={{ width: "100%" }}>
+                  <Select.Option>Cari Provinsi</Select.Option>
+                  {Array.isArray(DataLokasi)?.provinsi?.map(
+                    (provinsi, index) => (
+                      <Select.Option key={index} value={provinsi}>
+                        {provinsi?.provinsi}
+                      </Select.Option>
+                    )
+                  )}
+                </Select>
+                <div>Kota</div>
+                <Select
+                  disabled={!DataLokasi.kota}
+                  placeholder="Cari Kota"
+                  style={{ width: "100%" }}
                 >
-                  <option value="">Pilih Provinsi</option>
-                  {provinsi.map((provinsi) => (
-                    <option key={provinsi} value={provinsi}>{provinsi}</option>
+                  {Array.isArray(DataLokasi).kota?.map((provinsi, index) => (
+                    <Select.Option key={index} value={provinsi}>
+                      {provinsi}
+                    </Select.Option>
                   ))}
-                </select>
+                </Select>
               </div>
             </div>
             <div className="flex flex-col ml-5 w-[10%] max-md:ml-0 max-md:w-full">
