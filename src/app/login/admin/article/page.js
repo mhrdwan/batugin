@@ -9,6 +9,7 @@ function Article() {
   useEffect(() => {
     getArticle();
   }, []);
+  
   const columns = [
     {
       title: "No",
