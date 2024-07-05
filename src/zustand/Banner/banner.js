@@ -1,3 +1,4 @@
+import { baseURL } from "@/app/api/baseUrl";
 import axios from "axios";
 
 const { create } = require("zustand");
@@ -8,7 +9,7 @@ export const BannerZustand = create((set, get) => ({
   getBanner: async () => {
     try {
       const response = await axios.get(
-        `https://batuginbackend.whandev.tech/banner/get-banner-home`
+        `${baseURL}banner/get-banner-home`
       );
       console.log(response.data);
       set({ DataBanner: response.data });

@@ -1,9 +1,40 @@
+"use client";
 import NavbarComp from "@/components/NavbarComp";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import gambAr from "../../../public/assets/loginKiri.png";
+import axios from "axios";
+import { baseURL } from "../api/baseUrl";
+import { notification } from "antd";
+import { useRouter } from 'next/navigation'
 
 function page() {
+  const [email , setEmail]=useState("")
+  const [password , setPassword]=useState("")
+
+ 
+  const router = useRouter()
+
+  async function login() {
+    const body = {
+      username: email,
+      password: password,
+    };
+    try {
+      const response = await axios.post(`${baseURL}auth/login-admin`, body);
+      notification.success({
+        message: "Sukses Login",
+      });
+      router.push('/login/admin/dashboard')
+    } catch (error) {
+      console.log(error.response);
+      notification.error({
+        message:
+          error.response?.data?.status.message || "Username / Password salah",
+      });
+    }
+  }
+
   return (
     <div>
       <NavbarComp />
@@ -17,6 +48,7 @@ function page() {
             Email
           </div>
           <input
+            onChange={(e) => setEmail(e.target.value)}
             placeholder=" Tuliskan email anda"
             className="Frame113 w-96 h-12 p-3 rounded-sm border border-yellow-900 justify-start items-center gap-2 inline-flex"
           />
@@ -25,7 +57,8 @@ function page() {
           </div>
           <div className="w-96">
             <input
-            type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
               placeholder="Masukkan Password"
               className="Frame113 w-96 h-12 p-3 rounded-sm border border-yellow-900 justify-start items-center gap-2 inline-flex"
             />
@@ -33,7 +66,10 @@ function page() {
               Lupa password?
             </div>
           </div>
-          <div className="hover:cursor-pointer ButtonSmall mt-[78px] w-96 h-12 px-5 py-2 bg-red-600 rounded-sm justify-center items-center gap-2 inline-flex">
+          <div
+            onClick={login}
+            className="hover:cursor-pointer ButtonSmall mt-[78px] w-96 h-12 px-5 py-2 bg-red-600 rounded-sm justify-center items-center gap-2 inline-flex"
+          >
             <div className="Login text-white text-base font-medium font-['Poppins']">
               Login
             </div>

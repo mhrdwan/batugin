@@ -39,17 +39,16 @@ export default function ArtikelKamiSwipper({ ArtikelKami }) {
       modules={[Autoplay]}
       className="mySwiper"
     >
-      {ArtikelKami.map((item) => (
-        <SwiperSlide key={item.id}>
+      {ArtikelKami?.map((item) => (
+        <SwiperSlide key={item.no}>
           <div className="w-[282px] h-[416px] p-3 bg-neutral-50 rounded-sm shadow flex-col justify-start items-start gap-3 inline-flex">
             <img
               className="self-stretch h-[272px] rounded-sm"
-              src="https://via.placeholder.com/258x272"
+              src={item?.foto}
             />
 
             <div className="self-stretch text-start text-black text-sm font-medium font-['Inter'] leading-normal">
-              Negara-negara yang membuat ekspor Jamu indonesia meningkat di
-              tahun 2..
+             {item.sub_title}
             </div>
             <div className="w-[258px] h-12 px-5 py-2 bg-red-600 rounded-sm justify-center items-center gap-2 inline-flex">
               <div className="text-white text-base font-medium font-['Poppins']">

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import daunKanan from "../../../public/assets/daunkanan.png";
 import daunKanan2 from "../../../public/assets/daun2.png";
 import Vector from "../../../public/assets/Vector.png";
@@ -20,13 +20,27 @@ import banner1 from "../../../public/assets/Banner_Home/Banner 01.png";
 import banner2 from "../../../public/assets/Banner_Home/Banner 02.png";
 import banner3 from "../../../public/assets/Banner_Home/Banner 03.png";
 import banner4 from "../../../public/assets/Banner_Home/Banner 04.png";
+import axios from "axios";
 
 const bannerHome = [banner1, banner2, banner3, banner4];
 
 function ArtikelKami() {
   const routerr = usePathname();
   console.log(`ini router`, routerr);
+  const [dataArtikel, setdataArtikel] = useState("");
 
+  async function getArtikel() {
+    try {
+      const response = await axios.get(`/api/v1/artikel`);
+      console.log(`ini response`, response.data.artikel);
+      setdataArtikel(response.data.artikel);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(() => {
+    getArtikel();
+  }, []);
   const ArtikelKami = [
     {
       id: 1,
@@ -135,7 +149,7 @@ function ArtikelKami() {
           {/* </div> */}
           {/* </div> */}
 
-          <ArtikelKamiSwipper ArtikelKami={ArtikelKami} />
+          <ArtikelKamiSwipper ArtikelKami={ dataArtikel.data} />
 
           <div className="ml-[-11.75rem] mt-[9.7rem]">
             <Image src={Vector5} />
@@ -179,7 +193,7 @@ function ArtikelKami() {
               <div className="tengah pl-[222px] mx-auto  pr-[222px]">
                 <div className="Frame72  w-48 mb-5 h-10 flex-col justify-center items-center gap-0.5 inline-flex">
                   <div className="OutAchivement text-yellow-900 text-2xl font-semibold font-['Poppins']">
-                    Out Achivement
+                    Our Achivement
                   </div>
                   <div className="Rectangle6 self-stretch h-1 bg-red-600" />
                 </div>
@@ -214,7 +228,7 @@ function ArtikelKami() {
           </div>
           <div className="mt-20 flex justify-center space-x-5">
             {bannerHome.map((item, index) => (
-              <div key={index} >
+              <div key={index}>
                 <Image
                   src={item}
                   alt={`Banner ${index + 1}`}
