@@ -1,15 +1,16 @@
 "use client";
 import { ArticleZustand } from "@/zustand/Article/article";
 import { Button, Table } from "antd";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../page";
+import ModalArtikelBaru from "@/components/ModalArtikelBaru/ModalArtikelBaru";
 
 function Article() {
   const { getArticle, DataArticle, loading } = ArticleZustand();
   useEffect(() => {
     getArticle();
   }, []);
-  
+  const [openModal, setOpenModal] = useState(false);
   const columns = [
     {
       title: "No",
@@ -58,14 +59,21 @@ function Article() {
   return (
     <div>
       <Sidebar title="Article">
+        <Button
+          onClick={() => setOpenModal(true)}
+          style={{ backgroundColor: "#fddb1d", color: "black" }}
+        >
+          Artikel Baru
+        </Button>
         <Table
           loading={loading}
           scroll={{
-            y: 240,
+            y: 500,
           }}
           dataSource={DataArticle?.data}
           columns={columns}
         />
+        <ModalArtikelBaru openModal={openModal} setOpenModal={setOpenModal}/>
       </Sidebar>
     </div>
   );

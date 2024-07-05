@@ -66,7 +66,7 @@ export default function Banner() {
   return (
     <div>
       <Sidebar title={partAfterAdmin}>
-      <Table columns={columns} dataSource={DataBanner?.data} />;
+      <Table columns={columns} dataSource={DataBanner?.data} />
       </Sidebar>
     </div>
   );

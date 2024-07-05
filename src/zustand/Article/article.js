@@ -1,3 +1,4 @@
+import { baseURL } from "@/app/api/baseUrl";
 import axios from "axios";
 
 const { create } = require("zustand");
@@ -8,7 +9,7 @@ export const ArticleZustand = create((set, get) => ({
   getArticle: async () => {
     try {
       const response = await axios.get(
-        `https://batuginbackend.whandev.tech/article/get-article?page=1&limit=10`
+        `${baseURL}article/get-article?page=1&limit=10`
       );
       set({ DataArticle: response.data });
       set({ loading: false });

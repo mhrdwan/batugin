@@ -12,7 +12,6 @@ export default function TableArticle() {
       title: "No",
       dataIndex: "no",
       key: "name",
-      width:70
     },
     {
       title: "Title",

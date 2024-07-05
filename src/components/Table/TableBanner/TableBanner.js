@@ -12,7 +12,6 @@ export default function TableBanner() {
       title: "No",
       dataIndex: "id",
       key: "id",
-      width:70
     },
     {
       title: "Banner",
