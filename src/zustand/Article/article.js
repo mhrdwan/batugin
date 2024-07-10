@@ -30,11 +30,23 @@ export const ArticleZustand = create((set, get) => ({
   },
 
   // Upload Artikel
-  uploadArtikel: async (forrm) => {
-    const form = new FormData();
-    form.append("cover", form.cover);
+  uploadArtikel: async (form) => {
+    const formData = new FormData();
+    formData.append("cover", 'test');
+    formData.append("title", form.title);
+    formData.append("sub_title", form.subTitle);
+    formData.append("content", form.content);
+    console.log(`form`, form);
     try {
-      const response = await axios.get(`${baseURL}article/add-article`);
+      const response = await axios.post(
+        `${baseURL}article/add-article`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       set({ detailDataArticle: response.data });
     } catch (error) {
       set({ loading: false });

@@ -8,13 +8,24 @@ import ArtikelKami from "@/components/Home/ArtikelKami";
 import FooterComp from "@/components/Home/Footer";
 import { ArticleZustand } from "@/zustand/Article/article";
 
+const styles = {
+  content: {
+    fontFamily: "'Poppins', sans-serif",
+    marginTop: '6px',
+  },
+  list: {
+    listStyleType: 'decimal',
+    marginLeft: '20px',
+  },
+};
+
 export default function Artikel({ params }) {
   const { getDetailArticle, detailDataArticle } = ArticleZustand();
+
   useEffect(() => {
     getDetailArticle(params.id);
-  }, []);
-  console.log(`slug`, params);
-  console.log(`detailDataArticle`, detailDataArticle.data);
+  }, [getDetailArticle, params.id]);
+
   return (
     <div className="bg-white">
       <NavbarComp />
@@ -32,16 +43,18 @@ export default function Artikel({ params }) {
       </div>
 
       <div className="pl-[1.42rem] pr-[1.42rem] md:pl-[8.5rem] md:pr-[8.5rem]">
-        <h1 className="text-[12px] md:text-[24px] font-semibold text-start mt-6 font-poopin ">
+        <h1 className="text-[12px] md:text-[24px] font-semibold text-start mt-6 font-poopin">
           {detailDataArticle?.data?.[0].sub_title} - {detailDataArticle?.data?.[0].title}
         </h1>
         <p className="text-start md:text-[16px] text-[10px] mt-2 text-gray-600">
           {detailDataArticle?.data?.[0].createdAt}
         </p>
-        <div className="  mt-6 ">
-          <p className="font-medium md:text-[16px] font-poopin">
-            {detailDataArticle?.data?.[0].content}
-          </p>
+        <div className="mt-6">
+          <div
+            className="font-medium md:text-[16px] font-poopin"
+            style={styles.content}
+            dangerouslySetInnerHTML={{ __html: detailDataArticle?.data?.[0].content }}
+          ></div>
         </div>
         <div className="mt-[10rem]">
           <ArtikelKami />
