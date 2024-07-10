@@ -1,4 +1,5 @@
 import { baseURL } from "@/app/api/baseUrl";
+import { message } from "antd";
 import axios from "axios";
 
 const { create } = require("zustand");
@@ -32,7 +33,7 @@ export const ArticleZustand = create((set, get) => ({
   // Upload Artikel
   uploadArtikel: async (form) => {
     const formData = new FormData();
-    formData.append("cover", 'test');
+    formData.append("cover", form.image);
     formData.append("title", form.title);
     formData.append("sub_title", form.subTitle);
     formData.append("content", form.content);
@@ -47,8 +48,11 @@ export const ArticleZustand = create((set, get) => ({
           },
         }
       );
-      set({ detailDataArticle: response.data });
+      set({ detailDataArticle: response.data});
+      console.log(response?.data?.status?.message)
+      message.success(response?.data?.status?.message)
     } catch (error) {
+      message.error(error?.response?.data?.status?.message || 'gagal upload artikel')
       set({ loading: false });
     }
   },

@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { Modal, Button, Input, Row, Upload } from "antd";
+import { Modal, Button, Input, Row, Upload, message } from "antd";
 import dynamic from "next/dynamic";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css";
 import { ArticleZustand } from "@/zustand/Article/article";
+
 export default function ModalArtikelBaru({ openModal, setOpenModal }) {
   const [content, setContent] = useState("");
   const [contentUpload, setContentUpload] = useState({
     title: "",
     subTitle: "",
+    image: null, // Tambahkan state untuk menyimpan gambar
   });
   const { uploadArtikel } = ArticleZustand();
 
@@ -28,6 +30,15 @@ export default function ModalArtikelBaru({ openModal, setOpenModal }) {
     uploadArtikel({ ...contentUpload, content });
   };
 
+  const handleUploadChange = (info) => {
+    console.log(`info`, info.file.originFileObj);
+      setContentUpload({
+        ...contentUpload,
+        image: info.file.originFileObj,
+      });
+   
+  };
+
   const modules = {
     toolbar: [
       [{ header: [1, 2, false] }],
@@ -42,18 +53,7 @@ export default function ModalArtikelBaru({ openModal, setOpenModal }) {
       ["clean"],
     ],
   };
-  const props = {
-    action: "https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload",
-    onChange({ file, fileList }) {
-      if (file.type == "image/jpeg") {
-        console.log('boleh')
-      }else{
-        console.log('tidak boleh')
-        fileList.pop()
-        return;
-      }
-    },
-  };
+
   const formats = [
     "header",
     "bold",
@@ -92,8 +92,8 @@ export default function ModalArtikelBaru({ openModal, setOpenModal }) {
               onChange={handleTyping}
               placeholder="Masukkan Sub Title"
             />
-            <Upload {...props}>
-              <Button >Upload</Button>
+            <Upload onChange={handleUploadChange}>
+              <Button>Upload</Button>
             </Upload>
           </Row>
           <ReactQuill
