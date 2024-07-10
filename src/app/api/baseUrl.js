@@ -1,1 +1,1 @@
-export const baseURL = 'http://159.223.85.15:2000/'
+export const baseURL = 'https://be-erklika.mhridwan.com/'
