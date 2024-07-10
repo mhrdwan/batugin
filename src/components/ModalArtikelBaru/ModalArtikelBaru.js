@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Modal, Button, Input, Row, Upload, message } from "antd";
+import { Modal, Button, Input, Row, Upload } from "antd";
 import dynamic from "next/dynamic";
 
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
-import "react-quill/dist/quill.snow.css";
+const CKEditor = dynamic(() => import("@ckeditor/ckeditor5-react").then(mod => mod.CKEditor), { ssr: false });
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ArticleZustand } from "@/zustand/Article/article";
 
 export default function ModalArtikelBaru({ openModal, setOpenModal }) {
@@ -35,37 +35,7 @@ export default function ModalArtikelBaru({ openModal, setOpenModal }) {
         ...contentUpload,
         image: info.file.originFileObj,
       });
-   
   };
-
-  const modules = {
-    toolbar: [
-      [{ header: [1, 2, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" },
-      ],
-      ["link", "image"],
-      ["clean"],
-    ],
-  };
-
-  const formats = [
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-  ];
 
   return (
     <Modal
@@ -95,13 +65,13 @@ export default function ModalArtikelBaru({ openModal, setOpenModal }) {
               <Button>Masukkan Foto</Button>
             </Upload>
           </Row>
-          <ReactQuill
-            theme="snow"
-            className="mt-3"
-            value={content}
-            onChange={setContent}
-            modules={modules}
-            formats={formats}
+          <CKEditor
+            editor={ClassicEditor}
+            data={content}
+            onChange={(event, editor) => {
+              const data = editor.getData();
+              setContent(data);
+            }}
             style={{ height: "400px", marginBottom: "50px" }}
           />
           <div
