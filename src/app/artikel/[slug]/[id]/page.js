@@ -18,11 +18,11 @@ export default function Artikel({ params }) {
   return (
     <div className="bg-white">
       <NavbarComp />
-      <div className="relative h-[8.9rem] md:h-[30rem] bg-red-400 overflow-hidden">
+      <div className="relative h-[8.9rem] md:h-[30rem] bg-red-200 overflow-hidden">
         {detailDataArticle?.data?.foto &&
           detailDataArticle.data.foto.startsWith("/") && (
             <Image
-              src={detailDataArticle.data.foto}
+              src={'https://be-erklika.mhridwan.com/article/2024~articlePhoto-1720182076695.jpg'}
               alt="Banner Artikel"
               layout="fill"
               objectFit="cover"
@@ -33,22 +33,15 @@ export default function Artikel({ params }) {
 
       <div className="pl-[1.42rem] pr-[1.42rem] md:pl-[8.5rem] md:pr-[8.5rem]">
         <h1 className="text-[12px] md:text-[24px] font-semibold text-start mt-6 font-poopin ">
-          {detailDataArticle?.data?.sub_title} -{" "}
-          {detailDataArticle?.data?.title}
+          {detailDataArticle?.data?.[0].sub_title} -
+          {detailDataArticle?.data?.[0].title}
         </h1>
         <p className="text-start md:text-[16px] text-[10px] mt-2 text-gray-600">
-          {detailDataArticle?.data?.createdAt}
+          {detailDataArticle?.data?.[0].createdAt}
         </p>
         <div className="  mt-6 ">
           <p className="font-medium md:text-[16px] font-poopin">
-            {detailDataArticle?.data?.content}
-          </p>
-          <p className="mt-4 md:text-[16px] font-medium font-poopin">
-            Duis non sapien at turpis interdum lobortis. Aenean ullamcorper
-            turpis sed turpis accumsan tincidunt. Nam ullamcorper congue
-            suscipit. Integer nec nisi ut risus consequat volutpat. Vivamus ac
-            quam ut velit viverra tempor. Phasellus aliquet neque sit amet justo
-            eleifend, et malesuada libero ultrices.
+            {detailDataArticle?.data?.[0].content}
           </p>
         </div>
         <div className="mt-[10rem]">

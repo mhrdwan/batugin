@@ -17,20 +17,20 @@ function FooterComp({ mt = 20 }) {
                 <Image src={logo} />
               </div>
               <div className="flex flex-col text-start">
-                <div className="font-semibold text-accents-2 text-[1.25rem]">
+                <div className="font-semibold text-accents-2 text-[1.15rem]">
                   Tentang
                 </div>
-                <div className="text-[1rem] text-accents-2 ">
+                <div className="text-[0.7rem] text-accents-2 ">
                   <div>About</div>
                   <div>Help Center</div>
                   <div>Store</div>
                 </div>
               </div>
               <div className="flex flex-col text-start">
-                <div className="font-semibold text-accents-2 text-[1.25rem]">
+                <div className="font-semibold text-accents-2 text-[1.15rem]">
                   Social Media
                 </div>
-                <div className="text-[1rem] text-accents-2 ">
+                <div className="text-[0.7rem] text-accents-2 ">
                   <div className="hover:cursor-pointer" onClick={()=>window.open("https://www.instagram.com/batuginkf/","_blank")}>Instagram</div>
                   <div className="hover:cursor-pointer" onClick={()=>window.open("https://www.facebook.com/BatuginID","_blank")}>Facebook</div>
                   <div className="hover:cursor-pointer" onClick={()=>window.open("https://www.tiktok.com/@batuginkf","_blank")}>Tiktok</div>
@@ -38,20 +38,20 @@ function FooterComp({ mt = 20 }) {
                 </div>
               </div>
               <div className="flex flex-col text-start">
-                <div className="font-semibold text-accents-2 text-[1.25rem]">
+                <div className="font-semibold text-accents-2 text-[1.15rem]">
                   Others
                 </div>
-                <div className="text-[1rem] text-accents-2 ">
+                <div className="text-[0.7rem] text-accents-2 ">
                   <div>Store</div>
                   <div>Points</div>
                   <div>Leadderboard</div>
                 </div>
               </div>
               <div className="flex flex-col text-start">
-                <div className="font-semibold text-accents-2 text-[1.25rem]">
+                <div className="font-semibold text-accents-2 text-[1.15rem]">
                   Contact
                 </div>
-                <div className="text-[1rem] text-accents-2 ">
+                <div className="text-[0.7rem] text-accents-2 ">
                   <div>batugin.support@gmail.com</div>
                   <div>(021) 1238-2309</div>
                   <div>(Whatsapp) 0812-2389-1239 </div>
