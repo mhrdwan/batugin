@@ -1,3 +1,4 @@
+import { baseURL } from "@/app/api/baseUrl";
 import axios from "axios";
 
 const { create } = require("zustand");
@@ -14,7 +15,7 @@ export const LokasiZustand = create((set, get) => ({
     const id_kota = get().id_kota;
     try {
       const response = await axios.get(
-        `https://batuginbackend.whandev.tech/location/get-select-location?id_provinsi=${id_provinsi}&id_kota=${id_kota}`
+        `${baseURL}location/get-select-location?id_provinsi=${id_provinsi}&id_kota=${id_kota}`
       );
       // console.log(response.data);
       set({ DataLokasi: response.data });

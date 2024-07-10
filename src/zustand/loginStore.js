@@ -1,3 +1,4 @@
+import { baseURL } from "@/app/api/baseUrl";
 import axios from "axios";
 
 const { create } = require("zustand");
@@ -24,7 +25,7 @@ export const LoginZustand = create((set, get) => ({
     set({ loading: true });
     try {
       const response = await axios.post(
-        `https://batuginbackend.whandev.tech/auth/login-admin`,
+        `${baseURL}auth/login-admin`,
         {
           username: userPassword.username,
           password: userPassword.password,
