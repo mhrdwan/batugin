@@ -12,6 +12,8 @@ const styles = {
   content: {
     fontFamily: "'Poppins', sans-serif",
     marginTop: '6px',
+    maxWidth: '1400px',
+    margin: '0 auto',
   },
 };
 
@@ -48,11 +50,11 @@ console.log(`detailDataArticle.data?.[0]?.foto`,detailDataArticle?.data?.[0]?.fo
         <p className="text-start md:text-[16px] text-[10px] mt-2 text-gray-600">
           {detailDataArticle?.data?.[0]?.createdAt}
         </p>
-        <div className="mt-6">
+        <div className="mt-6  w-full">
           {detailDataArticle?.data?.[0]?.content && (
             <div
               dangerouslySetInnerHTML={{ __html: detailDataArticle.data[0].content }}
-              className="prose"
+              className="prose  "
               style={styles.content}
             >
             </div>

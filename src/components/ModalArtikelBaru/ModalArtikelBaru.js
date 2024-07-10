@@ -73,7 +73,7 @@ export default function ModalArtikelBaru({ openModal, setOpenModal }) {
       open={openModal}
       onCancel={() => setOpenModal(false)}
       footer={null}
-      width={900}
+      width={1400}
       style={{ height: 700, display: "flex", flexDirection: "column" }}
     >
       {typeof window !== "undefined" && (
