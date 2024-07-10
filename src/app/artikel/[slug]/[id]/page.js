@@ -7,6 +7,7 @@ import Image from "next/image";
 import ArtikelKami from "@/components/Home/ArtikelKami";
 import FooterComp from "@/components/Home/Footer";
 import { ArticleZustand } from "@/zustand/Article/article";
+import parse from 'html-react-parser';
 
 const styles = {
   content: {
@@ -50,11 +51,14 @@ export default function Artikel({ params }) {
           {detailDataArticle?.data?.[0].createdAt}
         </p>
         <div className="mt-6">
-          <div
-            className="font-medium md:text-[16px] font-poopin"
-            style={styles.content}
-            dangerouslySetInnerHTML={{ __html: detailDataArticle?.data?.[0].content }}
-          ></div>
+          {detailDataArticle?.data?.[0]?.content && (
+            <div dangerouslySetInnerHTML={{__html :detailDataArticle.data[0].content}}
+              className=""
+              style={styles.content}
+            >
+              {/* {parse(detailDataArticle.data[0].content)} */}
+            </div>
+          )}
         </div>
         <div className="mt-[10rem]">
           <ArtikelKami />

@@ -33,27 +33,27 @@ function Article() {
       dataIndex: "foto",
       key: "address",
     },
-    {
-      title: "Edit",
-      render: () => {
-        return (
-          <>
-            <Button
-              size="sm"
-              style={{ backgroundColor: "#1677ff", color: "white" }}
-            >
-              Edit
-            </Button>
-            <Button
-              size="sm"
-              style={{ backgroundColor: "red", color: "white" }}
-            >
-              Hapus
-            </Button>
-          </>
-        );
-      },
-    },
+    // {
+    //   title: "Edit",
+    //   render: () => {
+    //     return (
+    //       <>
+    //         <Button
+    //           size="sm"
+    //           style={{ backgroundColor: "#1677ff", color: "white" }}
+    //         >
+    //           Edit
+    //         </Button>
+    //         <Button
+    //           size="sm"
+    //           style={{ backgroundColor: "red", color: "white" }}
+    //         >
+    //           Hapus
+    //         </Button>
+    //       </>
+    //     );
+    //   },
+    // },
   ];
 
   return (
