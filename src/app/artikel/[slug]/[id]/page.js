@@ -27,13 +27,11 @@ export default function Artikel({ params }) {
   if (!isClient) {
     return null; // Atau spinner/loading state
   }
-
+console.log(`detailDataArticle.data?.[0]?.foto`,detailDataArticle?.data?.[0]?.foto)
   return (
     <div className="bg-white">
       <NavbarComp />
       <div className="relative h-[8.9rem] md:h-[30rem] bg-red-200 overflow-hidden">
-        {detailDataArticle?.data?.foto &&
-          detailDataArticle.data.foto.startsWith("/") && (
             <Image
               src={detailDataArticle.data?.[0]?.foto}
               alt="Banner Artikel"
@@ -41,15 +39,14 @@ export default function Artikel({ params }) {
               objectFit="cover"
               objectPosition="center"
             />
-          )}
       </div>
 
       <div className="pl-[1.42rem] pr-[1.42rem] md:pl-[8.5rem] md:pr-[8.5rem]">
         <h1 className="text-[12px] md:text-[24px] font-semibold text-start mt-6 font-poopin">
-          {detailDataArticle?.data?.[0].sub_title} - {detailDataArticle?.data?.[0].title}
+          {detailDataArticle?.data?.[0]?.sub_title} - {detailDataArticle?.data?.[0]?.title}
         </h1>
         <p className="text-start md:text-[16px] text-[10px] mt-2 text-gray-600">
-          {detailDataArticle?.data?.[0].createdAt}
+          {detailDataArticle?.data?.[0]?.createdAt}
         </p>
         <div className="mt-6">
           {detailDataArticle?.data?.[0]?.content && (
