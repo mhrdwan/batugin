@@ -7,7 +7,7 @@ import "react-quill/dist/quill.snow.css";
 
 export default function ModalArtikelBaru({ openModal, setOpenModal }) {
   const [content, setContent] = useState("");
-console.log(content)
+// console.log(content)
   const modules = {
     toolbar: [
       [{ header: [1, 2, false] }],

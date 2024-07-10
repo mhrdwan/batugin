@@ -5,6 +5,7 @@ const { create } = require("zustand");
 
 export const ArticleZustand = create((set, get) => ({
   DataArticle: [],
+  detailDataArticle: "",
   loading: true,
   getArticle: async () => {
     try {
@@ -13,6 +14,16 @@ export const ArticleZustand = create((set, get) => ({
       );
       set({ DataArticle: response.data });
       set({ loading: false });
+    } catch (error) {
+      set({ loading: false });
+    }
+  },
+  getDetailArticle: async (id) => {
+    try {
+      const response = await axios.get(
+        `${baseURL}article/get-article-detail?id_article=${id}`
+      );
+      set({ detailDataArticle: response.data });
     } catch (error) {
       set({ loading: false });
     }

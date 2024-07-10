@@ -21,6 +21,7 @@ import banner2 from "../../../public/assets/Banner_Home/Banner 02.png";
 import banner3 from "../../../public/assets/Banner_Home/Banner 03.png";
 import banner4 from "../../../public/assets/Banner_Home/Banner 04.png";
 import axios from "axios";
+import { baseURL } from "@/app/api/baseUrl";
 
 const bannerHome = [banner1, banner2, banner3, banner4];
 
@@ -31,9 +32,11 @@ function ArtikelKami() {
 
   async function getArtikel() {
     try {
-      const response = await axios.get(`/api/v1/artikel`);
-      console.log(`ini response`, response.data.artikel);
-      setdataArtikel(response.data.artikel);
+      const response = await axios.get(
+        `${baseURL}article/get-article?page=1&limit=10`
+      );
+      console.log(`ini response`, response.data.data);
+      setdataArtikel(response.data.data);
     } catch (error) {
       console.log(error);
     }
@@ -41,6 +44,8 @@ function ArtikelKami() {
   useEffect(() => {
     getArtikel();
   }, []);
+
+  console.log(`ini dataArtikel`, dataArtikel);
   const ArtikelKami = [
     {
       id: 1,
@@ -127,6 +132,7 @@ function ArtikelKami() {
           <p className="font-normal mt-3 text-[1rem] text-neutral-3">
             Sharing is caring
           </p>
+
           {/* <div className=" flex justify-center bg-red-500  "> */}
           {/* <div className="md:grid flex md:grid-cols-4  w-full lg:grid-cols-4 gap-12 mt-20 overflow-x-scroll">
             {ArtikelKami.map((item) => (
@@ -149,7 +155,7 @@ function ArtikelKami() {
           {/* </div> */}
           {/* </div> */}
 
-          <ArtikelKamiSwipper ArtikelKami={ dataArtikel.data} />
+          <ArtikelKamiSwipper dataArtikel={dataArtikel || []} />
 
           <div className="ml-[-11.75rem] mt-[9.7rem]">
             <Image src={Vector5} />
