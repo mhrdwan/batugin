@@ -48,11 +48,25 @@ export const ArticleZustand = create((set, get) => ({
           },
         }
       );
-      set({ detailDataArticle: response.data});
-      console.log(response?.data?.status?.message)
-      message.success(response?.data?.status?.message)
+      set({ detailDataArticle: response.data });
+      console.log(response?.data?.status?.message);
+      message.success(response?.data?.status?.message);
     } catch (error) {
-      message.error(error?.response?.data?.status?.message || 'gagal upload artikel')
+      message.error(
+        error?.response?.data?.status?.message || "gagal upload artikel"
+      );
+      set({ loading: false });
+    }
+  },
+  // delete artikel
+  deleteArtikel: async (id) => {
+    const body = {
+      id_article: id,
+    };
+    try {
+      const response = await axios.get(`${baseURL}article/delete-article`,body);
+      set({ detailDataArticle: response.data });
+    } catch (error) {
       set({ loading: false });
     }
   },

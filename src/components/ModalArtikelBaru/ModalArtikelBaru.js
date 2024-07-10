@@ -74,8 +74,8 @@ export default function ModalArtikelBaru({ openModal, setOpenModal }) {
       open={openModal}
       onCancel={() => setOpenModal(false)}
       footer={null}
-      width={800}
-      style={{ height: 600, display: "flex", flexDirection: "column" }}
+      width={900}
+      style={{ height: 700, display: "flex", flexDirection: "column" }}
     >
       {typeof window !== "undefined" && (
         <>
@@ -93,7 +93,7 @@ export default function ModalArtikelBaru({ openModal, setOpenModal }) {
               placeholder="Masukkan Sub Title"
             />
             <Upload onChange={handleUploadChange}>
-              <Button>Upload</Button>
+              <Button>Masukkan Foto</Button>
             </Upload>
           </Row>
           <ReactQuill

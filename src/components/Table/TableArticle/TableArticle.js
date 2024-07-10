@@ -1,40 +1,83 @@
+import ModalArtikelBaru from "@/components/ModalArtikelBaru/ModalArtikelBaru";
 import { ArticleZustand } from "@/zustand/Article/article";
-import { Button, Table } from "antd";
-import React, { useEffect } from "react";
+import { Button, Popconfirm, Table } from "antd";
+import React, { useEffect, useState } from "react";
 
 export default function TableArticle() {
   const { getArticle, DataArticle, loading } = ArticleZustand();
+  const [visiblePopConfirm, setVisiblePopConfirm] = useState(null);
+  const [openModal, setOpenModal] = useState(null);
+
   useEffect(() => {
     getArticle();
   }, []);
+
+  const handleDelete = (key) => {
+    // Add your delete logic here
+    console.log(`Deleted item with key: ${key}`);
+    setVisiblePopConfirm(null);
+  };
+
+  const handleCancel = () => {
+    setVisiblePopConfirm(null);
+  };
+
   const columns = [
     {
       title: "No",
       dataIndex: "no",
-      key: "name",
+      key: "no",
     },
     {
       title: "Title",
       dataIndex: "title",
-      key: "age",
+      key: "title",
     },
     {
       title: "Sub Title",
       dataIndex: "sub_title",
-      key: "address",
+      key: "sub_title",
     },
     {
       title: "Foto",
       dataIndex: "foto",
-      key: "address",
+      key: "foto",
     },
     {
       title: "Edit",
-      render: () => {
+      key: "edit",
+      render: (text, record) => {
         return (
           <>
-            <Button size="sm" style={{backgroundColor :"#1677ff" , color :"white"}}>Edit</Button>
-            <Button size="sm" style={{backgroundColor :"red" , color :"white"}}>Hapus</Button>
+            <ModalArtikelBaru
+              openModal={openModal === record.key}
+              setOpenModal={() => setOpenModal(null)}
+            />
+            <Button
+              size="sm"
+              onClick={() => setOpenModal(record.key)}
+              style={{ backgroundColor: "#1677ff", color: "white" }}
+            >
+              Edit
+            </Button>
+            <Popconfirm
+              title="Hapus Artikel"
+              description="Yakin menghapus artikel?"
+              visible={visiblePopConfirm === record.key}
+              onConfirm={() => handleDelete(record.key)}
+              onCancel={handleCancel}
+              okText="Yes"
+              cancelText="No"
+            >
+              <Button
+                danger
+                onClick={() => setVisiblePopConfirm(record.key)}
+                size="sm"
+                style={{ backgroundColor: "red", color: "white" }}
+              >
+                Hapus
+              </Button>
+            </Popconfirm>
           </>
         );
       },
@@ -48,7 +91,10 @@ export default function TableArticle() {
         scroll={{
           y: 240,
         }}
-        dataSource={DataArticle?.data}
+        dataSource={DataArticle?.data.map((item, index) => ({
+          ...item,
+          key: index,
+        }))}
         columns={columns}
       />
     </div>
