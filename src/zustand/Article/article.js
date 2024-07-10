@@ -28,4 +28,16 @@ export const ArticleZustand = create((set, get) => ({
       set({ loading: false });
     }
   },
+
+  // Upload Artikel
+  uploadArtikel: async (forrm) => {
+    const form = new FormData();
+    form.append("cover", form.cover);
+    try {
+      const response = await axios.get(`${baseURL}article/add-article`);
+      set({ detailDataArticle: response.data });
+    } catch (error) {
+      set({ loading: false });
+    }
+  },
 }));

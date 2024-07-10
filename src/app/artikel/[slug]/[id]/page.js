@@ -22,7 +22,7 @@ export default function Artikel({ params }) {
         {detailDataArticle?.data?.foto &&
           detailDataArticle.data.foto.startsWith("/") && (
             <Image
-              src={'https://be-erklika.mhridwan.com/article/2024~articlePhoto-1720182076695.jpg'}
+              src={detailDataArticle.data?.[0]?.foto}
               alt="Banner Artikel"
               layout="fill"
               objectFit="cover"
@@ -33,8 +33,7 @@ export default function Artikel({ params }) {
 
       <div className="pl-[1.42rem] pr-[1.42rem] md:pl-[8.5rem] md:pr-[8.5rem]">
         <h1 className="text-[12px] md:text-[24px] font-semibold text-start mt-6 font-poopin ">
-          {detailDataArticle?.data?.[0].sub_title} -
-          {detailDataArticle?.data?.[0].title}
+          {detailDataArticle?.data?.[0].sub_title} - {detailDataArticle?.data?.[0].title}
         </h1>
         <p className="text-start md:text-[16px] text-[10px] mt-2 text-gray-600">
           {detailDataArticle?.data?.[0].createdAt}

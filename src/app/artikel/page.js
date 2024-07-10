@@ -31,13 +31,12 @@ function PageArticle() {
     console.log("Card clicked with id:", item);
     router.push(
       `/artikel/${item?.sub_title
-        ?.toLowerCase() // Ubah ke huruf kecil
-        .replace(/[^a-z0-9\s-]/g, "") // Hapus karakter spesial
-        .trim() // Hapus spasi di awal dan akhir
-        .replace(/\s+/g, "-") // Ganti spasi dengan tanda hubung
+        ?.toLowerCase() 
+        .replace(/[^a-z0-9\s-]/g, "") 
+        .trim() 
+        .replace(/\s+/g, "-") 
         .replace(/-+/g, "-")}/${item?.id}`
     );
-    // Lakukan sesuatu, seperti navigasi ke halaman detail artikel
   };
   return (
     <div className="bg-white ">
