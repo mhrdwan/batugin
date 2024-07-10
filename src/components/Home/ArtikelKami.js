@@ -196,7 +196,7 @@ function ArtikelKami() {
               //   backgroundSize: "cover",
               // }}
             >
-              <div className="tengah pl-[222px] mx-auto  pr-[222px]">
+              <div className="tengah pl-[100px] mx-auto  pr-[100px]">
                 <div className="Frame72  w-48 mb-5 h-10 flex-col justify-center items-center gap-0.5 inline-flex">
                   <div className="OutAchivement text-yellow-900 text-2xl font-semibold font-['Poppins']">
                     Our Achivement

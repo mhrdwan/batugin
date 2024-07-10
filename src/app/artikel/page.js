@@ -35,12 +35,12 @@ function PageArticle() {
         .replace(/[^a-z0-9\s-]/g, "") // Hapus karakter spesial
         .trim() // Hapus spasi di awal dan akhir
         .replace(/\s+/g, "-") // Ganti spasi dengan tanda hubung
-        .replace(/-+/g, "-")}/${item?.no}`
+        .replace(/-+/g, "-")}/${item?.id}`
     );
     // Lakukan sesuatu, seperti navigasi ke halaman detail artikel
   };
   return (
-    <div className="bg-white h-screen">
+    <div className="bg-white ">
       <NavbarComp />
       <NorifReward />
       <div className="pl-[120px] pr-[120px]">
