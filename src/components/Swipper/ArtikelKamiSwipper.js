@@ -28,9 +28,6 @@ export default function ArtikelKamiSwipper({ dataArtikel }) {
           spaceBetween: 30,
         },
       }}
-      //   slidesPerView={4}
-      //   spaceBetween={30}
-      // centeredSlides={true}
       autoplay={{
         delay: 3000,
         disableOnInteraction: false,
@@ -41,28 +38,31 @@ export default function ArtikelKamiSwipper({ dataArtikel }) {
     >
       {dataArtikel?.map((item) => (
         <SwiperSlide key={item.no}>
-          <div className="w-[282px] h-[416px] p-3 bg-neutral-50 rounded-sm shadow flex-col justify-start items-start gap-3 inline-flex">
-            <img
-              className="self-stretch h-[272px] rounded-sm"
-              src={item?.foto}
-            />
-
+          <div className="w-[282px] h-[350px] p-3 bg-neutral-50 rounded-sm shadow flex flex-col justify-between items-start gap-3">
+            <div className="w-full h-[200px] overflow-hidden">
+              <img
+                className="w-full h-full rounded-sm object-cover transform transition-transform duration-500 hover:scale-110"
+                src={item?.foto}
+                alt={item?.sub_title}
+              />
+            </div>
             <div className="self-stretch text-start text-black text-sm font-medium font-['Inter'] leading-normal">
               {item.sub_title}
             </div>
-            <div className="w-[258px] h-12 px-5 py-2 bg-red-600 rounded-sm justify-center items-center gap-2 inline-flex">
-              <div className="text-white text-base font-medium font-['Poppins']">
-                <Link
-                  href={`/artikel/${item?.sub_title
-                    ?.toLowerCase() // Ubah ke huruf kecil
-                    .replace(/[^a-z0-9\s-]/g, "") // Hapus karakter spesial
-                    .trim() // Hapus spasi di awal dan akhir
-                    .replace(/\s+/g, "-") // Ganti spasi dengan tanda hubung
-                    .replace(/-+/g, "-")}/${item?.no}`}
-                >
-                  {" "}
-                  Lihat Artikel
-                </Link>
+            <div className="w-full flex justify-center">
+              <div className="w-[258px] h-12 px-5 py-2 bg-red-600 rounded-sm flex justify-center items-center">
+                <div className="text-white text-base font-medium font-['Poppins']">
+                  <Link
+                    href={`/artikel/${item?.sub_title
+                      ?.toLowerCase() // Ubah ke huruf kecil
+                      .replace(/[^a-z0-9\s-]/g, "") // Hapus karakter spesial
+                      .trim() // Hapus spasi di awal dan akhir
+                      .replace(/\s+/g, "-") // Ganti spasi dengan tanda hubung
+                      .replace(/-+/g, "-")}/${item?.id}`}
+                  >
+                    Lihat Artikel
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
