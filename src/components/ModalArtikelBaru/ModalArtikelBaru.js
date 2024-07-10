@@ -11,11 +11,10 @@ export default function ModalArtikelBaru({ openModal, setOpenModal }) {
   const [contentUpload, setContentUpload] = useState({
     title: "",
     subTitle: "",
-    image: null, // Tambahkan state untuk menyimpan gambar
+    image: null, 
   });
   const { uploadArtikel } = ArticleZustand();
 
-  // Fungsi untuk menangani perubahan input
   const handleTyping = (e) => {
     const { name, value } = e.target;
     setContentUpload({

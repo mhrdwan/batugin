@@ -1,5 +1,5 @@
 import { baseURL } from "@/app/api/baseUrl";
-import { message } from "antd";
+import { message, notification } from "antd";
 import axios from "axios";
 
 const { create } = require("zustand");
@@ -66,7 +66,8 @@ export const ArticleZustand = create((set, get) => ({
     try {
       const response = await axios.post(`${baseURL}article/delete-article`,body);
       set({ detailDataArticle: response.data });
-      console.log(response.data)
+      console.log( `ini delete artikel`,response.data.status.message)
+      message.success(response.data.status.message)
     } catch (error) {
       set({ loading: false });
     }

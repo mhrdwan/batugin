@@ -4,7 +4,7 @@ import { Button, Popconfirm, Table } from "antd";
 import React, { useEffect, useState } from "react";
 
 export default function TableArticle() {
-  const { getArticle, DataArticle, loading,deleteArtikel } = ArticleZustand();
+  const { getArticle, DataArticle, loading, deleteArtikel } = ArticleZustand();
   const [visiblePopConfirm, setVisiblePopConfirm] = useState(null);
   const [openModal, setOpenModal] = useState(null);
 
@@ -12,17 +12,18 @@ export default function TableArticle() {
     getArticle();
   }, []);
 
-  const handleDelete = (key) => {
+  const handleDelete = async (key) => {
     // Add your delete logic here
-    deleteArtikel(key)
+    await deleteArtikel(key);
     setVisiblePopConfirm(null);
+    await getArticle();
   };
 
   const handleCancel = () => {
     setVisiblePopConfirm(null);
   };
 
-console.log(`DataArticle`,DataArticle)
+  console.log(`DataArticle`, DataArticle);
 
   const columns = [
     {
@@ -40,11 +41,11 @@ console.log(`DataArticle`,DataArticle)
       dataIndex: "sub_title",
       key: "sub_title",
     },
-    {
-      title: "Foto",
-      dataIndex: "foto",
-      key: "foto",
-    },
+    // {
+    //   title: "Foto",
+    //   dataIndex: "foto",
+    //   key: "foto",
+    // },
     {
       title: "Edit",
       key: "edit",
