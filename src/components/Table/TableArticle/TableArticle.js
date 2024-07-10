@@ -4,7 +4,7 @@ import { Button, Popconfirm, Table } from "antd";
 import React, { useEffect, useState } from "react";
 
 export default function TableArticle() {
-  const { getArticle, DataArticle, loading } = ArticleZustand();
+  const { getArticle, DataArticle, loading,deleteArtikel } = ArticleZustand();
   const [visiblePopConfirm, setVisiblePopConfirm] = useState(null);
   const [openModal, setOpenModal] = useState(null);
 
@@ -14,13 +14,15 @@ export default function TableArticle() {
 
   const handleDelete = (key) => {
     // Add your delete logic here
-    console.log(`Deleted item with key: ${key}`);
+    deleteArtikel(key)
     setVisiblePopConfirm(null);
   };
 
   const handleCancel = () => {
     setVisiblePopConfirm(null);
   };
+
+console.log(`DataArticle`,DataArticle)
 
   const columns = [
     {
@@ -64,7 +66,7 @@ export default function TableArticle() {
               title="Hapus Artikel"
               description="Yakin menghapus artikel?"
               visible={visiblePopConfirm === record.key}
-              onConfirm={() => handleDelete(record.key)}
+              onConfirm={() => handleDelete(text.id)}
               onCancel={handleCancel}
               okText="Yes"
               cancelText="No"
@@ -91,7 +93,7 @@ export default function TableArticle() {
         scroll={{
           y: 240,
         }}
-        dataSource={DataArticle?.data.map((item, index) => ({
+        dataSource={DataArticle?.data?.map((item, index) => ({
           ...item,
           key: index,
         }))}

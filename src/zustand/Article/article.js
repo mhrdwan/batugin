@@ -64,8 +64,9 @@ export const ArticleZustand = create((set, get) => ({
       id_article: id,
     };
     try {
-      const response = await axios.get(`${baseURL}article/delete-article`,body);
+      const response = await axios.post(`${baseURL}article/delete-article`,body);
       set({ detailDataArticle: response.data });
+      console.log(response.data)
     } catch (error) {
       set({ loading: false });
     }
