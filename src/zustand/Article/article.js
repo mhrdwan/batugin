@@ -37,7 +37,12 @@ export const ArticleZustand = create((set, get) => ({
     formData.append("title", form.title);
     formData.append("sub_title", form.subTitle);
     formData.append("content", form.content);
-    console.log(`form`, form);
+  
+    // Debugging
+    for (let pair of formData.entries()) {
+      console.log(`${pair[0]}: ${pair[1]}`);
+    }
+  
     try {
       const response = await axios.post(
         `${baseURL}article/add-article`,
@@ -45,7 +50,11 @@ export const ArticleZustand = create((set, get) => ({
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            // Tambahkan header lain jika diperlukan
+            "Authorization": "••••••",
+            ...formData.getHeaders(), // Jika formData.getHeaders() tersedia
           },
+          maxBodyLength: Infinity,
         }
       );
       set({ detailDataArticle: response.data });
@@ -58,6 +67,7 @@ export const ArticleZustand = create((set, get) => ({
       set({ loading: false });
     }
   },
+  
   // delete artikel
   deleteArtikel: async (id) => {
     const body = {
