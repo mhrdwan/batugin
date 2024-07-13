@@ -26,7 +26,7 @@ export default function Artikel({ params }) {
     setIsClient(true);
   }, [getDetailArticle, params.id]);
 
-  if (!isClient) {
+  if (!isClient || !detailDataArticle) {
     return null; // Atau spinner/loading state
   }
 
@@ -35,28 +35,16 @@ export default function Artikel({ params }) {
   return (
     <div className="bg-white">
       <Head>
-        <title>
-          {articleData?.sub_title} - {articleData?.title}
-        </title>
-        <meta
-          name="description"
-          content={articleData?.description || articleData?.sub_title}
-        />
-        <meta
-          name="keywords"
-          content="batu ginjal, kesehatan, artikel kesehatan"
-        />
+        <title>{articleData?.sub_title} - {articleData?.title}</title>
+        <meta name="description" content={articleData?.description || articleData?.sub_title} />
+        <meta name="keywords" content="batu ginjal, kesehatan, artikel kesehatan" />
         <meta property="og:title" content={articleData?.title} />
-        <meta
-          property="og:description"
-          content={articleData?.description || articleData?.sub_title}
-        />
+        <meta property="og:description" content={articleData?.description || articleData?.sub_title} />
         <meta property="og:image" content={articleData?.foto} />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content={`https://batugin.co.id/artikel/${articleData?.id}`}
-        />
+        <meta property="og:url" content={`https://batugin.co.id/artikel/${articleData?.id}`} />
+        <meta property="og:author" content="Ridwan" />
+        <link rel="icon" href="/icon.png" />
       </Head>
       <NavbarComp />
       <div className="relative h-[8.9rem] md:h-[30rem] bg-red-200 overflow-hidden">
@@ -76,7 +64,7 @@ export default function Artikel({ params }) {
         <p className="text-start md:text-[16px] text-[10px] mt-2 text-gray-600">
           {articleData?.createdAt}
         </p>
-        <div className="mt-6  w-full">
+        <div className="mt-6 w-full">
           {articleData?.content && (
             <div
               dangerouslySetInnerHTML={{ __html: articleData.content }}
