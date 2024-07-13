@@ -1,19 +1,25 @@
 import ModalArtikelBaru from "@/components/ModalArtikelBaru/ModalArtikelBaru";
 import { ArticleZustand } from "@/zustand/Article/article";
 import { Button, Popconfirm, Table } from "antd";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-export default function TableArticle() {
+export default function TableArticle({
+  openModal,
+  setOpenModal,
+  idModal,
+  setidModal,
+}) {
   const { getArticle, DataArticle, loading, deleteArtikel } = ArticleZustand();
   const [visiblePopConfirm, setVisiblePopConfirm] = useState(null);
-  const [openModal, setOpenModal] = useState(null);
+  const [selectedRecord, setSelectedRecord] = useState(null);
+  const route = usePathname();
 
   useEffect(() => {
     getArticle();
   }, []);
 
   const handleDelete = async (key) => {
-    // Add your delete logic here
     await deleteArtikel(key);
     setVisiblePopConfirm(null);
     await getArticle();
@@ -23,7 +29,17 @@ export default function TableArticle() {
     setVisiblePopConfirm(null);
   };
 
-  console.log(`DataArticle`, DataArticle);
+  const handleOpenModal = (record) => {
+    setSelectedRecord(record);
+    setOpenModal(true);
+    setidModal(record ? "edit" : "create");
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+    setSelectedRecord(null);
+    setidModal(null);
+  };
 
   const columns = [
     {
@@ -41,24 +57,26 @@ export default function TableArticle() {
       dataIndex: "sub_title",
       key: "sub_title",
     },
-    // {
-    //   title: "Foto",
-    //   dataIndex: "foto",
-    //   key: "foto",
-    // },
+    {
+      title: "Link",
+      dataIndex: "sub_title",
+      key: "sub_title",
+      render :(data1,datasemua)=>{
+        // console.log(data1,datasemua)
+        return <Button 
+        onClick={()=> window.open(`https://www.batugin.co.id/artikel/${datasemua?.title}/${datasemua?.id}`)}
+        style={{backgroundColor:'#fddb1d' ,color:'black'}}>Link</Button>
+      }
+    },
     {
       title: "Edit",
       key: "edit",
       render: (text, record) => {
         return (
           <>
-            <ModalArtikelBaru
-              openModal={openModal === record.key}
-              setOpenModal={() => setOpenModal(null)}
-            />
             <Button
               size="sm"
-              onClick={() => setOpenModal(record.key)}
+              onClick={() => handleOpenModal(record)}
               style={{ backgroundColor: "#1677ff", color: "white" }}
             >
               Edit
@@ -67,7 +85,7 @@ export default function TableArticle() {
               title="Hapus Artikel"
               description="Yakin menghapus artikel?"
               visible={visiblePopConfirm === record.key}
-              onConfirm={() => handleDelete(text.id)}
+              onConfirm={() => handleDelete(record.id)}
               onCancel={handleCancel}
               okText="Yes"
               cancelText="No"
@@ -91,15 +109,22 @@ export default function TableArticle() {
     <div>
       <Table
         loading={loading}
-        scroll={{
-          y: 240,
-        }}
+        scroll={route === "/login/admin/article" ? {} : { y: 240 }}
         dataSource={DataArticle?.data?.map((item, index) => ({
           ...item,
           key: index,
         }))}
         columns={columns}
       />
+      {openModal && (
+        <ModalArtikelBaru
+          idModal={idModal}
+          setidModal={setidModal}
+          data={selectedRecord}
+          openModal={openModal}
+          setOpenModal={handleCloseModal}
+        />
+      )}
     </div>
   );
 }

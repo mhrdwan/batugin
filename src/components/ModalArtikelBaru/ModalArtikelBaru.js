@@ -1,19 +1,43 @@
-import React, { useState } from "react";
-import { Modal, Button, Input, Row, Upload, message } from "antd";
+import React, { useEffect, useState } from "react";
+import { Modal, Button, Input, Row, Upload } from "antd";
 import dynamic from "next/dynamic";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css";
 import { ArticleZustand } from "@/zustand/Article/article";
 
-export default function ModalArtikelBaru({ openModal, setOpenModal }) {
-  const [content, setContent] = useState("");
+export default function ModalArtikelBaru({
+  openModal,
+  setOpenModal,
+  data,
+  setidModal,
+  idModal,
+}) {
+  const [content, setContent] = useState(data?.content || "");
   const [contentUpload, setContentUpload] = useState({
-    title: "",
-    subTitle: "",
-    image: null, 
+    title: data?.title || "",
+    subTitle: data?.sub_title || "",
+    image: data?.foto || null,
   });
-  const { uploadArtikel } = ArticleZustand();
+  const { uploadArtikel, editArtikel, getArticle } = ArticleZustand();
+
+  useEffect(() => {
+    if (idModal === "edit" && data) {
+      setContentUpload({
+        title: data.title,
+        subTitle: data.sub_title,
+        image: data?.foto,
+      });
+      setContent(data.content);
+    } else if (idModal === "create") {
+      setContentUpload({
+        title: "",
+        subTitle: "",
+        image: null,
+      });
+      setContent("");
+    }
+  }, [idModal, data]);
 
   const handleTyping = (e) => {
     const { name, value } = e.target;
@@ -23,19 +47,23 @@ export default function ModalArtikelBaru({ openModal, setOpenModal }) {
     });
   };
 
-  const handleSave = () => {
-    console.log("Artikel disimpan:", { ...contentUpload, content });
-    setOpenModal(false);
-    uploadArtikel({ ...contentUpload, content });
+  const handleSave = async (valid) => {
+    if (valid == "create") {
+      uploadArtikel({ ...contentUpload, content });
+      await getArticle();
+      setOpenModal(false);
+    } else {
+      editArtikel({ ...contentUpload, content });
+      await getArticle();
+      setOpenModal(false);
+    }
   };
 
   const handleUploadChange = (info) => {
-    console.log(`info`, info.file.originFileObj);
-      setContentUpload({
-        ...contentUpload,
-        image: info.file.originFileObj,
-      });
-   
+    setContentUpload({
+      ...contentUpload,
+      image: info.file.originFileObj,
+    });
   };
 
   const modules = {
@@ -69,7 +97,7 @@ export default function ModalArtikelBaru({ openModal, setOpenModal }) {
 
   return (
     <Modal
-      title="Artikel Baru"
+      title={idModal === "create" ? "Artikel Baru" : "Edit Artikel"}
       open={openModal}
       onCancel={() => setOpenModal(false)}
       footer={null}
@@ -119,7 +147,9 @@ export default function ModalArtikelBaru({ openModal, setOpenModal }) {
             </Button>
             <Button
               style={{ backgroundColor: "#fddb1d", color: "black" }}
-              onClick={handleSave}
+              onClick={() =>
+                handleSave(idModal == "create" ? "create" : "edit")
+              }
             >
               Simpan
             </Button>

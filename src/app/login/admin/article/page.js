@@ -4,6 +4,7 @@ import { Button, Table } from "antd";
 import React, { useEffect, useState } from "react";
 import Sidebar from "../page";
 import ModalArtikelBaru from "@/components/ModalArtikelBaru/ModalArtikelBaru";
+import TableArticle from "@/components/Table/TableArticle/TableArticle";
 
 function Article() {
   const { getArticle, DataArticle, loading } = ArticleZustand();
@@ -11,6 +12,7 @@ function Article() {
     getArticle();
   }, []);
   const [openModal, setOpenModal] = useState(false);
+  const [idModal, setidModal] = useState("create");
   const columns = [
     {
       title: "No",
@@ -60,20 +62,31 @@ function Article() {
     <div>
       <Sidebar title="Article">
         <Button
-          onClick={() => setOpenModal(true)}
+          onClick={() => {
+            setidModal("create");
+            setOpenModal(true);
+          }}
           style={{ backgroundColor: "#fddb1d", color: "black" }}
         >
           Artikel Baru
         </Button>
-        <Table
+        <div className="mt-3">
+          <TableArticle
+            idModal={idModal}
+            setidModal={setidModal}
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+          />
+        </div>
+        {/* <Table
           loading={loading}
           scroll={{
             y: 500,
           }}
           dataSource={DataArticle?.data}
           columns={columns}
-        />
-        <ModalArtikelBaru openModal={openModal} setOpenModal={setOpenModal}/>
+        /> */}
+        {/* <ModalArtikelBaru openModal={openModal} setOpenModal={setOpenModal}/> */}
       </Sidebar>
     </div>
   );

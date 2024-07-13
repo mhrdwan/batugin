@@ -13,8 +13,8 @@ export const ArticleZustand = create((set, get) => ({
       const response = await axios.get(
         `${baseURL}article/get-article?page=1&limit=10`
       );
-      set({ DataArticle: response.data });
       set({ loading: false });
+      set({ DataArticle: response.data });
     } catch (error) {
       set({ loading: false });
     }
@@ -49,6 +49,36 @@ export const ArticleZustand = create((set, get) => ({
           maxBodyLength: Infinity,
         }
       );
+      set({ loading: false });
+      set({ detailDataArticle: response.data });
+      console.log(response?.data?.status?.message);
+      message.success(response?.data?.status?.message);
+    } catch (error) {
+      message.error(
+        error?.response?.data?.status?.message || "gagal upload artikel"
+      );
+      set({ loading: false });
+    }
+  },
+  editArtikel: async (form) => {
+    const formData = new FormData();
+    formData.append("cover", form.image);
+    formData.append("title", form.title);
+    formData.append("sub_title", form.subTitle);
+    formData.append("content", form.content);
+    console.log(`form`, form);
+    try {
+      const response = await axios.post(
+        `${baseURL}article/edit-article`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          maxBodyLength: Infinity,
+        }
+      );
+      set({ loading: false });
       set({ detailDataArticle: response.data });
       console.log(response?.data?.status?.message);
       message.success(response?.data?.status?.message);
@@ -70,6 +100,7 @@ export const ArticleZustand = create((set, get) => ({
         body
       );
       set({ detailDataArticle: response.data });
+      set({ loading: false });
       console.log(`ini delete artikel`, response.data.status.message);
       message.success(response.data.status.message);
     } catch (error) {
