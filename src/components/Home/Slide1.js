@@ -6,6 +6,17 @@ import Image from "next/image";
 import Link from "next/link";
 import SwipperHomeUtama from "../Swipper/SwipperHomeUtama/SwipperHomeUtama";
 
+
+export const metadata = {
+    title: "Batugin",
+    description: "Obat Peluruh Batu Ginjal PERTAMA di Indonesia",
+    authors: [{ name: "Batugin"}],
+    openGraph:[],
+    icon: './icon.png',
+    
+  
+  };
+
 function Slide1() {
   const widthNya = 256; // 16 * 16
   const lebarnya = 21.12; // 1.32 * 16
