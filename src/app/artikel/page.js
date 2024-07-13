@@ -30,7 +30,7 @@ function PageArticle() {
   const handleCardClick = (item) => {
     console.log("Card clicked with id:", item);
     router.push(
-      `/artikel/${item?.sub_title
+      `/artikel/${item?.title
         ?.toLowerCase() 
         .replace(/[^a-z0-9\s-]/g, "") 
         .trim() 
