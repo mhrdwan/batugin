@@ -47,7 +47,7 @@ export default function ArtikelKamiSwipper({ dataArtikel }) {
               />
             </div>
             <div className="self-stretch text-start text-black text-sm font-medium font-['Inter'] leading-normal">
-              {item.sub_title}
+              {item.title}
             </div>
             <div className="w-full flex justify-center">
               <div className="w-[258px] h-12 px-5 py-2 bg-red-600 rounded-sm flex justify-center items-center">
