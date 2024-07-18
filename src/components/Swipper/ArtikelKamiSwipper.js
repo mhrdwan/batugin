@@ -11,21 +11,21 @@ export default function ArtikelKamiSwipper({ dataArtikel }) {
     <Swiper
       breakpoints={{
         380: {
-          slidesPerView: 2,
+          slidesPerView: 3,
           spaceBetween: 200,
           centeredSlides: true,
         },
         640: {
-          slidesPerView: 2,
+          slidesPerView: 3,
           spaceBetween: 10,
         },
         800: {
           slidesPerView: 3,
-          spaceBetween: 90,
+          spaceBetween: 10,
         },
         900: {
-          slidesPerView: 4,
-          spaceBetween: 30,
+          slidesPerView: 3,
+          spaceBetween: 10,
         },
       }}
       autoplay={{
