@@ -47,13 +47,14 @@ export default function Artikel({ params }) {
         <link rel="icon" href="/icon.png" />
       </Head>
       <NavbarComp />
-      <div className="relative h-[8.9rem] md:h-[30rem] bg-red-200 overflow-hidden">
+      <div className="relative bg-red-200 overflow-hidden" style={{ aspectRatio: "16/9" }}>
         <Image
           src={articleData?.foto}
           alt="Banner Artikel"
           layout="fill"
           objectFit="cover"
           objectPosition="center"
+          className="w-full h-full"
         />
       </div>
 
