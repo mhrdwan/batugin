@@ -19,7 +19,7 @@ export default function ModalArtikelBaru({
     subTitle: data?.sub_title || "",
     image: data?.foto || null,
   });
-  const { uploadArtikel, editArtikel, getArticle } = ArticleZustand();
+  const { uploadArtikel, editArtikel, getArticle ,editFotoArtikel} = ArticleZustand();
 
   useEffect(() => {
     if (idModal === "edit" && data) {
@@ -53,12 +53,14 @@ export default function ModalArtikelBaru({
       await getArticle();
       setOpenModal(false);
     } else {
-      editArtikel({ ...contentUpload, content });
+      // console.log(`contentUpload`,contentUpload)
+      editArtikel({ ...contentUpload, content },data.id);
+      await editFotoArtikel(data.id,{...contentUpload, content})
       await getArticle();
       setOpenModal(false);
     }
   };
-
+// console.log(data)
   const handleUploadChange = (info) => {
     setContentUpload({
       ...contentUpload,

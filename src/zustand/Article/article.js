@@ -60,13 +60,14 @@ export const ArticleZustand = create((set, get) => ({
       set({ loading: false });
     }
   },
-  editArtikel: async (form) => {
+  editArtikel: async (form,id) => {
     const formData = new FormData();
-    formData.append("cover", form.image);
+    // formData.append("cover", form.image);
     formData.append("title", form.title);
     formData.append("sub_title", form.subTitle);
     formData.append("content", form.content);
-    console.log(`form`, form);
+    formData.append("id_article", id);
+    // console.log(`form`, form);
     try {
       const response = await axios.post(
         `${baseURL}article/edit-article`,
@@ -104,6 +105,35 @@ export const ArticleZustand = create((set, get) => ({
       console.log(`ini delete artikel`, response.data.status.message);
       message.success(response.data.status.message);
     } catch (error) {
+      set({ loading: false });
+    }
+  },
+  ///edit foto
+  editFotoArtikel: async (id,form) => {
+    const formData = new FormData();
+    // console.log(`api`,id,form)
+    formData.append("cover", form.image);
+    formData.append("id_article", id);
+   
+    try {
+      const response = await axios.post(
+        `${baseURL}article/edit-article-photo`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          maxBodyLength: Infinity,
+        }
+      );
+      set({ loading: false });
+      set({ detailDataArticle: response.data });
+      console.log(response?.data?.status?.message);
+      message.success(response?.data?.status?.message);
+    } catch (error) {
+      message.error(
+        error?.response?.data?.status?.message || "gagal upload artikel"
+      );
       set({ loading: false });
     }
   },
