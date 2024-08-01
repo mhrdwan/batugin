@@ -1,4 +1,5 @@
-import { useState } from "react";
+"use client";
+import { useEffect, useState } from "react";
 import TablePoint from "./table";
 import FooterComp from "../Home/Footer";
 import { Button, Modal, Form, Input, Upload } from "antd";
@@ -13,7 +14,6 @@ export default function PointKamu() {
     photo: null,
   });
 
-  console.log(datasemua);
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -79,7 +79,8 @@ export default function PointKamu() {
                   };
                 });
               }}
-            placeholder="Masukkan Nama" />
+              placeholder="Masukkan Nama"
+            />
           </Form.Item>
           <Form.Item
             label="Email"
@@ -111,7 +112,7 @@ export default function PointKamu() {
                 setdatasemua(() => {
                   return {
                     ...datasemua,
-                    foto: e.file
+                    foto: e.file,
                   };
                 });
               }}
@@ -150,6 +151,19 @@ function Login() {
 }
 
 function TableBaru() {
+  const { getPointAllData, getPointAll } = ArticleZustand();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const itemsPerPage = 10;
+  useEffect(() => {
+    getPointAll();
+    setTotalPages(Math.ceil(getPointAllData.totalData / itemsPerPage));
+  }, {});
+  
+  const handlePageClick = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+  console.log(getPointAllData)
   return (
     <>
       <style>
@@ -201,60 +215,29 @@ function TableBaru() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>01</td>
-            <td>Jensen</td>
-            <td>Jensen@gmail.com</td>
-            <td className="text-red-600">1,204</td>
-          </tr>
-          <tr>
-            <td>02</td>
-            <td>Akbarudin Abdul</td>
-            <td>Akbarudin.a@gmail.com</td>
-            <td className="text-red-600">1,178</td>
-          </tr>
-          <tr>
-            <td>03</td>
-            <td>Steven Tjandra</td>
-            <td>S.Tjandra99@gmail.com</td>
-            <td className="text-red-600">1,123</td>
-          </tr>
-          <tr>
-            <td>04</td>
-            <td>Steven </td>
-            <td>tarjo@gmail.com</td>
-            <td className="text-red-600">1,123</td>
-          </tr>
-          <tr>
-            <td>05</td>
-            <td>olivia </td>
-            <td>olivia@gmail.com</td>
-            <td className="text-red-600">1,123</td>
-          </tr>
+          {getPointAllData?.data?.map((item, index) => (
+            <tr>
+              <td>{item.no}</td>
+              <td>{item.nama}</td>
+              <td>{item.email}</td>
+              <td className="text-red-600">{item.point}</td>
+            </tr>
+          ))}
           {/* more rows as needed */}
         </tbody>
       </table>
       <div className="Frame51 t h-10 justify-end w-full items-start gap-2 inline-flex">
-        <div className="Frame46 hover:cursor-pointer w-10 p-2 bg-yellow-900 rounded flex-col justify-center items-center gap-2 inline-flex">
-          <div className=" text-white text-base font-medium font-['Poppins']">
-            1
+        {Array.from({ length: totalPages }, (_, index) => (
+          <div
+            key={index}
+            onClick={() => handlePageClick(index + 1)}
+            className={`Frame${index + 46} hover:cursor-pointer w-10 p-2 ${index + 1 === currentPage ? 'bg-yellow-900' : 'hover:bg-primary-2'} rounded border border-yellow-900 flex-col justify-center items-center gap-2 inline-flex`}
+          >
+            <div className={`text-base font-medium font-['Poppins'] ${index + 1 === currentPage ? 'text-white' : 'text-yellow-900'}`}>
+              {index + 1}
+            </div>
           </div>
-        </div>
-        <div className="Frame47 hover:cursor-pointer hover:bg-primary-2 w-10 p-2 rounded border border-yellow-900 flex-col justify-center items-center gap-2 inline-flex">
-          <div className=" text-yellow-900 text-base font-medium font-['Poppins']">
-            2
-          </div>
-        </div>
-        <div className="Frame48 hover:cursor-pointer hover:bg-primary-2 w-10 p-2 rounded border border-yellow-900 flex-col justify-center items-center gap-2 inline-flex">
-          <div className=" text-yellow-900 text-base font-medium font-['Poppins']">
-            3
-          </div>
-        </div>
-        <div className="Frame49 hover:cursor-pointer hover:bg-primary-2 w-10 p-2 rounded border border-yellow-900 flex-col justify-center items-center gap-2 inline-flex">
-          <div className=" text-yellow-900 text-base font-medium font-['Poppins']">
-            4
-          </div>
-        </div>
+        ))}
       </div>
     </>
   );

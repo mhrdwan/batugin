@@ -44,7 +44,7 @@ export default function NotifikasiPage() {
       render :(data)=>{
         return (
           <img
-            alt="example"
+            alt={data}
             style={{ width: "100px" }}
             src={`${data}`}
           />
