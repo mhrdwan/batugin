@@ -188,10 +188,13 @@ export const ArticleZustand = create((set, get) => ({
 
   getPointAll: async (id) => {
     try {
-      const response = await axios.get(`${baseURL}auth/get-point-all?page=1&limit=10`);
+      const response = await axios.get(
+        `${baseURL}auth/get-point-all?page=1&limit=10`
+      );
       set({ getPointAllData: response.data });
     } catch (error) {
       set({ loading: false });
     }
   },
+  
 }));

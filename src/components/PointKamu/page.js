@@ -153,17 +153,16 @@ function Login() {
 function TableBaru() {
   const { getPointAllData, getPointAll } = ArticleZustand();
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const itemsPerPage = 10;
-  useEffect(() => {
-    getPointAll();
-    setTotalPages(Math.ceil(getPointAllData.totalData / itemsPerPage));
-  }, {});
+  const itemsPerPage = 5;
   
+  useEffect(() => {
+    getPointAll(currentPage); // Fetch data for the current page
+  }, [currentPage]);
+
   const handlePageClick = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-  console.log(getPointAllData)
+
   return (
     <>
       <style>
@@ -216,18 +215,17 @@ function TableBaru() {
         </thead>
         <tbody>
           {getPointAllData?.data?.map((item, index) => (
-            <tr>
-              <td>{item.no}</td>
+            <tr key={index}>
+              <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
               <td>{item.nama}</td>
               <td>{item.email}</td>
               <td className="text-red-600">{item.point}</td>
             </tr>
           ))}
-          {/* more rows as needed */}
         </tbody>
       </table>
       <div className="Frame51 t h-10 justify-end w-full items-start gap-2 inline-flex">
-        {Array.from({ length: totalPages }, (_, index) => (
+        {Array.from({ length: getPointAllData?.totalPage || 1 }, (_, index) => (
           <div
             key={index}
             onClick={() => handlePageClick(index + 1)}
@@ -242,3 +240,4 @@ function TableBaru() {
     </>
   );
 }
+
