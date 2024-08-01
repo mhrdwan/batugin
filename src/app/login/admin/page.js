@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -25,7 +25,6 @@ function Sidebar({ title = "title", children }) {
       : "";
   console.log(partAfterAdmin);
 
-  
   return (
     <div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50  text-gray-800">
       <div className="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
@@ -41,8 +40,18 @@ function Sidebar({ title = "title", children }) {
                 </div>
               </div>
             </li>
-            <li  className={`${partAfterAdmin === 'dashboard' ? "bg-primary-2" : "bg-transparent"} hover:cursor-pointer`}>
-              <Link href="/login/admin/dashboard" id="dashboard" className=" relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <li
+              className={`${
+                partAfterAdmin === "dashboard"
+                  ? "bg-primary-2"
+                  : "bg-transparent"
+              } hover:cursor-pointer`}
+            >
+              <Link
+                href="/login/admin/dashboard"
+                id="dashboard"
+                className=" relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+              >
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
                     className="w-5 h-5"
@@ -59,13 +68,23 @@ function Sidebar({ title = "title", children }) {
                     ></path>
                   </svg>
                 </span>
-                <span id="dashboard" className="ml-2 text-sm tracking-wide truncate">
+                <span
+                  id="dashboard"
+                  className="ml-2 text-sm tracking-wide truncate"
+                >
                   Dashboard
                 </span>
               </Link>
             </li>
-            <li className={`${partAfterAdmin === 'banner' ? "bg-primary-2" : "bg-transparent"}`}>
-              <Link href="/login/admin/banner" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <li
+              className={`${
+                partAfterAdmin === "banner" ? "bg-primary-2" : "bg-transparent"
+              }`}
+            >
+              <Link
+                href="/login/admin/banner"
+                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+              >
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
                     className="w-5 h-5"
@@ -90,8 +109,15 @@ function Sidebar({ title = "title", children }) {
                 </span>
               </Link>
             </li>
-            <li className={`${partAfterAdmin === 'article' ? "bg-primary-2" : "bg-transparent"}`}>
-              <Link href="/login/admin/article" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <li
+              className={`${
+                partAfterAdmin === "article" ? "bg-primary-2" : "bg-transparent"
+              }`}
+            >
+              <Link
+                href="/login/admin/article"
+                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+              >
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
                     className="w-5 h-5"
@@ -113,8 +139,13 @@ function Sidebar({ title = "title", children }) {
                 </span>
               </Link>
             </li>
-            <li>
-              <a className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <li className={`${
+                partAfterAdmin === "notifikasi" ? "bg-primary-2" : "bg-transparent"
+              }`}>
+              <Link
+                href="/login/admin/notifikasi"
+                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+              >
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
                     className="w-5 h-5"
@@ -137,7 +168,7 @@ function Sidebar({ title = "title", children }) {
                 <span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-500 bg-red-50 rounded-full">
                   10+
                 </span>
-              </a>
+              </Link>
             </li>
             <li className="px-5">
               <div className="flex flex-row items-center h-8">
@@ -255,7 +286,10 @@ function Sidebar({ title = "title", children }) {
               </a>
             </li>
             <li>
-              <Link href={"/login/admin/login"} className="hover:cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+              <Link
+                href={"/login/admin/login"}
+                className="hover:cursor-pointer relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+              >
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
                     className="w-5 h-5"

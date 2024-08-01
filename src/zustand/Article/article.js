@@ -8,6 +8,7 @@ export const ArticleZustand = create((set, get) => ({
   DataArticle: [],
   detailDataArticle: "",
   loading: true,
+  getPointAdminData: "",
   getArticle: async () => {
     try {
       const response = await axios.get(
@@ -143,7 +144,7 @@ export const ArticleZustand = create((set, get) => ({
     formData.append("cover", form.foto);
     formData.append("nama", form.nama);
     formData.append("email", form.email);
-    console.log(`ini form api`,form);
+    console.log(`ini form api`, form);
     try {
       const response = await axios.post(`${baseURL}auth/add-point`, formData, {
         headers: {
@@ -158,6 +159,27 @@ export const ArticleZustand = create((set, get) => ({
     } catch (error) {
       message.error(
         error?.response?.data?.status?.message || "gagal upload artikel"
+      );
+      set({ loading: false });
+    }
+  },
+  getPointAdmin: async (id) => {
+    try {
+      const response = await axios.get(`${baseURL}auth/get-point-admin`);
+      set({ getPointAdminData: response.data });
+    } catch (error) {
+      set({ loading: false });
+    }
+  },
+  approvePoint: async (id) => {
+    try {
+      const response = await axios.post(`${baseURL}auth/approve-point`, {
+        id_point: id,
+      });
+      message.success(response?.data?.status?.message);
+    } catch (error) {
+      message.error(
+        error?.response?.data?.status?.message || "gagal approve point"
       );
       set({ loading: false });
     }
