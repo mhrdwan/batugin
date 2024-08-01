@@ -38,6 +38,20 @@ export default function NotifikasiPage() {
       key: "point",
     },
     {
+      title: "Gambar",
+      dataIndex: "foto",
+      key: "foto",
+      render :(data)=>{
+        return (
+          <img
+            alt="example"
+            style={{ width: "100px" }}
+            src={`${data}`}
+          />
+        );
+      }
+    },
+    {
       title: "Edit",
       render: (ew) => {
         return (
@@ -49,6 +63,7 @@ export default function NotifikasiPage() {
                 console.log(ew);
                 await approvePoint(ew.id);
                 await getPointAdmin();
+                await getPointAll();
               }}
             >
               Approve
@@ -87,7 +102,10 @@ export default function NotifikasiPage() {
     getPointAll();
   }, []);
   return (
-    <Sidebar title={partAfterAdmin} dataNotifikasi={getPointAdminData?.data?.length || 0}>
+    <Sidebar
+      title={partAfterAdmin}
+      dataNotifikasi={getPointAdminData?.data?.length || 0}
+    >
       <div className="w-full ">
         <h1 className="font-bold">Waiting Approve Point Admin</h1>
         <Table dataSource={getPointAdminData.data} columns={columns} />
