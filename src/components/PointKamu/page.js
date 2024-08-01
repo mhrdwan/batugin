@@ -1,7 +1,32 @@
+import { useState } from "react";
 import TablePoint from "./table";
 import FooterComp from "../Home/Footer";
-
+import { Button, Modal, Form, Input, Upload } from "antd";
+import { UploadOutlined } from "@ant-design/icons";
+import { ArticleZustand } from "@/zustand/Article/article";
 export default function PointKamu() {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const { tambahPoint } = ArticleZustand();
+  const [datasemua, setdatasemua] = useState({
+    email: null,
+    nama: null,
+    photo: null,
+  });
+
+  console.log(datasemua);
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = async () => {
+    setIsModalVisible(false);
+    await tambahPoint(datasemua);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <>
       <div className="mt-5 md:pr-[8.5rem] md:pl-[8.5rem] pr-[0.71rem] pl-[0.71rem]">
@@ -10,35 +35,117 @@ export default function PointKamu() {
           Ladder Board Points
         </p>
         <div className="mt-[3rem]">
+          <div className="flex justify-end">
+            <Button
+              style={{ backgroundColor: "#d1232a", color: "white" }}
+              onClick={showModal}
+            >
+              Input Point
+            </Button>
+          </div>
           <TableBaru />
         </div>
       </div>
       <div className="mt-[10rem]">
         <FooterComp />
       </div>
+
+      <Modal
+        title="Input Point"
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={[
+          <Button key="back" onClick={handleCancel}>
+            Cancel
+          </Button>,
+          <Button key="submit" type="primary" onClick={handleOk}>
+            OK
+          </Button>,
+        ]}
+      >
+        <Form layout="vertical">
+          <Form.Item
+            label="Nama"
+            name="name"
+            rules={[{ required: true, message: "Please input your name!" }]}
+          >
+            <Input
+              onChange={(e) => {
+                setdatasemua(() => {
+                  return {
+                    ...datasemua,
+                    nama: e.target.value,
+                  };
+                });
+              }}
+            placeholder="Masukkan Nama" />
+          </Form.Item>
+          <Form.Item
+            label="Email"
+            name="email"
+            rules={[{ required: true, message: "Please input your email!" }]}
+          >
+            <Input
+              onChange={(e) => {
+                setdatasemua(() => {
+                  return {
+                    ...datasemua,
+                    email: e.target.value,
+                  };
+                });
+              }}
+              placeholder="Masukkan Email"
+            />
+          </Form.Item>
+          <Form.Item
+            label="Photo"
+            name="photo"
+            rules={[{ required: true, message: "Please upload your photo!" }]}
+          >
+            <Upload
+              name="photo"
+              listType="picture"
+              maxCount={1}
+              onChange={(e) => {
+                setdatasemua(() => {
+                  return {
+                    ...datasemua,
+                    foto: e.file
+                  };
+                });
+              }}
+              beforeUpload={() => false}
+            >
+              <Button icon={<UploadOutlined />}>Click to Upload</Button>
+            </Upload>
+          </Form.Item>
+        </Form>
+      </Modal>
     </>
   );
 }
 
 function Login() {
   return (
-    <div className="table-login pr-[0.71rem] pl-[0.71rem] mt-5 flex justify-center ">
-      <div className="pt-5 pb-5 w-full border rounded-lg border-black text-center h-[9rem]">
-        <div className="text-secondary-2">
-          <p className="text-[1rem] font-medium">
-            Please log in/register to view points
-          </p>
-          <div className="flex justify-center mt-4">
-            <button className="mx-2 px-5 py-2 border border-red-600 text-red-600 font-medium rounded-sm">
-              Register
-            </button>
-            <button className="mx-2 px-5 py-2 bg-red-600 text-white font-medium rounded-sm">
-              Login
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <></>
+    // <div className="table-login pr-[0.71rem] pl-[0.71rem] mt-5 flex justify-center ">
+    //   <div className="pt-5 pb-5 w-full border rounded-lg border-black text-center h-[9rem]">
+    //     <div className="text-secondary-2">
+    //       <p className="text-[1rem] font-medium">
+    //         Please log in/register to view points
+    //       </p>
+    //       <div className="flex justify-center mt-4">
+    //         <button className="mx-2 px-5 py-2 border border-red-600 text-red-600 font-medium rounded-sm">
+    //           Register
+    //         </button>
+    //         <button className="mx-2 px-5 py-2 bg-red-600 text-white font-medium rounded-sm">
+    //           Login
+    //         </button>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 }
 
@@ -148,7 +255,6 @@ function TableBaru() {
             4
           </div>
         </div>
-       
       </div>
     </>
   );
