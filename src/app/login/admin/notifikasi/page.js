@@ -6,7 +6,13 @@ import { Button, Col, Row, Table } from "antd";
 import { ArticleZustand } from "@/zustand/Article/article";
 
 export default function NotifikasiPage() {
-  const { getPointAdmin, getPointAdminData, approvePoint } = ArticleZustand();
+  const {
+    getPointAdmin,
+    getPointAdminData,
+    approvePoint,
+    getPointAllData,
+    getPointAll,
+  } = ArticleZustand();
   const routerr = usePathname();
   const pathSegments = routerr.split("/");
   const adminIndex = pathSegments.indexOf("admin");
@@ -39,9 +45,10 @@ export default function NotifikasiPage() {
             <Button
               size="sm"
               style={{ backgroundColor: "#1677ff", color: "white" }}
-              onClick={(e) => {
+              onClick={async (e) => {
                 console.log(ew);
-                approvePoint(ew.id)
+                await approvePoint(ew.id);
+                await getPointAdmin();
               }}
             >
               Approve
@@ -57,24 +64,35 @@ export default function NotifikasiPage() {
       },
     },
   ];
-  console.log(getPointAdminData.data);
+  const columnsList = [
+    {
+      title: "No",
+      dataIndex: "no",
+      key: "no",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
+    },
+    {
+      title: "Point",
+      dataIndex: "point",
+      key: "point",
+    },
+  ];
+  // console.log(getPointAdminData.data.length);
   useEffect(() => {
     getPointAdmin();
+    getPointAll();
   }, []);
   return (
-    <Sidebar title={partAfterAdmin}>
+    <Sidebar title={partAfterAdmin} dataNotifikasi={getPointAdminData?.data?.length || 0}>
       <div className="w-full ">
-        <Col>
-          <h1>Waiting Approve Point Admin</h1>
-          <Table dataSource={getPointAdminData.data} columns={columns} />
-        </Col>
-        {/* <Col md={12}>
-            <h1>Waiting Approve Point Admin</h1>
-            <Table
-              // dataSource={DataBanner?.data}
-              columns={columns}
-            />
-          </Col> */}
+        <h1 className="font-bold">Waiting Approve Point Admin</h1>
+        <Table dataSource={getPointAdminData.data} columns={columns} />
+        <h1 className="mt-10 font-bold">List Approve Point Admin</h1>
+        <Table dataSource={getPointAllData.data} columns={columnsList} />
       </div>
     </Sidebar>
   );

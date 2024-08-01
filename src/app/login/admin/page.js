@@ -1,7 +1,8 @@
 "use client";
+import { ArticleZustand } from "@/zustand/Article/article";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaHome,
   FaChartLine,
@@ -15,7 +16,7 @@ import {
   FaCog,
 } from "react-icons/fa";
 
-function Sidebar({ title = "title", children }) {
+function Sidebar({ title = "title", children}) {
   const routerr = usePathname();
   const pathSegments = routerr.split("/");
   const adminIndex = pathSegments.indexOf("admin");
@@ -24,6 +25,17 @@ function Sidebar({ title = "title", children }) {
       ? pathSegments.slice(adminIndex + 1).join("/")
       : "";
   console.log(partAfterAdmin);
+
+  const {
+    getPointAdmin,
+    getPointAdminData,
+    approvePoint,
+    getPointAllData,
+    getPointAll,
+  } = ArticleZustand();
+useEffect(()=>{
+  getPointAdmin();
+},[])
 
   return (
     <div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50  text-gray-800">
@@ -139,9 +151,13 @@ function Sidebar({ title = "title", children }) {
                 </span>
               </Link>
             </li>
-            <li className={`${
-                partAfterAdmin === "notifikasi" ? "bg-primary-2" : "bg-transparent"
-              }`}>
+            <li
+              className={`${
+                partAfterAdmin === "notifikasi"
+                  ? "bg-primary-2"
+                  : "bg-transparent"
+              }`}
+            >
               <Link
                 href="/login/admin/notifikasi"
                 className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
@@ -166,7 +182,7 @@ function Sidebar({ title = "title", children }) {
                   Notifications
                 </span>
                 <span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-500 bg-red-50 rounded-full">
-                  10+
+                  {getPointAdminData?.data?.length || 0}
                 </span>
               </Link>
             </li>

@@ -9,6 +9,7 @@ export const ArticleZustand = create((set, get) => ({
   detailDataArticle: "",
   loading: true,
   getPointAdminData: "",
+  getPointAllData: "",
   getArticle: async () => {
     try {
       const response = await axios.get(
@@ -181,6 +182,15 @@ export const ArticleZustand = create((set, get) => ({
       message.error(
         error?.response?.data?.status?.message || "gagal approve point"
       );
+      set({ loading: false });
+    }
+  },
+
+  getPointAll: async (id) => {
+    try {
+      const response = await axios.get(`${baseURL}auth/get-point-all?page=1&limit=10`);
+      set({ getPointAllData: response.data });
+    } catch (error) {
       set({ loading: false });
     }
   },
