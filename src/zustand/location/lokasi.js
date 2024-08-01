@@ -30,7 +30,7 @@ export const LokasiZustand = create((set, get) => ({
     const id_kota = get().id_kota;
     try {
       const response = await axios.get(
-        `https://batuginbackend.whandev.tech/location/get-location?id_provinsi=${id_provinsi}&id_kota=${id_kota}&page=1&limit=10`
+        `${baseURL}location/get-location?id_provinsi=${id_provinsi}&id_kota=${id_kota}&page=1&limit=10`
       );
       // console.log(response.data.data);
       set({dataSemuaLokasiSelect : response.data})
