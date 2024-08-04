@@ -25,7 +25,7 @@ function Slide1() {
 
   return (
     <div className="bg-white">
-      <div className="h-auto">
+      <div className="h-auto hidden sm:block">
         <SwipperHomeUtama />
       </div>
       {/* <div

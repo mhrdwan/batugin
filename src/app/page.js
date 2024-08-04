@@ -63,7 +63,7 @@ export default function Home() {
       {/* <div className="relative"> */}
       <ApaItu />
 
-      <div className="pl-[1.4rem] pr-[1.4rem] flex justify-center w-full mt-[2rem] md:hidden">
+      <div className="pl-[1.4rem] pr-[1.4rem] flex justify-center w-full mt-[8rem] md:hidden">
         <Image
           src={BATUGIN_PINTU}
           alt="BATUGIN_PINTU"
