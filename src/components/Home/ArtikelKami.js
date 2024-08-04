@@ -232,7 +232,7 @@ function ArtikelKami() {
               </div>
             </div>
           </div>
-          <div className="mt-20 flex justify-center space-x-5">
+          <div className="sm:mt-20   justify-center space-x-5 hidden sm:flex">
             {bannerHome.map((item, index) => (
               <div key={index}>
                 <Image
@@ -245,7 +245,7 @@ function ArtikelKami() {
               </div>
             ))}
           </div>
-          <div className="cover-banner mt-16  md:hidden ini-hp">
+          <div className="cover-banner sm:mt-16  md:hidden ini-hp">
             <div
               className="w-full h-[50.625rem] bg-red-300 flex  "
               style={{
@@ -259,19 +259,19 @@ function ArtikelKami() {
                   Our Achivement
                 </p>
                 <p className="text-secondary-2 text-[2rem] font-bold mt-[100px]">
-                  8 Years
+                  50 years
                 </p>
                 <p className="text-secondary-2 text-[1rem] mt-1">
                   Been trusted by customer
                 </p>
                 <p className="text-secondary-2 text-[2rem] font-bold mt-[100px]">
-                  20.000
+                  60.000+
                 </p>
                 <p className="text-secondary-2 text-[1rem] mt-1">
                   Sold to our customer
                 </p>
                 <p className="text-secondary-2 text-[2rem] font-bold mt-[100px]">
-                  1000
+                  1500
                 </p>
                 <p className="text-secondary-2 text-[1rem] mt-1">
                   Bottle sold / month
