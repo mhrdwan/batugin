@@ -10,13 +10,13 @@ export default function ArtikelKamiSwipper({ dataArtikel }) {
   return (
     <Swiper
       breakpoints={{
-        380: {
+        400: {
           slidesPerView: 3,
           spaceBetween: 200,
-          centeredSlides: true,
+          // centeredSlides: true,
         },
         640: {
-          slidesPerView: 4,
+          slidesPerView: 3,
           spaceBetween: 10,
         },
         800: {
