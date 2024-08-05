@@ -106,9 +106,7 @@ function ArtikelKami() {
     },
   ];
 
-  if (routerr.includes(`/artikel`)) {
-    console.log("benar");
-  }
+ 
   return (
     <div className=" ">
       <div className=" flex justify-between items-center">

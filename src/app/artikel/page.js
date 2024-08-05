@@ -31,10 +31,10 @@ function PageArticle() {
     console.log("Card clicked with id:", item);
     router.push(
       `/artikel/${item?.title
-        ?.toLowerCase() 
-        .replace(/[^a-z0-9\s-]/g, "") 
-        .trim() 
-        .replace(/\s+/g, "-") 
+        ?.toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, "")
+        .trim()
+        .replace(/\s+/g, "-")
         .replace(/-+/g, "-")}/${item?.id}`
     );
   };
@@ -42,7 +42,7 @@ function PageArticle() {
     <div className="bg-white ">
       <NavbarComp />
       <NorifReward />
-      <div className="pl-[120px] pr-[120px]">
+      <div className="pl-[120px] pr-[120px] hidden sm:block">
         <div className="mt-14">
           {Array.isArray(dataArtikel) &&
             dataArtikel?.map((item, index) => (
@@ -56,6 +56,19 @@ function PageArticle() {
               </div>
             ))}
         </div>
+      </div>
+      <div>
+        {Array.isArray(dataArtikel) &&
+          dataArtikel?.map((item, index) => (
+            <div className="mt-9 sm:hidden pl-5 pr-5 h-[30vh]" key={index}>
+              <CardArtikelList
+                onClick={() => handleCardClick(item)}
+                imageUrl={item?.foto}
+                description={item?.content}
+                title={item?.title}
+              />
+            </div>
+          ))}
       </div>
       <FooterComp mt={"10"} />
     </div>
