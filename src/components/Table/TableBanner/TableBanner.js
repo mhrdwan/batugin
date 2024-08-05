@@ -17,6 +17,9 @@ export default function TableBanner() {
       title: "Banner",
       dataIndex: "banner",
       key: "banner",
+      render :(banner)=>{
+        return <img src={banner} alt="banner" style={{width:"80%" , height:"10vh"}}/>;
+      }
     },
     {
       title: "Edit",
