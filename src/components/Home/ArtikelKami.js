@@ -106,6 +106,9 @@ function ArtikelKami() {
     },
   ];
 
+  if (routerr.includes(`/artikel`)) {
+    console.log("benar");
+  }
   return (
     <div className=" ">
       <div className=" flex justify-between items-center">
@@ -245,7 +248,11 @@ function ArtikelKami() {
               </div>
             ))}
           </div>
-          <div className="cover-banner sm:mt-16  md:hidden ini-hp">
+          <div
+            className={`cover-banner sm:mt-16  md:hidden ini-hp ${
+              routerr.includes(`/artikel`) ? "hidden" : ""
+            }`}
+          >
             <div
               className="w-full h-[50.625rem] bg-red-300 flex  "
               style={{
