@@ -2,12 +2,13 @@
 import FooterComp from "@/components/Home/Footer";
 import NavbarComp from "@/components/NavbarComp";
 import NorifReward from "@/components/NorifReward";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import katamere1 from "../../../public/assets/katamereka/Ashanty.png";
 import katamere2 from "../../../public/assets/katamereka/Rasidin Karyana Founder Sinar Jaya Group.png";
 import katamere3 from "../../../public/assets/katamereka/Suharto GM ASDP PT. Ferry Indonesia.png";
 import katamere4 from "../../../public/assets/katamereka/Walikota tangerang.png";
+import { katamerekaZustandStore } from "@/zustand/katamereka/katamereka";
 
 const testimonials = [
   {
@@ -41,6 +42,11 @@ const testimonials = [
 ];
 
 function KataMereka() {
+  const { fetchGetList, dataFetchGetList } = katamerekaZustandStore();
+  useEffect(() => {
+    fetchGetList();
+  }, []);
+
   return (
     <div className="bg-white">
       <NavbarComp />
@@ -57,14 +63,14 @@ function KataMereka() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
-        {testimonials.map((item) => (
+        {dataFetchGetList?.data?.map((item) => (
           <div
-            key={item.id}
+            key={item.no}
             className="flex flex-col items-center p-10 border border-neutral-400"
           >
             <Image
               loading="lazy"
-              src={item.image}
+              src={item.foto}
               alt={item.name}
               width={120}
               height={120}
@@ -74,12 +80,16 @@ function KataMereka() {
               {item.name}
             </div>
             <div className="w-full h-1 bg-red-600 mt-2 mb-4"></div>
-            <div className="text-neutral-400 text-center">{item.age} Tahun</div>
-            <div className="text-center text-zinc-600 mt-6">{item.desc}</div>
+            <div className="text-neutral-400 text-center">
+              {item.pekerjaan} 
+            </div>
+            <div className="text-center text-zinc-600 mt-6">
+              {item.testimoni}
+            </div>
           </div>
         ))}
       </div>
-      <FooterComp />
+      <FooterComp mt={5} />
     </div>
   );
 }
