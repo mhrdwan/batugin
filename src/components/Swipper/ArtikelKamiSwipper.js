@@ -10,9 +10,9 @@ export default function ArtikelKamiSwipper({ dataArtikel }) {
   return (
     <Swiper
       breakpoints={{
-        400: {
-          slidesPerView: 3,
-          spaceBetween: 200,
+        300: {
+          slidesPerView: 2,
+          spaceBetween: 250,
           // centeredSlides: true,
         },
         640: {
@@ -34,7 +34,7 @@ export default function ArtikelKamiSwipper({ dataArtikel }) {
       }}
       loop
       modules={[Autoplay]}
-      className="mySwiper"
+      className="mySwiper "
     >
       {dataArtikel?.map((item) => (
         <SwiperSlide key={item.no}>
