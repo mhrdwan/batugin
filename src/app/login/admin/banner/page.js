@@ -47,7 +47,13 @@ export default function Banner() {
       dataIndex: "banner",
       key: "banner",
       render: (banner) => {
-        return <img style={{ width: 100 , height:"10vh"}} src={banner} alt="banner" />;
+        return (
+          <img
+            style={{ width: 100, height: "10vh" }}
+            src={banner}
+            alt="banner"
+          />
+        );
       },
     },
     {

@@ -16,15 +16,15 @@ export default function ArtikelKamiSwipper({ dataArtikel }) {
           centeredSlides: true,
         },
         640: {
-          slidesPerView: 3,
+          slidesPerView: 4,
           spaceBetween: 10,
         },
         800: {
-          slidesPerView: 3,
+          slidesPerView: 4,
           spaceBetween: 10,
         },
         900: {
-          slidesPerView: 3,
+          slidesPerView: 4,
           spaceBetween: 10,
         },
       }}
