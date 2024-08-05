@@ -24,7 +24,8 @@ const gambar = [
   alfa,
   alfamidi,
   viva,
-  watsons,century
+  watsons,
+  century,
 ];
 
 function MitraKami() {
@@ -32,7 +33,10 @@ function MitraKami() {
     <div className="bg-white">
       <NavbarComp />
       <NorifReward />
-      <div className="pl-[120px] pr-[120px]">
+      <div className="pl-[120px] pr-[120px] hidden sm:block">
+        <LokasiKamiBaru />
+      </div>
+      <div className="sm:hidden">
         <LokasiKamiBaru />
       </div>
 
@@ -48,7 +52,7 @@ function MitraKami() {
         </div>
       </div>
 
-      <div className=" pl-[120px] pr-[120px] mt-[80px] grid grid-cols-4 gap-4">
+      <div className=" sm:pl-[120px] sm:pr-[120px] mt-[80px] grid sm:grid-cols-4 sm:gap-4 grid-cols-3 gap-3">
         {gambar.map((src, index) => (
           <div
             key={index}

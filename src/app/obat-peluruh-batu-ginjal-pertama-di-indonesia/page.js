@@ -201,14 +201,14 @@ function page() {
         </p>
         <SwipperDashboard KataMereka={KataMereka} />
       </div> */}
-      <div className="md:hidden">
+      <div className="md:hidden hidden">
         <p className="underline decoration-[3px] text-secondary-2 underline-offset-[6px] mt-[5rem] text-center decoration-red-500 font-semibold text-[1.5rem]">
           Review Batugin
         </p>
         <p className="text-center mt-4 text-[1rem]">
           Yang sudah merasakan khasiat batugin
         </p>
-        <div className="mt-5  w-full items-center flex">
+        <div className="mt-5  w-full items-center flex ">
           <SwipperMobile KataMereka={KataMereka} />
         </div>
       </div>

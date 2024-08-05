@@ -38,7 +38,7 @@ console.log(`dataSemuaLokasiSelect`,dataSemuaLokasiSelect)
           <div className="flex gap-5 max-md:flex-col max-md:gap-0">
             <div className="flex flex-col w-full">
               <div className="flex grow gap-2 justify-between px-6 py-3 text-xl font-medium text-black bg-white max-md:flex-wrap max-md:px-5 max-md:mt-10">
-                <div className="w-1/2 pr-2">
+                <div className="sm:w-1/2 w-full sm:pr-2 p-0">
                   <div>Provinsi</div>
                   <Select
                     showSearch
@@ -61,7 +61,7 @@ console.log(`dataSemuaLokasiSelect`,dataSemuaLokasiSelect)
                       ))}
                   </Select>
                 </div>
-                <div className="w-1/2 pl-2">
+                <div className="sm:w-1/2 w-full sm:pr-2 p-0">
                   <div>Kota</div>
                   <Select
                     disabled={!id_provinsi}
