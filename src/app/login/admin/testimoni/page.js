@@ -52,7 +52,7 @@ export default function Testimoni() {
       },
     },
     {
-      title: "Edit / Detele",
+      title: "Edit / Delete",
       // dataIndex: "foto",
       // key: "foto",
       render: () => {
@@ -61,7 +61,7 @@ export default function Testimoni() {
             <Button style={{ backgroundColor: "yellow", color: "black" }}>
               Edit
             </Button>{" "}
-            <Button style={{ backgroundColor: "red", color: "white" }}>Detele</Button>
+            <Button style={{ backgroundColor: "red", color: "white" }}>Delete</Button>
           </>
         );
       },
