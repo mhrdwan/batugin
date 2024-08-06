@@ -26,6 +26,7 @@ function page() {
         message: "Sukses Login",
       });
       router.push('/login/admin/dashboard')
+      localStorage.setItem("tokenlogin", response.data.data.token);
     } catch (error) {
       console.log(error.response);
       notification.error({

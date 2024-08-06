@@ -32,7 +32,8 @@ export const LoginZustand = create((set, get) => ({
         }
       );
       set({ loading: false });
-      console.log(response.data.status);
+      console.log(`response.data login`,response.data.data.token);
+      localStorage.setItem("token", response.data.data.token);
       set({
         responseMessage: response.data.status.code,
       });
