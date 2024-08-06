@@ -8,7 +8,7 @@ export const katamerekaZustandStore = create((set, get) => ({
   fetchGetList: async () => {
     try {
       const data = await axios(
-        `${baseURL}testimoni/get-testimoni?limit=10&page=1`
+        `${baseURL}testimoni/get-testimoni?limit=999&page=1`
       );
       console.log(data.data);
       set({ dataFetchGetList: data?.data });
