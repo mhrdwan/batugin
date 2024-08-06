@@ -7,7 +7,7 @@ import { testimoniZustand } from "@/zustand/testimoni/testimoni";
 import "./testimoni.css";
 import ModalTestimoniAddEdit from "@/components/ModalTestimoni/ModalTestimoniAddEdit";
 export default function Testimoni() {
-  const { fetchDataTestimoni, dataTestimoni } = testimoniZustand();
+  const { fetchDataTestimoni, dataTestimoni,deleteDataTestimoni } = testimoniZustand();
   const [openModal, setopenModal] = useState(false);
   const [dataModalEdit , setdataModalEdit] = useState([]);
   const [titleModal, settitleModal] = useState("Buat Testimoni");
@@ -59,7 +59,7 @@ export default function Testimoni() {
       title: "Edit / Delete",
       // dataIndex: "foto",
       // key: "foto",
-      render: (data) => {
+      render: (data,data2) => {
         return (
           <>
             <Button
@@ -73,7 +73,7 @@ export default function Testimoni() {
             >
               Edit
             </Button>{" "}
-            <Button style={{ backgroundColor: "red", color: "white" }}>
+            <Button onClick={()=>deleteDataTestimoni(data?.id)} style={{ backgroundColor: "red", color: "white" }}>
               Delete
             </Button>
           </>
