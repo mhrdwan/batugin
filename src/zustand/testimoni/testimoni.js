@@ -1,7 +1,7 @@
 import { baseURL } from "@/app/api/baseUrl";
 import { notification } from "antd";
 import axios from "axios";
-const token = localStorage.getItem("tokenlogin");
+// const token = localStorage.getItem("tokenlogin");
 
 const { create } = require("zustand");
 export const testimoniZustand = create((set, get) => ({
@@ -27,11 +27,11 @@ export const testimoniZustand = create((set, get) => ({
       const data = await axios.post(
         `${baseURL}testimoni/add-testimoni`,
         formData,
-        {
-          headers: {
-            Authorization: token,
-          },
-        }
+        // {
+        //   headers: {
+        //     Authorization: token,
+        //   },
+        // }
       );
       console.log(data?.data?.status?.message);
       notification.success({
@@ -58,11 +58,11 @@ export const testimoniZustand = create((set, get) => ({
       const data = await axios.post(
         `${baseURL}testimoni/edit-testimoni`,
         formData,
-        {
-          headers: {
-            Authorization: token,
-          },
-        }
+        // {
+        //   headers: {
+        //     Authorization: token,
+        //   },
+        // }
       );
     } catch (error) {
       console.log(error);
