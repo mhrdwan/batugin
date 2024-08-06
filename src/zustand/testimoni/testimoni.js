@@ -9,7 +9,7 @@ export const testimoniZustand = create((set, get) => ({
   fetchDataTestimoni: async () => {
     try {
       const data = await axios.get(
-        `${baseURL}testimoni/get-testimoni?limit=10&page=1`
+        `${baseURL}testimoni/get-testimoni?limit=999&page=1`
       );
       //   console.log(data);
       set({ dataTestimoni: data?.data });
