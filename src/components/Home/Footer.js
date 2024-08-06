@@ -6,7 +6,9 @@ import Image from "next/image";
 function FooterComp({ mt = 20 }) {
   return (
     <div>
-      <div className={`mt-[${mt}rem] md:flex justify-center items-center hidden`}>
+      <div
+        className={`mt-[${mt}rem] md:flex justify-center items-center hidden`}
+      >
         <div
           className="h-[19rem] w-full bg-no-repeat bg-cover bg-center "
           style={{ backgroundImage: `url('${footer.src}')` }}
@@ -31,10 +33,47 @@ function FooterComp({ mt = 20 }) {
                   Social Media
                 </div>
                 <div className="text-[0.7rem] text-accents-2 ">
-                  <div className="hover:cursor-pointer" onClick={()=>window.open("https://www.instagram.com/batuginkf/","_blank")}>Instagram</div>
-                  <div className="hover:cursor-pointer" onClick={()=>window.open("https://www.facebook.com/BatuginID","_blank")}>Facebook</div>
-                  <div className="hover:cursor-pointer" onClick={()=>window.open("https://www.tiktok.com/@batuginkf","_blank")}>Tiktok</div>
-                  <div className="hover:cursor-pointer" onClick={()=>window.open("https://www.youtube.com/@BatuginKF","_blank")}>YouTube</div>
+                  <div
+                    className="hover:cursor-pointer"
+                    onClick={() =>
+                      window.open(
+                        "https://www.instagram.com/batuginkf/",
+                        "_blank"
+                      )
+                    }
+                  >
+                    Instagram
+                  </div>
+                  <div
+                    className="hover:cursor-pointer"
+                    onClick={() =>
+                      window.open(
+                        "https://www.facebook.com/BatuginID",
+                        "_blank"
+                      )
+                    }
+                  >
+                    Facebook
+                  </div>
+                  <div
+                    className="hover:cursor-pointer"
+                    onClick={() =>
+                      window.open("https://www.tiktok.com/@batuginkf", "_blank")
+                    }
+                  >
+                    Tiktok
+                  </div>
+                  <div
+                    className="hover:cursor-pointer"
+                    onClick={() =>
+                      window.open(
+                        "https://www.youtube.com/@BatuginKF",
+                        "_blank"
+                      )
+                    }
+                  >
+                    YouTube
+                  </div>
                 </div>
               </div>
               <div className="flex flex-col text-start">
@@ -84,9 +123,38 @@ function FooterComp({ mt = 20 }) {
               Social Media
             </div>
             <div className="text-[0.85rem] text-accents-2 ">
-              <div>Instagram</div>
-              <div>Facebook</div>
-              <div>Twitter</div>
+              <div
+                className="hover:cursor-pointer"
+                onClick={() =>
+                  window.open("https://www.instagram.com/batuginkf/", "_blank")
+                }
+              >
+                Instagram
+              </div>
+              <div
+                className="hover:cursor-pointer"
+                onClick={() =>
+                  window.open("https://www.facebook.com/BatuginID", "_blank")
+                }
+              >
+                Facebook
+              </div>
+              <div
+                className="hover:cursor-pointer"
+                onClick={() =>
+                  window.open("https://www.tiktok.com/@batuginkf", "_blank")
+                }
+              >
+                Tiktok
+              </div>
+              <div
+                className="hover:cursor-pointer"
+                onClick={() =>
+                  window.open("https://www.youtube.com/@BatuginKF", "_blank")
+                }
+              >
+                YouTube
+              </div>
             </div>
             <div className="font-semibold mt-[3.7rem]  text-accents-2 text-[1.45rem]">
               Others
