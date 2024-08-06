@@ -1,12 +1,16 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../page";
 import { Button, Table } from "antd";
 import Image from "next/image";
 import { testimoniZustand } from "@/zustand/testimoni/testimoni";
 import "./testimoni.css";
+import ModalTestimoniAddEdit from "@/components/ModalTestimoni/ModalTestimoniAddEdit";
 export default function Testimoni() {
   const { fetchDataTestimoni, dataTestimoni } = testimoniZustand();
+  const [openModal, setopenModal] = useState(false);
+  const [dataModalEdit , setdataModalEdit] = useState([]);
+  const [titleModal, settitleModal] = useState("Buat Testimoni");
   useEffect(() => {
     fetchDataTestimoni();
   }, []);
@@ -55,13 +59,23 @@ export default function Testimoni() {
       title: "Edit / Delete",
       // dataIndex: "foto",
       // key: "foto",
-      render: () => {
+      render: (data) => {
         return (
           <>
-            <Button style={{ backgroundColor: "yellow", color: "black" }}>
+            <Button
+              onClick={() => {
+                settitleModal("Edit Testimoni");
+                setopenModal(true)
+                // console.log(data)
+                setdataModalEdit(data)
+              }}
+              style={{ backgroundColor: "yellow", color: "black" }}
+            >
               Edit
             </Button>{" "}
-            <Button style={{ backgroundColor: "red", color: "white" }}>Delete</Button>
+            <Button style={{ backgroundColor: "red", color: "white" }}>
+              Delete
+            </Button>
           </>
         );
       },
@@ -71,8 +85,25 @@ export default function Testimoni() {
   return (
     <div>
       <Sidebar title="Testimoni">
-        <Button style={{backgroundColor :'yellow' , color:'black' , borderColor:'black'}}>Tambah Testimoni</Button>
+        <Button
+          style={{
+            backgroundColor: "yellow",
+            color: "black",
+            borderColor: "black",
+          }}
+          onClick={() => {
+            settitleModal("Buat Testimoni");
+            setopenModal(true)}}
+        >
+          Tambah Testimoni
+        </Button>
         <Table columns={columnsList} dataSource={dataTestimoni?.data} />
+        <ModalTestimoniAddEdit
+        dataModalEdit={dataModalEdit}
+          titleModal={titleModal}
+          setopenModal={setopenModal}
+          openModal={openModal}
+        />
       </Sidebar>
     </div>
   );
