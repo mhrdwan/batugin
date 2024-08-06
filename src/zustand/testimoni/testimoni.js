@@ -1,9 +1,9 @@
 import { baseURL } from "@/app/api/baseUrl";
 import { notification } from "antd";
 import axios from "axios";
+const token = localStorage.getItem("tokenlogin");
 
 const { create } = require("zustand");
-const token = localStorage.getItem("tokenlogin");
 export const testimoniZustand = create((set, get) => ({
   dataTestimoni: [],
   fetchDataTestimoni: async () => {
