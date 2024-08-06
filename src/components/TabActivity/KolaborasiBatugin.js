@@ -8,7 +8,7 @@ function KolaborasiBatugin() {
     <div className="mt-5">
       {/* <FollowBatugin/> */}
       <SwipperKolaborasi />
-      <div className="md:pr-[8.5rem] md:pl-[8.5rem] mt-10">
+      <div className="md:pr-[8.5rem] md:pl-[8.5rem] mt-10 pl-5 pr-5">
         <p>
           Kolaborasi Batugin untuk kesehatan ginjal masyarakat Indonesia.
           Sebagai pelopor obat peluruh batu ginjal pertama di Indonesia, kami di

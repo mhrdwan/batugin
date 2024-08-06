@@ -108,7 +108,7 @@ function SenamSehatBatugin() {
         </div>
       </div>
       {/* ini hp */}
-      <div className="w-full mt-16 pl-10 pr-10">
+      <div className="w-full mt-16 pl-10 pr-10 sm:hidden">
         <div className="flex flex-col">
           <div className="px-5 py-10 w-full bg-white border border-solid border-stone-300 max-md:max-w-full">
             <div className="flex gap-5 max-md:flex-col max-md:gap-0">
