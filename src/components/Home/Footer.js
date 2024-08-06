@@ -53,7 +53,7 @@ function FooterComp({ mt = 20 }) {
                 </div>
                 <div className="text-[0.7rem] text-accents-2 ">
                   <div>batugin.support@gmail.com</div>
-                  <div>(021) 1238-2309</div>
+                  <div>1-500-255</div>
                   <div>(Whatsapp) 0812-2389-1239 </div>
                 </div>
               </div>
@@ -101,7 +101,7 @@ function FooterComp({ mt = 20 }) {
             </div>
             <div className="text-[0.85rem] text-accents-2 ">
               <div>batugin.support@gmail.com</div>
-              <div>(021) 1238-2309</div>
+              <div>1-500-255</div>
               <div>(Whatsapp) 0812-2389-1239 </div>
             </div>
           </div>
