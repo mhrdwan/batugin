@@ -156,7 +156,7 @@ function TableBaru() {
   const itemsPerPage = 5;
   
   useEffect(() => {
-    getPointAll(currentPage); // Fetch data for the current page
+    getPointAll(currentPage); 
   }, [currentPage]);
 
   const handlePageClick = (pageNumber) => {
@@ -164,7 +164,7 @@ function TableBaru() {
   };
 
   return (
-    <>
+    <div className="">
       <style>
         {`
         .styled-table {
@@ -204,7 +204,7 @@ function TableBaru() {
         }
         `}
       </style>
-      <table className="styled-table">
+      <table className="styled-table ">
         <thead>
           <tr>
             <th>No.</th>
@@ -237,7 +237,7 @@ function TableBaru() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

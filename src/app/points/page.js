@@ -39,7 +39,7 @@ export default function Page() {
     <div className="bg-white">
       <NavbarComp />
       <NorifReward />
-      <div className="w-full mt-10 md:pr-[8.5rem] md:pl-[8.5rem]">
+      <div className="w-full mt-10 md:pr-[8.5rem] md:pl-[8.5rem] pl-5 pr-5 text-sm">
         <div className="Frame164 h-8 justify-start items-start gap-5 inline-flex">
           <div className={`Frame110 hover:cursor-pointer flex-col justify-center items-center gap-1 inline-flex ${aktif === 'pesta' ? '' : 'opacity-80'}`} onClick={() => changeTab("pesta")}>
             <div className="PestaPointBatugin text-base font-medium font-['Poppins']">

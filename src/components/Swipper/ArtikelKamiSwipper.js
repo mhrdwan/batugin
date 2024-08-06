@@ -54,10 +54,10 @@ export default function ArtikelKamiSwipper({ dataArtikel }) {
                 <div className="text-white text-base font-medium font-['Poppins']">
                   <Link
                     href={`/artikel/${item?.sub_title
-                      ?.toLowerCase() // Ubah ke huruf kecil
-                      .replace(/[^a-z0-9\s-]/g, "") // Hapus karakter spesial
-                      .trim() // Hapus spasi di awal dan akhir
-                      .replace(/\s+/g, "-") // Ganti spasi dengan tanda hubung
+                      ?.toLowerCase() 
+                      .replace(/[^a-z0-9\s-]/g, "")
+                      .trim() 
+                      .replace(/\s+/g, "-") 
                       .replace(/-+/g, "-")}/${item?.id}`}
                   >
                     Lihat Artikel
