@@ -75,13 +75,13 @@ function page() {
 
   function tabBaruBeli120() {
     window.open(
-      "https://www.tokopedia.com/kimiafarmaapotekos/batugin-elixir-120-ml-obat-herbal-batu-ginjal-kimia-farma",
+      "https://s.shopee.co.id/1qHXvLo7hT",
       "_blank"
     );
   }
   function tabBaruBeli300() {
     window.open(
-      "https://www.tokopedia.com/kimiafarmaapotekos/batugin-elixir-300-ml-obat-herbal-batu-ginjal-kimia-farma",
+      "https://s.shopee.co.id/1qHXvLo7hT",
       "_blank"
     );
   }

@@ -27,7 +27,7 @@ function ApaItu() {
             buang air kecil lebih lancar.
           </p>
           <div className="flex justify-center md:block ">
-            <button onClick={()=>window.open('https://www.tokopedia.com/kimiafarmaapotekos/batugin-elixir-300-ml-obat-herbal-batu-ginjal-kimia-farma',"_black")} className="bg-accents-2 border text-[1.25rem] w-11/12 pl-6 pr-6 border-accents-2 hover:text-accents-2 text-white font-semibold text-base leading-normal md:w-[10rem] h-[3.75rem] px-2 py-2 mt-[2rem] hover:bg-primary-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+            <button onClick={()=>window.open('https://s.shopee.co.id/1qHXvLo7hT',"_black")} className="bg-accents-2 border text-[1.25rem] w-11/12 pl-6 pr-6 border-accents-2 hover:text-accents-2 text-white font-semibold text-base leading-normal md:w-[10rem] h-[3.75rem] px-2 py-2 mt-[2rem] hover:bg-primary-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
               Beli Produk
             </button>
           </div>
