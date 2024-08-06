@@ -80,9 +80,12 @@ function SenamSehatBatugin() {
               <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
                   {/* <div className="text-xl font-semibold tracking-wide text-black max-md:max-w-full">
-                    Bergerak Bersama Batugin Kota Tangerang
-                  </div> */}
-                  <div className="mt-5 text-base tracking-wide leading-7 text-zinc-700 max-md:max-w-full">
+          Bergerak Bersama Batugin Kota Tangerang
+        </div> */}
+                  <div
+                    className="mt-5 text-base tracking-wide leading-7 text-zinc-700 max-md:max-w-full"
+                    style={{ textAlign: "justify" }}
+                  >
                     Batugin Bersama Kementerian Pemuda dan Olahraga RI
                     berkolaborasi untuk menciptakan gerakan senam yang
                     bermanfaat untuk kesehatan ginjal. Pada bulan Juli 2024
@@ -110,6 +113,7 @@ function SenamSehatBatugin() {
               </div>
             </div>
           </div>
+
           <div className="flex flex-col justify-center px-5 py-10 w-full bg-white border border-solid border-stone-300 max-md:max-w-full">
             <div className="text-xl font-semibold tracking-wide leading-7 text-black max-md:max-w-full">
               Tentang Batugin
@@ -203,7 +207,10 @@ function SenamSehatBatugin() {
                   {/* <div className="text-xl font-semibold tracking-wide text-black max-md:max-w-full">
                     Bergerak Bersama Batugin Kota Tangerang
                   </div> */}
-                  <div className="mt-5 text-base tracking-wide leading-7 text-zinc-700 max-md:max-w-full">
+                  <div
+                    style={{ textAlign: "justify" }}
+                    className="mt-5 text-base tracking-wide leading-7 text-zinc-700 max-md:max-w-full"
+                  >
                     Batugin Bersama Kementerian Pemuda dan Olahraga RI
                     berkolaborasi untuk menciptakan gerakan senam yang
                     bermanfaat untuk kesehatan ginjal. Pada bulan Juli 2024
