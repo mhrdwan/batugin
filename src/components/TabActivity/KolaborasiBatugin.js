@@ -2,14 +2,42 @@ import SwipperKolaborasi from "../Swipper/SwipperKolaborasi/SwipperKolaborasi";
 import React from "react";
 import FollowBatugin from "../Home/Follow";
 import FooterComp from "../Home/Footer";
+import gambar from "../../../public/assets/Kolaborasi Point/2d0c14b9-89a6-434c-bec4-783ae5e7e10f.jpeg";
+import gambar2 from "../../../public/assets/Kolaborasi Point/716bea46-1d5e-451e-9b58-87cfc58a6917.jpeg";
+import gambar3 from "../../../public/assets/Kolaborasi Point/112523f8-066b-4879-a5dc-1d547b694db8.jpeg";
+import gambar4 from "../../../public/assets/Kolaborasi Point/be0e7fca-23d0-4e2c-899d-a1ba2be1f1ca.jpeg";
+import gambar5 from "../../../public/assets/Kolaborasi Point/c776d2e3-68b5-4e71-ac35-b47aa772d1ff.jpeg";
+import gambar6 from "../../../public/assets/Kolaborasi Point/fda90b68-434a-4f51-9798-b926157bceec.jpeg";
+import gambar7 from "../../../public/assets/Kolaborasi Point/WhatsApp Image 2024-05-30 at 9.10.36 AM.jpeg";
+import gambar8 from "../../../public/assets/Kolaborasi Point/WhatsApp Image 2024-05-31 at 3.10.00 PM.jpeg";
+import gambar9 from "../../../public/assets/Kolaborasi Point/WhatsApp Image 2024-06-05 at 2.34.48 PM.jpeg";
+import gambar10 from "../../../public/assets/Kolaborasi Point/WhatsApp Image 2024-07-03 at 1.29.54 PM.jpeg";
+import gambar11 from "../../../public/assets/Kolaborasi Point/WhatsApp Image 2024-07-04 at 12.34.59 PM.jpeg";
+import gambar12 from "../../../public/assets/Kolaborasi Point/WhatsApp Image 2024-07-22 at 6.53.25 AM.jpeg";
+import gambar13 from "../../../public/assets/Kolaborasi Point/WhatsApp Image 2024-07-23 at 5.20.59 AM.jpeg";
+import Image from "next/image";
 
+const gambarValue = [
+  gambar,
+  gambar2,
+  gambar3,
+  gambar4,
+  gambar5,
+  gambar6,
+  gambar7,
+  gambar8,
+  gambar9,
+  gambar10,
+  gambar11,
+  gambar12,
+  gambar13,
+];
 function KolaborasiBatugin() {
   return (
     <div className="mt-5">
       {/* <FollowBatugin/> */}
       <div className="">
-
-      <SwipperKolaborasi />
+        <SwipperKolaborasi />
       </div>
       <div className="md:pr-[8.5rem] md:pl-[8.5rem] mt-10 pl-5 pr-5">
         <p>
@@ -55,6 +83,19 @@ function KolaborasiBatugin() {
           dan berbagai pihak, kami siap melanjutkan misi kami dalam meningkatkan
           kesehatan ginjal di Indonesia.
         </p>
+      </div>
+      <div className="flex flex-wrap mt-5 sm:p-32">
+        {gambarValue.map((item, index) => (
+          <div key={index} className="w-1/2 md:w-1/3 lg:w-1/4 p-5">
+            <Image
+              className="object-cover w-full h-full"
+              src={item}
+              width={200}
+              height={200}
+              alt={`Gambar Kolaborasi Batugin ${index + 1}`}
+            />
+          </div>
+        ))}
       </div>
       <div className="mt-10">
         <FooterComp />

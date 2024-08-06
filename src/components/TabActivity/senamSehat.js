@@ -79,9 +79,9 @@ function SenamSehatBatugin() {
             <div className="flex gap-5 max-md:flex-col max-md:gap-0">
               <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
-                  {/* <div className="text-xl font-semibold tracking-wide text-black max-md:max-w-full">
-          Bergerak Bersama Batugin Kota Tangerang
-        </div> */}
+                  <div className="text-xl font-semibold tracking-wide text-black max-md:max-w-full">
+                    Senam Ginjal Sehat Batugin Kolaborasi dengan Kemenpora RI
+                  </div>
                   <div
                     className="mt-5 text-base tracking-wide leading-7 text-zinc-700 max-md:max-w-full"
                     style={{ textAlign: "justify" }}
@@ -204,9 +204,9 @@ function SenamSehatBatugin() {
             <div className="flex gap-5 max-md:flex-col max-md:gap-0">
               <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
-                  {/* <div className="text-xl font-semibold tracking-wide text-black max-md:max-w-full">
-                    Bergerak Bersama Batugin Kota Tangerang
-                  </div> */}
+                  <div className="text-xl font-semibold tracking-wide text-black max-md:max-w-full">
+                    Senam Ginjal Sehat Batugin Kolaborasi dengan Kemenpora RI
+                  </div>
                   <div
                     style={{ textAlign: "justify" }}
                     className="mt-5 text-base tracking-wide leading-7 text-zinc-700 max-md:max-w-full"
