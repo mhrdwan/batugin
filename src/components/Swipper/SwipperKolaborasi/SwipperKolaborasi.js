@@ -16,7 +16,7 @@ import Image from "next/image";
 const kolaborasiBanner = [kolaborasi1, kolaborasi2, kolaborasi3];
 export default function SwipperKolaborasi() {
   return (
-    <div>
+    <div className="">
       <Swiper
         autoplay={{
           delay: 3000,
@@ -28,7 +28,7 @@ export default function SwipperKolaborasi() {
         mousewheel={true}
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-        className="mySwiper"
+        className="mySwiper "
       >
         {/* {kolaborasiBanner.map((item, index) => (
           <div key={index}>
@@ -42,12 +42,13 @@ export default function SwipperKolaborasi() {
             </SwiperSlide>
           </div>
         ))} */}
-         <Image
-                src={kolaborasiBanner[0]}
-                alt={`Banner `}
-                width={"100%"}
-                layout="cover"
-              />
+        <Image
+          src={kolaborasiBanner[0]}
+          alt={`Banner `}
+          width={"100%"}
+          layout=""
+          className=" w-full"
+        />
       </Swiper>
     </div>
   );
