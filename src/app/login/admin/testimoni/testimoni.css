@@ -1,0 +1,6 @@
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper .ant-table-tbody >tr >th, :where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper .ant-table-tbody >tr >td {
+    transition: background 0.2s, border-color 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+    width: 0px;
+    font-size: 11px;
+}
