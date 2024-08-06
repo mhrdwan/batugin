@@ -71,6 +71,7 @@ export default function Testimoni() {
   return (
     <div>
       <Sidebar title="Testimoni">
+        <Button style={{backgroundColor :'yellow' , color:'black' , borderColor:'black'}}>Tambah Testimoni</Button>
         <Table columns={columnsList} dataSource={dataTestimoni?.data} />
       </Sidebar>
     </div>
