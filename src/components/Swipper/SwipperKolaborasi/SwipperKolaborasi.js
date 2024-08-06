@@ -19,7 +19,7 @@ export default function SwipperKolaborasi() {
     <div>
       <Swiper
         autoplay={{
-          delay: 4000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         cssMode={true}
@@ -30,7 +30,7 @@ export default function SwipperKolaborasi() {
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
         className="mySwiper"
       >
-        {kolaborasiBanner.map((item, index) => (
+        {/* {kolaborasiBanner.map((item, index) => (
           <div key={index}>
             <SwiperSlide>
               <Image
@@ -41,7 +41,13 @@ export default function SwipperKolaborasi() {
               />
             </SwiperSlide>
           </div>
-        ))}
+        ))} */}
+         <Image
+                src={kolaborasiBanner[0]}
+                alt={`Banner `}
+                width={"100%"}
+                layout="cover"
+              />
       </Swiper>
     </div>
   );

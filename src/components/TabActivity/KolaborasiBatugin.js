@@ -7,7 +7,10 @@ function KolaborasiBatugin() {
   return (
     <div className="mt-5">
       {/* <FollowBatugin/> */}
+      <div className="">
+
       <SwipperKolaborasi />
+      </div>
       <div className="md:pr-[8.5rem] md:pl-[8.5rem] mt-10 pl-5 pr-5">
         <p>
           Kolaborasi Batugin untuk kesehatan ginjal masyarakat Indonesia.
