@@ -97,7 +97,7 @@ export default function Testimoni() {
         >
           Tambah Testimoni
         </Button>
-        <Table columns={columnsList} dataSource={dataTestimoni?.data} />
+        <Table pagination={false} columns={columnsList} dataSource={dataTestimoni?.data} />
         <ModalTestimoniAddEdit
         dataModalEdit={dataModalEdit}
           titleModal={titleModal}

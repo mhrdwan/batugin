@@ -71,4 +71,16 @@ export const testimoniZustand = create((set, get) => ({
       });
     }
   },
+  deleteDataTestimoni: async (id) => {
+    const body = {
+      id_testimoni: id,
+    };
+    try {
+      const data = await axios.post(`${baseURL}testimoni/del-testimoni`, body);
+      //   console.log(data);
+      notification.success({
+        message: data?.data?.status?.message || "deleted successfully",
+      });
+    } catch (error) {}
+  },
 }));
