@@ -91,9 +91,9 @@ function FooterComp({ mt = 20 }) {
                   Contact
                 </div>
                 <div className="text-[0.7rem] text-accents-2 ">
-                  <div>batugin.support@gmail.com</div>
+                  <div>Kimia Farma</div>
                   <div>1-500-255</div>
-                  <div>(Whatsapp) 0812-2389-1239 </div>
+                  {/* <div>(Whatsapp) 0812-2389-1239 </div> */}
                 </div>
               </div>
             </div>
@@ -168,9 +168,9 @@ function FooterComp({ mt = 20 }) {
               Contact
             </div>
             <div className="text-[0.85rem] text-accents-2 ">
-              <div>batugin.support@gmail.com</div>
+              <div>Kimia Farma</div>
               <div>1-500-255</div>
-              <div>(Whatsapp) 0812-2389-1239 </div>
+              {/* <div>(Whatsapp) 0812-2389-1239 </div> */}
             </div>
           </div>
         </div>
