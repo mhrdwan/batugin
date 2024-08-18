@@ -25,7 +25,7 @@ function Slide1() {
 
   return (
     <div className="bg-white">
-      <div className="h-auto hidden sm:block">
+      <div className="h-auto  sm:block">
         <SwipperHomeUtama />
       </div>
       {/* <div
@@ -70,7 +70,7 @@ function Slide1() {
         </div>
       </div> */}
       <div
-        className="hp h-[20rem] bg-primary-1 md:hidden p-[1.5rem]"
+        className="hp h-[20rem] hidden bg-primary-1 md:hidden p-[1.5rem]"
         style={{
           backgroundImage: "url('/assets/kuning-hp.png')",
           backgroundRepeat: "no-repeat",
