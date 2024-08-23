@@ -5,6 +5,7 @@ import FooterComp from "../Home/Footer";
 import { Button, Modal, Form, Input, Upload } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { ArticleZustand } from "@/zustand/Article/article";
+import GiveAway from "../Give Away/giveAway";
 export default function PointKamu() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const { tambahPoint } = ArticleZustand();
@@ -154,9 +155,9 @@ function TableBaru() {
   const { getPointAllData, getPointAll } = ArticleZustand();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
-  
+
   useEffect(() => {
-    getPointAll(currentPage); 
+    getPointAll(currentPage);
   }, [currentPage]);
 
   const handlePageClick = (pageNumber) => {
@@ -229,15 +230,23 @@ function TableBaru() {
           <div
             key={index}
             onClick={() => handlePageClick(index + 1)}
-            className={`Frame${index + 46} hover:cursor-pointer w-10 p-2 ${index + 1 === currentPage ? 'bg-yellow-900' : 'hover:bg-primary-2'} rounded border border-yellow-900 flex-col justify-center items-center gap-2 inline-flex`}
+            className={`Frame${index + 46} hover:cursor-pointer w-10 p-2 ${
+              index + 1 === currentPage ? "bg-yellow-900" : "hover:bg-primary-2"
+            } rounded border border-yellow-900 flex-col justify-center items-center gap-2 inline-flex`}
           >
-            <div className={`text-base font-medium font-['Poppins'] ${index + 1 === currentPage ? 'text-white' : 'text-yellow-900'}`}>
+            <div
+              className={`text-base font-medium font-['Poppins'] ${
+                index + 1 === currentPage ? "text-white" : "text-yellow-900"
+              }`}
+            >
               {index + 1}
             </div>
           </div>
         ))}
       </div>
+      <div className="mt-28">
+        <GiveAway />
+      </div>
     </div>
   );
 }
-

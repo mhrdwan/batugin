@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["be-erklika.mhridwan.com"], // Tambahkan domain yang diizinkan di sini
+    domains: ["be-erklika.mhridwan.com"], 
   },
 };
 
