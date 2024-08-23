@@ -19,8 +19,9 @@ export default function GiveAway() {
       {/* <p className="font-semibold mb-2">Give Away</p> */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {dataFetchGetListGA?.data?.map((item) => (
-          <Link
-            href={`/giveaway-detail/${item.id}/${item.title.replace(/ /g, '-')}`}
+          <a
+          target="_blank"
+            href={item?.link}
             key={item.id}
             className="flex bg-white rounded-lg overflow-hidden mb-5 hover:cursor-pointer"
           >
@@ -40,7 +41,7 @@ export default function GiveAway() {
               </p>
               <div className="">{truncateText(item.content, 50)}</div>
             </div>
-          </Link>
+          </a>
         ))}
       </div>
     </div>
