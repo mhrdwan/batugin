@@ -16,10 +16,11 @@ export default function GiveAway() {
 
   return (
     <div className="p-5">
+      {/* <p className="font-semibold mb-2">Give Away</p> */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {dataFetchGetListGA?.data?.map((item) => (
           <Link
-            href={`/giveaway-detail/${item.id}`}
+            href={`/giveaway-detail/${item.id}/${item.title.replace(/ /g, '-')}`}
             key={item.id}
             className="flex bg-white rounded-lg overflow-hidden mb-5 hover:cursor-pointer"
           >
