@@ -130,6 +130,16 @@ export default function ModalTestimoniAddEdit({
           </Form.Item>
         </Form>
       </Modal>
+      <style>
+        {`
+        :where(.css-dev-only-do-not-override-j9bb5n).ant-btn-primary {
+    color: #fff;
+    background: #1677ff !important;
+    box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+}
+
+        `}
+      </style>
     </div>
   );
 }

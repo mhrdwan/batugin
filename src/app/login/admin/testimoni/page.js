@@ -81,7 +81,7 @@ export default function Testimoni() {
       },
     },
   ];
-  console.log(dataTestimoni?.data);
+  // console.log(dataTestimoni?.data);
   return (
     <div>
       <Sidebar title="Testimoni">
