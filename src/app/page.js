@@ -17,7 +17,7 @@ export const metadata = {
     siteName: "Batugin - Obat Peluruh Batu Ginjal PERTAMA di Indonesia",
     images: [
       {
-        url: "https://www.batugin.co.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FBANNER%20BATUGIN%20-%201440%20x%20530-03.8c430ccc.png&w=3840&q=75",
+        url: "https://www.batugin.co.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FBatugin%20Product.a0708614.png&w=640&q=75",
         width: 1440,
         height: 530,
         alt: "Batugin - Obat Peluruh Batu Ginjal PERTAMA di Indonesia",
@@ -33,7 +33,7 @@ export const metadata = {
     description:
       "Obat Peluruh Batu Ginjal PERTAMA di Indonesia dengan bahan alami.",
     image:
-      "https://www.batugin.co.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FBANNER%20BATUGIN%20-%201440%20x%20530-03.8c430ccc.png&w=3840&q=75",
+      "https://www.batugin.co.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FBatugin%20Product.a0708614.png&w=640&q=75",
   },
   robots: "index, follow",
   canonical: "https://www.batugin.co.id/",
