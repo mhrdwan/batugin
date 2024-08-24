@@ -22,6 +22,7 @@ export default function GiveAway() {
       imageSrc: item.foto,
       title: item.title,
       description: item.content,
+      link: item.link,
     });
     setIsModalOpen(true);
   };
@@ -69,23 +70,29 @@ export default function GiveAway() {
 
 const AntdModal = ({ isModalOpen, handleCancel, content }) => (
   <Modal
-    title={content.title}
     open={isModalOpen}
     onCancel={handleCancel}
     footer={null}
-    width={800}
-    bodyStyle={{ height: "400px" }} // Set height to a fixed value
+    width="90%" // Mengatur lebar modal menjadi 90% dari layar untuk perangkat kecil
+    bodyStyle={{ height: "500px", maxHeight: "90vh", overflowY: "auto" }} 
   >
-    <div className="flex h-full">
-      <div className="w-1/2 p-2 h-full">
+    <div className="flex flex-col md:flex-row h-full">
+      <div className="w-full md:w-1/2 p-2 h-full">
         <img
           src={content.imageSrc}
           alt={content.title}
           className="w-full h-full object-cover rounded-lg"
         />
       </div>
-      <div className="w-1/2 p-2 h-full flex flex-col ">
-      <p className="font-bold">{content.title}</p>
+      <div className="w-full md:w-1/2 p-2 h-full flex flex-col">
+        <p className="font-bold mb-2">
+          {content.title}{" "}
+          <a target="_blank" href={content?.link}>
+            <Button style={{ color: "black", backgroundColor: "#fddb1d" }}>
+              Menuju Halaman
+            </Button>
+          </a>
+        </p>
         <p className="text-sm text-gray-600 overflow-auto">
           {content.description}
         </p>
