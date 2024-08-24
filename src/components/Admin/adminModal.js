@@ -57,8 +57,9 @@ export default function AdminModal({ setOpenModal, openModal, title, data }) {
       } else {
         await updateDetailAdmin(formValues);
         if (formValues.password != null) {
-          await updatePasswordAdmin(formValues);
+            await updatePasswordAdmin(formValues);
         }
+        await fetchGetListAdmin()
       }
       setOpenModal(false);
     } catch (error) {
