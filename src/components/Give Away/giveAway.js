@@ -73,7 +73,7 @@ const AntdModal = ({ isModalOpen, handleCancel, content }) => (
     open={isModalOpen}
     onCancel={handleCancel}
     footer={null}
-    width="90%" // Mengatur lebar modal menjadi 90% dari layar untuk perangkat kecil
+    width="80%"
     bodyStyle={{ height: "500px", maxHeight: "90vh", overflowY: "auto" }} 
   >
     <div className="flex flex-col md:flex-row h-full">
