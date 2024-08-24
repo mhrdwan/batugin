@@ -28,7 +28,7 @@ export default function SwipperHomeUtama() {
     <>
       <Swiper
         autoplay={{
-          delay: 3000,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         cssMode={true}

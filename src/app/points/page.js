@@ -1,75 +1,51 @@
-'use client'
-import NavbarComp from "@/components/NavbarComp";
-import NorifReward from "@/components/NorifReward";
-import PointKamu from "@/components/PointKamu/page";
-import KolaborasiBatugin from "@/components/TabActivity/KolaborasiBatugin";
-import MuriComp from "@/components/TabActivity/MuriComp";
-import SenamAero from "@/components/TabActivity/MuriComp";
-import SenamSehatBatugin from "@/components/TabActivity/senamSehat";
-// import KolaborasiBatugin from "@/components/KolaborasiBatugin"; // Contoh import komponen baru
-// import MuriBatugin from "@/components/MuriBatugin"; // Contoh import komponen baru
-// import SenamSehatBatugin from "@/components/SenamSehatBatugin"; // Contoh import komponen baru
-import React, { useState } from "react";
+import React from "react";
+import PagePoint from "./pages";
 
-export default function Page() {
-  const [aktif, setAktif] = useState("pesta");
+export const metadata = {
+  title: "Batugin - Points",
+  description:
+    "Batugin adalah obat peluruh batu ginjal pertama di Indonesia, efektif mengatasi batu ginjal dengan bahan-bahan alami.",
+  keywords:
+    "batugin,points,poin, obat peluruh batu ginjal, obat ginjal, obat batu ginjal, pengobatan ginjal alami",
+  authors: [{ name: "Ridwan" }],
+  openGraph: {
+    title: "Batugin - Obat Peluruh Batu Ginjal PERTAMA di Indonesia",
+    description:
+      "Obat Peluruh Batu Ginjal PERTAMA di Indonesia dengan bahan alami.",
+    url: "https://www.batugin.co.id/",
+    siteName: "Batugin - Obat Peluruh Batu Ginjal PERTAMA di Indonesia",
+    images: [
+      {
+        url: "https://www.batugin.co.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLOGO%20BATUGIN-01.af8304d1.png&w=128&q=75",
+        width: 1440,
+        height: 530,
+        alt: "Batugin - Obat Peluruh Batu Ginjal PERTAMA di Indonesia",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
+  twitterCard: {
+    card: "summary_large_image",
+    site: "@batugin",
+    title: "Batugin - Obat Peluruh Batu Ginjal PERTAMA di Indonesia",
+    description:
+      "Obat Peluruh Batu Ginjal PERTAMA di Indonesia dengan bahan alami.",
+    image:
+      "https://www.batugin.co.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLOGO%20BATUGIN-01.af8304d1.png&w=128&q=75",
+  },
+  robots: "index, follow",
+  canonical: "https://www.batugin.co.id/",
+  icons: {
+    icon: "./icon.png",
+  },
+};
 
-  // Fungsi untuk mengubah tab aktif
-  const changeTab = (tab) => {
-    setAktif(tab);
-  };
-
-  // Fungsi untuk menentukan komponen mana yang akan ditampilkan berdasarkan tab yang aktif
-  const renderComponent = () => {
-    switch (aktif) {
-      case "pesta":
-        return <PointKamu />;
-      case "kolaborasi":
-        return <KolaborasiBatugin />;
-      case "muri":
-        return <MuriComp />;
-      case "senam":
-        return <SenamSehatBatugin />;
-      default:
-        return <PointKamu />;
-    }
-  };
+export default async function Page() {
 
   return (
-    <div className="bg-white">
-      <NavbarComp />
-      <NorifReward />
-      <div className="w-full mt-10 md:pr-[8.5rem] md:pl-[8.5rem] pl-5 pr-5 text-sm">
-        <div className="Frame164 h-8 justify-start items-start gap-5 inline-flex">
-          <div className={`Frame110 hover:cursor-pointer flex-col justify-center items-center gap-1 inline-flex ${aktif === 'pesta' ? '' : 'opacity-80'}`} onClick={() => changeTab("pesta")}>
-            <div className="PestaPointBatugin text-base font-medium font-['Poppins']">
-              Pesta Point Batugin
-            </div>
-            {aktif === 'pesta' && <div className="Rectangle6 self-stretch h-1 bg-red-600" />}
-          </div>
-          <div className={`Frame151 hover:cursor-pointer opacity-80 flex-col justify-start items-start gap-1 inline-flex ${aktif === 'kolaborasi' ? '' : 'opacity-80'}`} onClick={() => changeTab("kolaborasi")}>
-            <div className="KolaborasiBatugin text-base font-medium font-['Poppins']">
-              Kolaborasi Batugin
-            </div>
-            {aktif === 'kolaborasi' && <div className="Rectangle6 self-stretch h-1 bg-red-600" />}
-          </div>
-          <div className={`Frame152 hover:cursor-pointer opacity-80 flex-col justify-start items-start gap-1 inline-flex ${aktif === 'muri' ? '' : 'opacity-80'}`} onClick={() => changeTab("muri")}>
-            <div className="MuriBatugin text-base font-medium font-['Poppins']">
-              Muri Batugin
-            </div>
-            {aktif === 'muri' && <div className="Rectangle6 self-stretch h-1 bg-red-600" />}
-
-          </div>
-          <div className={`Frame153 hover:cursor-pointer opacity-80 flex-col justify-start items-start gap-1 inline-flex ${aktif === 'senam' ? '' : 'opacity-80'}`} onClick={() => changeTab("senam")}>
-            <div className="SenamSehatBatugin text-base font-medium font-['Poppins']">
-              Senam Sehat Batugin
-            </div>
-            {aktif === 'senam' && <div className="Rectangle6 self-stretch h-1 bg-red-600" />}
-
-          </div>
-        </div>
-      </div>
-      {renderComponent()}
+    <div>
+      <PagePoint />
     </div>
   );
 }

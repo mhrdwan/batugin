@@ -17,7 +17,7 @@ export default function GiveAway() {
   return (
     <div className="p-5">
       {/* <p className="font-semibold mb-2">Give Away</p> */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {dataFetchGetListGA?.data?.map((item) => (
           <a
           target="_blank"
