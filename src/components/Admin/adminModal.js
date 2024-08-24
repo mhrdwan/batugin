@@ -1,23 +1,41 @@
 import { giveAwayZustandStore } from "@/zustand/GiveAway/giveAway";
-import { Form, Modal, Input, Image, Upload, Button, Row, Col } from "antd";
+import {
+  Form,
+  Modal,
+  Input,
+  Image,
+  Upload,
+  Button,
+  Row,
+  Col,
+  Switch,
+} from "antd";
 import React, { useEffect, useState } from "react";
 import { PlusOutlined } from "@ant-design/icons";
 import { adminZustandStore } from "@/zustand/Admin/admin";
 
 export default function AdminModal({ setOpenModal, openModal, title, data }) {
-  const { createAdmin, fetchGetListAdmin,updatePasswordAdmin } = adminZustandStore();
+  const {
+    createAdmin,
+    fetchGetListAdmin,
+    updatePasswordAdmin,
+    updateDetailAdmin,
+  } = adminZustandStore();
+  const [swich, setswich] = useState(false);
   const [formValues, setFormValues] = useState({
     username: data?.username || "",
-    password: data?.password || "",
     email: data?.email || "",
+    password: data?.password || null,
+    id: data?.id || "",
   });
 
   useEffect(() => {
     if (data) {
       setFormValues({
         username: data?.username || "",
-        password: data?.password || "",
         email: data?.email || "",
+        password: data?.password || null,
+        id: data?.id || "",
       });
     }
   }, [data]);
@@ -37,9 +55,9 @@ export default function AdminModal({ setOpenModal, openModal, title, data }) {
         await fetchGetListAdmin();
         await setOpenModal(false);
       } else {
-        await editGA(formValues);
-        if (formValues.cover != undefined) {
-          await editFotoGA(formValues);
+        await updateDetailAdmin(formValues);
+        if (formValues.password != null) {
+          await updatePasswordAdmin(formValues);
         }
       }
       setOpenModal(false);
@@ -58,9 +76,10 @@ export default function AdminModal({ setOpenModal, openModal, title, data }) {
           setOpenModal(false);
           setFormValues({
             username: null,
-            password:null,
+            password: null,
             email: null,
           });
+          setswich(false);
         }}
         onOk={() => TombolOK(title)}
       >
@@ -85,16 +104,35 @@ export default function AdminModal({ setOpenModal, openModal, title, data }) {
                 />
               </Form.Item>
             </Col>
-            <Col span={8}>
-              <Form.Item label="Password">
-                <Input
-                  type="password"
-                  id="password"
-                  value={formValues.password}
-                  onChange={onchange}
-                />
-              </Form.Item>
-            </Col>
+            {title == "Create Admin" ? (
+              <>
+                <Col span={8}>
+                  <Form.Item label={"Password"}>
+                    <Input
+                      type="password"
+                      id="password"
+                      value={formValues.password}
+                      onChange={onchange}
+                    />
+                  </Form.Item>
+                </Col>{" "}
+              </>
+            ) : (
+              <Col span={8}>
+                <Form.Item label={swich ? "Password" : "Change Password?"}>
+                  {swich && title != "Create Admin" ? (
+                    <Input
+                      type="password"
+                      id="password"
+                      value={formValues.password}
+                      onChange={onchange}
+                    />
+                  ) : (
+                    <Switch checked={swich} onChange={(e) => setswich(e)} />
+                  )}
+                </Form.Item>
+              </Col>
+            )}
           </Row>
         </Form>
       </Modal>
@@ -110,6 +148,16 @@ export default function AdminModal({ setOpenModal, openModal, title, data }) {
             margin-inline-start: 8px;
             background-color: #1677ff;
         }
+            :where(.css-dev-only-do-not-override-j9bb5n).ant-switch .ant-switch-inner {
+    display: block;
+    overflow: hidden;
+    border-radius: 100px;
+    background: gray;
+    height: 100%;
+    padding-inline-start: 24px;
+    padding-inline-end: 9px;
+    transition: padding-inline-start 0.2s ease-in-out, padding-inline-end 0.2s ease-in-out;
+}
         `}
       </style>
     </div>

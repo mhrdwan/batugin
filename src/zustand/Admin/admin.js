@@ -44,18 +44,48 @@ export const adminZustandStore = create((set, get) => ({
       });
     } catch (error) {
       console.error(error);
+      notification.error({
+        message:
+          error?.response?.data?.status?.message || "Gagal membuat admin",
+      });
       return error;
     }
   },
-  updatePasswordAdmin: async (id) => {
+  updateDetailAdmin: async (datas) => {
     try {
-      const data = await axios.post(`${baseURL}auth/delete-admin-detail`, {
-        id: id,
+      const data = await axios.post(`${baseURL}auth/update-admin-detail`, {
+        username: datas.username,
+        email: datas.email,
+        id: datas.id,
       });
       console.log(data.data);
       // set({ dataFetchGetListAdmin: data?.data?.order });
+      notification.success({
+        message: data?.data?.status?.message || "Berhasil update",
+      });
+      return data;
     } catch (error) {
-      console.error(error);
+      notification.error({
+        message: error?.response?.data?.status?.message || "Gagal update admin",
+      });
+      return error;
+    }
+  },
+  updatePasswordAdmin: async (datanya) => {
+    try {
+      const data = await axios.post(`${baseURL}auth/update-admin-password`, {
+        id: datanya?.id,
+        password: datanya?.password,
+      });
+      console.log(data.data);
+      // set({ dataFetchGetListAdmin: data?.data?.order });
+      notification.success({
+        message: data?.data?.status?.message || "Berhasil update password",
+      });
+    } catch (error) {
+      notification.error({
+        message: error?.response?.data?.status?.message || "Gagal update admin",
+      });
       return error;
     }
   },
