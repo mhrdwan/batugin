@@ -32,42 +32,41 @@ export default function GiveAway() {
   };
   return (
     <div className="p-5">
-      <p className="underline decoration-[3px]  mb-10 text-secondary-2 underline-offset-[6px] decoration-red-500 md:text-[1.5rem] text-[1rem] ">
+    <p className="underline decoration-[3px] mb-5 text-secondary-2 underline-offset-[6px] decoration-red-500 md:text-[1.5rem] text-[1rem]">
       Give Away
-      </p>
-      {/* <p className="font-semibold mb-2">Give Away</p> */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-        {dataFetchGetListGA?.data?.map((item) => (
-          <a
-            type="link"
-            onClick={() => handleLinkClick(item)}
-            className="flex bg-white rounded-lg overflow-hidden mb-5 hover:cursor-pointer"
-          >
-            <div className="w-1/6 aspect-w-1 aspect-h-1 relative overflow-hidden group">
-              <Image
-                src={item.foto}
-                alt={item.title}
-                className="object-cover w-full h-full transform transition-transform duration-300 group-hover:scale-110"
-                layout="fill"
-              />
+    </p>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      {dataFetchGetListGA?.data?.map((item) => (
+        <a
+          onClick={() => handleLinkClick(item)}
+          className="flex bg-white rounded-lg overflow-hidden mb-5 shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl card"
+        >
+          <div className="w-1/6 aspect-w-1 aspect-h-1 relative overflow-hidden group">
+            <Image
+              src={item.foto}
+              alt={item.title}
+              className="object-cover w-full h-full transform transition-transform duration-300 group-hover:scale-110"
+              layout="fill"
+            />
+          </div>
+          <div className="w-5/6 p-4 flex flex-col justify-between">
+            <p className="text-md font-semibold text-gray-800 group-hover:text-red-500 transition-colors">
+              {truncateText(item.title, 20)}
+            </p>
+            <div className="text-sm text-gray-600">
+              {truncateText(item.content, 50)}
             </div>
-            <div className="w-5/6 p-4 flex flex-col justify-between">
-              <p className="text-md font-semibold">
-                {truncateText(item.title, 20)}
-              </p>
-              <div className="text-sm text-gray-600">
-                {truncateText(item.content, 50)}
-              </div>
-            </div>
-          </a>
-        ))}
-        <AntdModal
-          isModalOpen={isModalOpen}
-          handleCancel={handleCancel}
-          content={modalContent}
-        />
-      </div>
+          </div>
+        </a>
+      ))}
+      <AntdModal
+        isModalOpen={isModalOpen}
+        handleCancel={handleCancel}
+        content={modalContent}
+      />
     </div>
+  </div>
+  
   );
 }
 
