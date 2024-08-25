@@ -32,6 +32,9 @@ export default function GiveAway() {
   };
   return (
     <div className="p-5">
+      <p className="underline decoration-[3px]  mb-10 text-secondary-2 underline-offset-[6px] decoration-red-500 md:text-[1.5rem] text-[1rem] ">
+      Give Away
+      </p>
       {/* <p className="font-semibold mb-2">Give Away</p> */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {dataFetchGetListGA?.data?.map((item) => (
@@ -74,7 +77,7 @@ const AntdModal = ({ isModalOpen, handleCancel, content }) => (
     onCancel={handleCancel}
     footer={null}
     width="80%"
-    bodyStyle={{ height: "500px", maxHeight: "90vh", overflowY: "auto" }} 
+    bodyStyle={{ height: "500px", maxHeight: "90vh", overflowY: "auto" }}
   >
     <div className="flex flex-col md:flex-row h-full">
       <div className="w-full md:w-1/2 p-2 h-full">
