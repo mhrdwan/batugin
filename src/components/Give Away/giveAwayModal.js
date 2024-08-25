@@ -102,6 +102,7 @@ export default function GiveAwayModal({
           <Form.Item label="Upload Image">
             <Upload
               listType="picture-card"
+              //  beforeUpload={() => false} 
               showUploadList={false}
               onChange={handleUploadChange}
             >

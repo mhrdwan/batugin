@@ -42,7 +42,7 @@ export default function GiveAway() {
   };
   return (
     <div className="p-5">
-      {dataFetchGetListGA.length > 0 && (
+      {/* {dataFetchGetListGA.length > 0 && ( */}
         <>
           <p className="underline decoration-[3px] mb-5 text-secondary-2 underline-offset-[6px] decoration-red-500 md:text-[1.5rem] text-[1rem]">
             Give Away
@@ -51,7 +51,7 @@ export default function GiveAway() {
             {dataFetchGetListGA?.data?.map((item) => (
               <a
                 onClick={() => handleLinkClick(item)}
-                className="flex bg-white rounded-lg overflow-hidden mb-2 shadow-md transform transition-transform hover:scale-105 hover:shadow-xl card"
+                className="flex bg-white rounded-lg overflow-hidden mb-2 hover:cursor-pointer shadow-md transform transition-transform hover:scale-105 hover:shadow-xl card"
               >
                 <div className="w-1/6 aspect-w-1 aspect-h-1 relative overflow-hidden group">
                   <Image
@@ -63,7 +63,7 @@ export default function GiveAway() {
                 </div>
                 <div className="w-5/6 p-4 flex flex-col justify-between">
                   <p className="text-md font-semibold text-gray-800 group-hover:text-red-500 transition-colors">
-                    {truncateText(item.title, 20)}
+                    {truncateText(item.title, 50)}
                   </p>
                   <div className="text-sm text-gray-600">
                     {truncateText(item.content, 50)}
@@ -91,7 +91,7 @@ export default function GiveAway() {
             </div>
           )} */}
         </>
-      )}
+      {/* )} */}
     </div>
   );
 }
