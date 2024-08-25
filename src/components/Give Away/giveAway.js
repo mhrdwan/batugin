@@ -76,16 +76,18 @@ export default function GiveAway() {
           content={modalContent}
         />
       </div>
-      <div className="w-full ">
-        <button
-          className="mt-5 px-4 w-full py-2 bg-[#fddb1d] text-black rounded hover:bg-[#FCE770] transition"
-          onClick={() => {
-            loadMore();
-          }}
-        >
-          Tampilkan lebih banyak
-        </button>
-      </div>
+      {dataFetchGetListGA && (
+        <div className="w-full ">
+          <button
+            className="mt-5 px-4 w-full py-2 bg-[#fddb1d] text-black rounded hover:bg-[#FCE770] transition"
+            onClick={() => {
+              loadMore();
+            }}
+          >
+            Tampilkan lebih banyak
+          </button>
+        </div>
+      )}
     </div>
   );
 }
