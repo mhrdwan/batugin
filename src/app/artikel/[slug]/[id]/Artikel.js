@@ -35,7 +35,7 @@ export default function Artikel({ params }) {
   return (
     <div className="bg-white">
       <Head>
-        <title>{articleData?.sub_title} - {articleData?.title}</title>
+        <title>{articleData?.title}</title>
         <meta name="description" content={articleData?.description || articleData?.sub_title} />
         <meta name="keywords" content="batu ginjal, kesehatan, artikel kesehatan" />
         <meta property="og:title" content={articleData?.title} />
@@ -62,7 +62,7 @@ export default function Artikel({ params }) {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
         <div className="absolute bottom-0 left-0 right-0 p-8 text-white max-w-7xl mx-auto">
           <h1 className="text-2xl md:text-4xl font-bold mb-2">
-            {articleData?.sub_title} - {articleData?.title}
+           {articleData?.title}
           </h1>
           <p className="text-sm md:text-base opacity-90">
             {new Date(articleData?.createdAt).toLocaleDateString('id-ID', { 
