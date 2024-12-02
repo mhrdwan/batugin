@@ -53,7 +53,7 @@ export default function ArtikelKamiSwipper({ dataArtikel }) {
               <div className="w-[258px] h-12 px-5 py-2 bg-red-600 rounded-sm flex justify-center items-center">
                 <div className="text-white text-base font-medium font-['Poppins']">
                   <Link
-                    href={`/artikel/${item?.sub_title
+                    href={`/artikel/${item?.sub_title || item?.title
                       ?.toLowerCase() 
                       .replace(/[^a-z0-9\s-]/g, "")
                       .trim() 
