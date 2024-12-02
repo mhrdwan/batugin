@@ -1,1 +1,1 @@
-export const baseURL = 'https://be-erklika.mhridwan.com/'
+export const baseURL = 'https://api.batugin.co.id/'
