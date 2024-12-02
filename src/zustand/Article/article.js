@@ -13,7 +13,12 @@ export const ArticleZustand = create((set, get) => ({
   getArticle: async () => {
     try {
       const response = await axios.get(
-        `${baseURL}article/get-article?page=1&limit=10`
+        `${baseURL}article/get-article?page=1&limit=10`,
+        {
+          headers: {
+            Authorization: localStorage.getItem("tokenlogin"),
+          },
+        }
       );
       set({ loading: false });
       set({ DataArticle: response.data });
@@ -24,7 +29,12 @@ export const ArticleZustand = create((set, get) => ({
   getDetailArticle: async (id) => {
     try {
       const response = await axios.get(
-        `${baseURL}article/get-article-detail?id_article=${id}`
+        `${baseURL}article/get-article-detail?id_article=${id}`,
+        {
+          headers: {
+            Authorization: localStorage.getItem("tokenlogin"),
+          },
+        }
       );
       set({ detailDataArticle: response.data });
     } catch (error) {
@@ -47,6 +57,7 @@ export const ArticleZustand = create((set, get) => ({
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            Authorization: localStorage.getItem("tokenlogin"),
           },
           maxBodyLength: Infinity,
         }
@@ -77,6 +88,7 @@ export const ArticleZustand = create((set, get) => ({
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            Authorization: localStorage.getItem("tokenlogin"),
           },
           maxBodyLength: Infinity,
         }
@@ -100,7 +112,13 @@ export const ArticleZustand = create((set, get) => ({
     try {
       const response = await axios.post(
         `${baseURL}article/delete-article`,
-        body
+        body,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: localStorage.getItem("tokenlogin"),
+          },
+        }
       );
       set({ detailDataArticle: response.data });
       set({ loading: false });
@@ -124,6 +142,7 @@ export const ArticleZustand = create((set, get) => ({
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            Authorization: localStorage.getItem("tokenlogin"),
           },
           maxBodyLength: Infinity,
         }
@@ -150,6 +169,7 @@ export const ArticleZustand = create((set, get) => ({
       const response = await axios.post(`${baseURL}auth/add-point`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
+          Authorization: localStorage.getItem("tokenlogin"),
         },
         maxBodyLength: Infinity,
       });
@@ -196,5 +216,4 @@ export const ArticleZustand = create((set, get) => ({
       set({ loading: false });
     }
   },
-  
 }));
