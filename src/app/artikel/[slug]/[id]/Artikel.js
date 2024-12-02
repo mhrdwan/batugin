@@ -49,7 +49,7 @@ export default function Artikel({ params }) {
       <NavbarComp />
       <div className="relative bg-red-200 overflow-hidden" style={{ aspectRatio: "16/9" }}>
         <Image
-          // src={articleData?.foto}
+          src={articleData?.foto}
           alt="Banner Artikel"
           layout="fill"
           objectFit="cover"

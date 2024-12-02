@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["be-erklika.mhridwan.com","https://api.batugin.co.id/"], 
+    domains: ["be-erklika.mhridwan.com","api.batugin.co.id"], 
   },
 };
 
