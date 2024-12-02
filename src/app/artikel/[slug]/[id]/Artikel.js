@@ -96,12 +96,24 @@ export default function Artikel({ params }) {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Main Content */}
-          <div className="lg:col-span-8">
+          {/* Main Content */}
+          <div className="lg:col-span-8 px-4 lg:px-0">
             {articleData?.content && (
               <div
                 dangerouslySetInnerHTML={{ __html: articleData.content }}
-                className="prose max-w-none prose-img:rounded-xl prose-headings:font-bold prose-p:text-gray-600"
-                style={styles.content}
+                className="prose prose-sm md:prose lg:prose-lg xl:prose-xl 
+        max-w-none md:max-w-2xl lg:max-w-3xl mx-auto 
+        prose-img:rounded-xl prose-img:w-full
+        prose-headings:font-bold prose-p:text-gray-600 
+        prose-p:leading-relaxed
+        prose-headings:text-gray-900
+        prose-li:text-gray-600
+        prose-ul:space-y-2 prose-ol:space-y-2"
+                style={{
+                  ...styles.content,
+                  overflow: "hidden",
+                  wordWrap: "break-word",
+                }}
               />
             )}
           </div>
