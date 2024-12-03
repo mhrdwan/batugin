@@ -6,6 +6,28 @@ import { Button, Modal, Form, Input, Upload } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { ArticleZustand } from "@/zustand/Article/article";
 import GiveAway from "../Give Away/giveAway";
+
+const staticData = {
+  data: [
+    { nama: "Ahmad Fauzi", email: "ahmad.fauzi@gmail.com", point: 10 },
+    { nama: "Putri Rahayu", email: "putri.rahayu@gmail.com", point: 9 },
+    { nama: "Budi Santoso", email: "budi.santoso@gmail.com", point: 9 },
+    { nama: "Dewi Lestari", email: "dewi.lestari@gmail.com", point: 8 },
+    { nama: "Muhammad Rizki", email: "m.rizki@gmail.com", point: 8 },
+    { nama: "Siti Nurhaliza", email: "siti.nurhaliza@gmail.com", point: 7 },
+    { nama: "Rudi Hermawan", email: "rudi.hermawan@gmail.com", point: 7 },
+    { nama: "Rina Wati", email: "rina.wati@gmail.com", point: 6 },
+    { nama: "Agus Setiawan", email: "agus.setiawan@gmail.com", point: 6 },
+    { nama: "Nina Safitri", email: "nina.safitri@gmail.com", point: 5 },
+    { nama: "Dian Kusuma", email: "dian.kusuma@gmail.com", point: 5 },
+    { nama: "Irfan Hakim", email: "irfan.hakim@gmail.com", point: 4 },
+    { nama: "Sri Wahyuni", email: "sri.wahyuni@gmail.com", point: 4 },
+    { nama: "Adi Nugroho", email: "adi.nugroho@gmail.com", point: 3 },
+    { nama: "Maya Sari", email: "maya.sari@gmail.com", point: 3 }
+  ],
+  totalPage: 3
+};
+
 export default function PointKamu() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const { tambahPoint } = ArticleZustand();
@@ -131,23 +153,6 @@ export default function PointKamu() {
 function Login() {
   return (
     <></>
-    // <div className="table-login pr-[0.71rem] pl-[0.71rem] mt-5 flex justify-center ">
-    //   <div className="pt-5 pb-5 w-full border rounded-lg border-black text-center h-[9rem]">
-    //     <div className="text-secondary-2">
-    //       <p className="text-[1rem] font-medium">
-    //         Please log in/register to view points
-    //       </p>
-    //       <div className="flex justify-center mt-4">
-    //         <button className="mx-2 px-5 py-2 border border-red-600 text-red-600 font-medium rounded-sm">
-    //           Register
-    //         </button>
-    //         <button className="mx-2 px-5 py-2 bg-red-600 text-white font-medium rounded-sm">
-    //           Login
-    //         </button>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
 
@@ -163,6 +168,15 @@ function TableBaru() {
   const handlePageClick = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
+  // Menggunakan data statis jika data API belum tersedia
+  const displayData = getPointAllData?.data || staticData.data;
+  const totalPages = getPointAllData?.totalPage || staticData.totalPage;
+
+  // Hitung index awal dan akhir untuk pagination
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = displayData.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <div className="">
@@ -199,13 +213,9 @@ function TableBaru() {
         .styled-table tbody tr:last-of-type {
             border-bottom: 2px solid #009879;
         }
-        .styled-table tbody tr.active-row {
-            font-weight: bold;
-            color: #009879;
-        }
         `}
       </style>
-      <table className="styled-table ">
+      <table className="styled-table">
         <thead>
           <tr>
             <th>No.</th>
@@ -215,7 +225,7 @@ function TableBaru() {
           </tr>
         </thead>
         <tbody>
-          {getPointAllData?.data?.map((item, index) => (
+          {currentItems.map((item, index) => (
             <tr key={index}>
               <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
               <td>{item.nama}</td>
@@ -225,8 +235,8 @@ function TableBaru() {
           ))}
         </tbody>
       </table>
-      <div className="Frame51 t h-10 justify-end w-full items-start gap-2 inline-flex">
-        {Array.from({ length: getPointAllData?.totalPage || 1 }, (_, index) => (
+      <div className="Frame51 h-10 justify-end w-full items-start gap-2 inline-flex">
+        {Array.from({ length: Math.ceil(displayData.length / itemsPerPage) }, (_, index) => (
           <div
             key={index}
             onClick={() => handlePageClick(index + 1)}
